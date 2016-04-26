@@ -1,0 +1,5 @@
+2016-04-26 09:50:59 INFO  [main] c.h.w.w.jpa.JpaBookmarkApplication [StartupInfoLogger.java:48] : Starting JpaBookmarkApplication on wzp1020 with PID 8196 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-26 09:50:59 DEBUG [main] c.h.w.w.jpa.JpaBookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-26 09:50:59 INFO  [main] c.h.w.w.jpa.JpaBookmarkApplication [SpringApplication.java:666] : No active profile set, falling back to default profiles: default
+2016-04-26 09:51:04 INFO  [main] c.h.w.w.jpa.JpaBookmarkApplication [StartupInfoLogger.java:57] : Started JpaBookmarkApplication in 6.175 seconds (JVM running for 6.497)
+2016-04-26 09:51:04 DEBUG [main] c.h.w.w.jpa.JpaBookmarkApplication [JpaBookmarkApplication.java:33] : Let's inspect the beans provided by Spring Boot:

@@ -1,0 +1,59 @@
+2016-04-18 13:36:49 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 10000 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 13:36:49 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 13:36:49 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 13:36:55 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 7.142 seconds (JVM running for 7.645)
+2016-04-18 14:10:06 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 11672 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 14:10:06 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 14:10:06 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 14:10:10 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 4.78 seconds (JVM running for 5.181)
+2016-04-18 14:10:10 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 11672 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 14:10:10 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 14:10:10 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 14:12:08 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 2060 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 14:12:08 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 14:12:08 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 14:12:12 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 4.637 seconds (JVM running for 4.99)
+2016-04-18 14:12:12 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [BookmarkApplication.java:41] : Let's inspect the beans provided by Spring Boot:
+2016-04-18 14:18:48 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 9880 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 14:18:48 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 14:18:48 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 14:18:53 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 4.594 seconds (JVM running for 4.926)
+2016-04-18 14:18:53 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [BookmarkApplication.java:40] : Let's inspect the beans provided by Spring Boot:
+2016-04-18 16:01:20 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 7900 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 16:01:20 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 16:01:20 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 16:01:24 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 5.106 seconds (JVM running for 5.47)
+2016-04-18 16:01:24 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [BookmarkApplication.java:45] : Let's inspect the beans provided by Spring Boot:
+2016-04-18 16:03:17 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 10676 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 16:03:17 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 16:03:17 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 16:03:22 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 5.165 seconds (JVM running for 5.503)
+2016-04-18 16:03:22 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [BookmarkApplication.java:45] : Let's inspect the beans provided by Spring Boot:
+2016-04-18 16:42:56 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 9724 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 16:42:56 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 16:42:56 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 16:43:01 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 5.158 seconds (JVM running for 5.49)
+2016-04-18 16:43:01 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [BookmarkApplication.java:45] : Let's inspect the beans provided by Spring Boot:
+2016-04-18 17:23:47 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 5124 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 17:23:47 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 17:23:47 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 17:24:03 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 11640 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 17:24:03 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 17:24:03 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 17:24:08 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 4.932 seconds (JVM running for 5.242)
+2016-04-18 17:24:08 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [BookmarkApplication.java:45] : Let's inspect the beans provided by Spring Boot:
+2016-04-18 17:32:45 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 8452 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 17:32:45 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 17:32:45 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 17:32:50 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 5.137 seconds (JVM running for 5.452)
+2016-04-18 17:32:50 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [BookmarkApplication.java:45] : Let's inspect the beans provided by Spring Boot:
+2016-04-18 17:40:00 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 7400 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 17:40:00 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 17:40:00 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 17:40:05 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 4.895 seconds (JVM running for 5.206)
+2016-04-18 17:40:05 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [BookmarkApplication.java:49] : Let's inspect the beans provided by Spring Boot:
+2016-04-18 17:40:44 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 13464 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-18 17:40:44 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-18 17:40:44 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-18 17:40:48 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 4.945 seconds (JVM running for 5.258)
+2016-04-18 17:40:48 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [BookmarkApplication.java:49] : Let's inspect the beans provided by Spring Boot:

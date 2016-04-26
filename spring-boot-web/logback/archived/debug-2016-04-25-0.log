@@ -1,0 +1,30 @@
+2016-04-25 10:09:19 INFO  [main] c.h.w.web.jpa.JpaMybatisApplication [StartupInfoLogger.java:48] : Starting JpaMybatisApplication on wzp1020 with PID 16236 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-25 10:09:19 DEBUG [main] c.h.w.web.jpa.JpaMybatisApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-25 10:09:19 INFO  [main] c.h.w.web.jpa.JpaMybatisApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-25 10:09:25 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : ==>  Preparing: select * from city where state = ? 
+2016-04-25 10:09:25 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : ==> Parameters: CA(String)
+2016-04-25 10:09:25 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : <==      Total: 2
+2016-04-25 10:11:04 INFO  [main] c.h.w.web.jpa.JpaMybatisApplication [StartupInfoLogger.java:48] : Starting JpaMybatisApplication on wzp1020 with PID 8416 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-25 10:11:04 DEBUG [main] c.h.w.web.jpa.JpaMybatisApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-25 10:11:04 INFO  [main] c.h.w.web.jpa.JpaMybatisApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-25 10:11:07 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : ==>  Preparing: select * from city where state = ? 
+2016-04-25 10:11:07 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : ==> Parameters: CA(String)
+2016-04-25 10:11:07 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : <==      Total: 2
+2016-04-25 10:18:56 INFO  [main] c.h.w.web.jpa.JpaMybatisApplication [StartupInfoLogger.java:48] : Starting JpaMybatisApplication on wzp1020 with PID 13856 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-25 10:18:56 DEBUG [main] c.h.w.web.jpa.JpaMybatisApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-25 10:18:56 INFO  [main] c.h.w.web.jpa.JpaMybatisApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-25 10:18:59 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : ==>  Preparing: select * from city where state = ? 
+2016-04-25 10:18:59 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : ==> Parameters: CA(String)
+2016-04-25 10:18:59 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : <==      Total: 2
+2016-04-25 10:20:10 INFO  [main] c.h.w.web.jpa.JpaMybatisApplication [StartupInfoLogger.java:48] : Starting JpaMybatisApplication on wzp1020 with PID 5180 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-25 10:20:10 DEBUG [main] c.h.w.web.jpa.JpaMybatisApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-25 10:20:10 INFO  [main] c.h.w.web.jpa.JpaMybatisApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-25 10:20:13 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : ==>  Preparing: select * from city where state = ? 
+2016-04-25 10:20:13 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : ==> Parameters: CA(String)
+2016-04-25 10:20:13 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : <==      Total: 2
+2016-04-25 10:22:12 INFO  [main] c.h.w.web.jpa.JpaMybatisApplication [StartupInfoLogger.java:48] : Starting JpaMybatisApplication on wzp1020 with PID 16020 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-25 10:22:12 DEBUG [main] c.h.w.web.jpa.JpaMybatisApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-25 10:22:12 INFO  [main] c.h.w.web.jpa.JpaMybatisApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-25 10:22:15 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : ==>  Preparing: select * from city where state = ? 
+2016-04-25 10:22:15 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : ==> Parameters: CA(String)
+2016-04-25 10:22:15 DEBUG [main] c.h.w.w.jpa.CityMapper.findByState [BaseJdbcLogger.java:145] : <==      Total: 2

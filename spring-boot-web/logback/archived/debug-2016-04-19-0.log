@@ -1,0 +1,45 @@
+2016-04-19 12:35:29 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 9264 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-19 12:35:29 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-19 12:35:29 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-19 12:35:34 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 5.768 seconds (JVM running for 6.081)
+2016-04-19 12:35:34 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [BookmarkApplication.java:49] : Let's inspect the beans provided by Spring Boot:
+2016-04-19 12:37:16 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 6232 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-19 12:37:16 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-19 12:37:16 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-19 12:37:20 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 4.983 seconds (JVM running for 5.309)
+2016-04-19 12:37:20 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [BookmarkApplication.java:49] : Let's inspect the beans provided by Spring Boot:
+2016-04-19 13:10:12 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:48] : Starting BookmarkApplication on wzp1020 with PID 13668 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-19 13:10:12 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-19 13:10:12 INFO  [main] c.h.w.web.jpa.BookmarkApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-19 13:10:16 INFO  [main] c.h.w.web.jpa.BookmarkApplication [StartupInfoLogger.java:57] : Started BookmarkApplication in 5.014 seconds (JVM running for 5.325)
+2016-04-19 13:10:16 DEBUG [main] c.h.w.web.jpa.BookmarkApplication [BookmarkApplication.java:49] : Let's inspect the beans provided by Spring Boot:
+2016-04-19 14:08:02 INFO  [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:48] : Starting WebSecurityApplication on wzp1020 with PID 11824 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-19 14:08:02 DEBUG [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-19 14:08:02 INFO  [main] c.h.w.w.s.WebSecurityApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-19 14:08:07 INFO  [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:57] : Started WebSecurityApplication in 5.063 seconds (JVM running for 5.378)
+2016-04-19 14:08:07 DEBUG [main] c.h.w.w.s.WebSecurityApplication [WebSecurityApplication.java:41] : Let's inspect the beans provided by Spring Boot:
+2016-04-19 14:15:18 INFO  [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:48] : Starting WebSecurityApplication on wzp1020 with PID 12252 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-19 14:15:18 DEBUG [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-19 14:15:18 INFO  [main] c.h.w.w.s.WebSecurityApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-19 14:15:23 INFO  [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:57] : Started WebSecurityApplication in 5.204 seconds (JVM running for 5.547)
+2016-04-19 14:15:23 DEBUG [main] c.h.w.w.s.WebSecurityApplication [WebSecurityApplication.java:41] : Let's inspect the beans provided by Spring Boot:
+2016-04-19 14:33:55 INFO  [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:48] : Starting WebSecurityApplication on wzp1020 with PID 9556 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-19 14:33:55 DEBUG [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-19 14:33:55 INFO  [main] c.h.w.w.s.WebSecurityApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-19 14:33:59 INFO  [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:57] : Started WebSecurityApplication in 5.054 seconds (JVM running for 5.374)
+2016-04-19 14:33:59 DEBUG [main] c.h.w.w.s.WebSecurityApplication [WebSecurityApplication.java:46] : Let's inspect the beans provided by Spring Boot:
+2016-04-19 14:53:02 INFO  [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:48] : Starting WebSecurityApplication on wzp1020 with PID 9224 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-19 14:53:02 DEBUG [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-19 14:53:02 INFO  [main] c.h.w.w.s.WebSecurityApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-19 14:53:07 INFO  [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:57] : Started WebSecurityApplication in 4.906 seconds (JVM running for 5.229)
+2016-04-19 14:53:07 DEBUG [main] c.h.w.w.s.WebSecurityApplication [WebSecurityApplication.java:47] : Let's inspect the beans provided by Spring Boot:
+2016-04-19 14:55:46 INFO  [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:48] : Starting WebSecurityApplication on wzp1020 with PID 8836 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-19 14:55:46 DEBUG [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-19 14:55:46 INFO  [main] c.h.w.w.s.WebSecurityApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-19 14:55:51 INFO  [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:57] : Started WebSecurityApplication in 5.063 seconds (JVM running for 5.391)
+2016-04-19 14:55:51 DEBUG [main] c.h.w.w.s.WebSecurityApplication [WebSecurityApplication.java:47] : Let's inspect the beans provided by Spring Boot:
+2016-04-19 15:12:10 INFO  [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:48] : Starting WebSecurityApplication on wzp1020 with PID 14264 (D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web\target\classes started by Administrator in D:\Document\Engineering\eclipsee\embracing-spring-boot\spring-boot-web)
+2016-04-19 15:12:10 DEBUG [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:51] : Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-04-19 15:12:10 INFO  [main] c.h.w.w.s.WebSecurityApplication [SpringApplication.java:670] : The following profiles are active: pro
+2016-04-19 15:12:14 INFO  [main] c.h.w.w.s.WebSecurityApplication [StartupInfoLogger.java:57] : Started WebSecurityApplication in 4.864 seconds (JVM running for 5.164)
+2016-04-19 15:12:14 DEBUG [main] c.h.w.w.s.WebSecurityApplication [WebSecurityApplication.java:40] : Let's inspect the beans provided by Spring Boot:
