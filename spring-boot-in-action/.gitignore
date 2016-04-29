@@ -1,0 +1,17 @@
+*.class
+*.jar
+*.war
+*.ear
+
+*.rar
+*.zip
+*.7z
+
+.settings
+.project
+.classpath
+
+target/
+build/
+bin/
+logback/

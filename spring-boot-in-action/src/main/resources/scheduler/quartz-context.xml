@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+ 
+    <context:component-scan base-package="hx.spring.boot.scheduler" />
+ 
+ 
+    <!-- For times when you just need to invoke a method on a specific object -->
+    <!-- By default, Quartz Jobs are stateless, resulting in the possibility of jobs interfering with each other.
+    If you specify two triggers for the same JobDetail, it might be possible that before the first job has finished,
+    the second one will start. If JobDetail classes implement the Stateful interface, this won’t happen.
+    The second job will not start before the first one has finished. To make jobs resulting from the
+    MethodInvokingJobDetailFactoryBean non-concurrent, set the concurrent flag to false. -->
+    <bean id="simpleJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="methodInvokingJobBean" />
+        <property name="targetMethod" value="printMessage" />
+        <!-- <property name="concurrent" value="false"/> -->
+    </bean>
+ 
+ 
+    <!-- For times when you need more complex processing, passing data to the scheduled job -->
+    <bean name="complexJobDetail"    class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="jobClass" value="hx.spring.boot.scheduler.SimpleQuartzJob" />
+        <property name="jobDataMap">
+            <!-- The job detail configuration has all information it needs to run the job (SimpleQuartzJob).
+            The job data map is available through the JobExecutionContext (passed to you at execution time),
+            but the JobDetail also gets its properties from the job data mapped to properties of the job instance.
+            So in this case, if the ExampleJob contains a bean property named timeout,
+            the JobDetail will have it applied automatically. -->
+            <map> 
+                <entry key="job" value-ref="simpleJobBean" />
+                <entry key="timeout" value="10" />
+            </map>
+        </property>
+        <property name="durability" value="true" />
+    </bean>
+ 
+ 
+    <!-- Run the job every 2 seconds with initial delay of 1 second -->
+    <bean id="simpleTrigger"  class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+        <property name="jobDetail" ref="simpleJobDetail" />
+        <property name="startDelay" value="1000" />
+        <property name="repeatInterval" value="2000" />
+    </bean>
+ 
+ 
+    <!-- Run the job every 5 seconds only on Weekends -->
+    <bean id="cronTrigger"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="complexJobDetail" />
+        <property name="cronExpression" value="0/10 * * * * ?" />
+    </bean>
+ 
+ 
+    <!-- Scheduler factory bean to glue together jobDetails and triggers to Configure Quartz Scheduler -->
+    <bean  class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="jobDetails">
+            <list>
+                <ref bean="simpleJobDetail" />
+                <ref bean="complexJobDetail" />
+            </list>
+        </property>
+ 
+        <property name="triggers">
+            <list>
+                <ref bean="simpleTrigger" />
+                <ref bean="cronTrigger" />
+            </list>
+        </property>
+    </bean>
+    
+    <!-- or specify the two JObDetails separately 
+    <bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+	    <property name="jobDetail" ref="jobDetail"/>
+	    <property name="startDelay" value="10000"/>
+	    <property name="repeatInterval" value="50000"/>
+	</bean>
+
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+	    <property name="jobDetail" ref="exampleJob"/>
+	    <property name="cronExpression" value="0 0 6 * * ?"/>
+	</bean> -->
+    
+ 
+</beans>
