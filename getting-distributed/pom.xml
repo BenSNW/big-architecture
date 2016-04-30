@@ -5,6 +5,7 @@
 		<groupId>com.hx.wang</groupId>
 		<artifactId>maven-parent</artifactId>
 		<version>1.0</version>
+		<relativePath>../maven-parent</relativePath>
 	</parent>
 	<artifactId>getting-distributed</artifactId>
 
@@ -12,7 +13,7 @@
 		<dependency>
 			<groupId>org.apache.curator</groupId>
 			<artifactId>curator-recipes</artifactId>
-			<version>${curator-version}</version>
+			<version>${curator.version}</version>
 		</dependency>
 	</dependencies>
 	

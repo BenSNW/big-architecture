@@ -6,7 +6,7 @@
 		<groupId>com.hx.wang</groupId>
 		<artifactId>big-architecture</artifactId>
 		<version>1.0</version>
-		<relativePath>../big-architecture</relativePath>
+		<relativePath>../../big-architecture</relativePath>
 	</parent>
 	<artifactId>maven-parent</artifactId>
 	<packaging>pom</packaging>
@@ -19,6 +19,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<resource.delimiter>@</resource.delimiter> <!-- delimiter that doesn't clash with Spring ${} placeholders -->
+		
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		
@@ -44,17 +45,22 @@
 		<jackson.version>2.6.5</jackson.version>
 		<zookeeper.version>3.4.6</zookeeper.version>
 		<zkClient.version>0.7</zkClient.version>
-		<curator-version>2.6.0</curator-version>
-		<netty-version>4.0.34.Final</netty-version>
+		<curator.version>2.6.0</curator.version>
+		<netty.version>4.0.34.Final</netty.version>
 		<jboss.resteasy.version>3.0.7.Final</jboss.resteasy.version>
 		<elasticsearch.version>2.3.0</elasticsearch.version>
-		<javassist.version>3.12.0.GA</javassist.version>
+		
+		<!-- old versions until 3.12.1.GA are maintained in javassist:javassist -->
+		<!-- newer versions since 3.13.0-GA have been moved to org.javassist:javassist -->
+		<!-- Spring Boot uses version 3.18.1-GA as Hibernate does -->
+		<javassist.version>3.20.0-GA</javassist.version>
+		<cglib.version>2.2.2</cglib.version>
 		<quartz.version>2.2.1</quartz.version>
 		
 		<maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
 		<maven.jar.plugin.version>2.5</maven.jar.plugin.version>
 	</properties>
-	
+		
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -63,6 +69,11 @@
 				<version>${spring.boot.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>${cglib.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

@@ -21,5 +21,6 @@
 		<module>dynamic-proxy</module>
 		<module>getting-distributed</module>
 		<module>running-netty</module>
+		<module>dubbo-diy</module>
 	</modules>
 </project>

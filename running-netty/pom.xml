@@ -5,6 +5,7 @@
 		<groupId>com.hx.wang</groupId>
 		<artifactId>maven-parent</artifactId>
 		<version>1.0</version>
+		<relativePath>../maven-parent</relativePath>
 	</parent>
 	<artifactId>running-netty</artifactId>
 
@@ -12,7 +13,7 @@
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
-			<version>${netty-version}</version>
+			<version>${netty.version}</version>
 		</dependency>
 	</dependencies>
 	
