@@ -1,7 +1,9 @@
 package hx.dubbo.service;
 
+import java.io.IOException;
 import java.lang.annotation.Annotation;
-import java.util.Arrays;
+import java.net.URL;
+import java.util.Enumeration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,35 +14,45 @@ public class ServiceLauncher {
 	
 	public static void run(Class<?> source, String... args) {
 		Annotation[] annotations = source.getAnnotations();
-		boolean packageAnnotated = false;
+		String[] basePackages = null;
 		for (Annotation anno : annotations) {
-			if (anno.annotationType() == ComponentScan.class) {
-				packageAnnotated = true;
-				
-				String[] basePackages = ((ComponentScan) anno).basePackages();
-				logger.info(Arrays.toString(basePackages));
-				
-				logger.info("Service Started");
+			// check for ComponentScan nanotation
+			if (anno.annotationType() == ComponentScan.class) {				
+				basePackages = ((ComponentScan) anno).basePackages();
+				// basePackages leaved as default value, namely empty array
+				if (basePackages.length == 0)
+					loadConfig(source.getPackage().getName());
+				else {
+					for (String basePackage : basePackages) {
+						if (Package.getPackage(basePackage) == null) {
+							logger.warn("Invalid package name found: {}", basePackage);
+						} else {
+							loadConfig(basePackage);
+						}
+					}
+				}
+				break;
 			}
 		}
 		
-		if (!packageAnnotated) {
+		if (basePackages == null) {
 			logger.info("No ComponentScan configuration class found");
-			loadConfig(source);
+			loadConfig(source.getPackage().getName());
 		}
 	}
 	
-	private static Class<?>[] loadConfig(Class<?> baseClass) {
-		
-		return loadConfig(baseClass.getPackage());
-		
+	private static void loadConfig(String basePackage) {
+		String packagePath = basePackage.replace(".", "/") + "/**/*.class";
+		logger.info(packagePath);
+		Enumeration<URL> urls = null;
+		try {
+			urls = ClassLoader.getSystemResources(packagePath);
+			while (urls.hasMoreElements()) {
+				logger.info(urls.nextElement().toString());
+			};
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-	
-	private static Class<?>[] loadConfig(Package basePackage) {
-		
-		return null;
-		
-	}
-
 	
 }
