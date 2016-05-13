@@ -14,10 +14,7 @@
 		<artifactId>curator-recipes</artifactId>
 		<version>${curator.version}</version>
 	</dependency>
-	<dependency>
-		<groupId>ch.qos.logback</groupId>
-		<artifactId>logback-access</artifactId>
-	</dependency>
+	<!-- logback StaticLoggerBinder for slf4j -->
 	<dependency>
 		<groupId>ch.qos.logback</groupId>
 		<artifactId>logback-classic</artifactId>

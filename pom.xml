@@ -22,5 +22,6 @@
 		<module>getting-distributed</module>
 		<module>running-netty</module>
 		<module>dubbo-diy</module>
+		<module>java-master</module>
 	</modules>
 </project>
