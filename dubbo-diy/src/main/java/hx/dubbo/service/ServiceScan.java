@@ -7,9 +7,11 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ComponentScan {
+public @interface ServiceScan {
 
 	String[] basePackages() default {};
+	
+	Class<?>[] classes() default {};
 
 	String[] value() default {};
 	

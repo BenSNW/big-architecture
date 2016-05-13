@@ -1,8 +1,5 @@
 package hx.dubbo.service;
 
-import java.lang.annotation.Annotation;
-import java.util.Arrays;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,33 +7,32 @@ public class ServiceLauncher {
 
 	private static final Logger logger = LoggerFactory.getLogger(ServiceLauncher.class);
 	
-	public static void run(Class<?> source, String... args) {
-		Annotation[] annotations = source.getAnnotations();
-		boolean packageAnnotated = false;
-		for (Annotation anno : annotations) {
-			if (anno.annotationType() == ComponentScan.class) {
-				packageAnnotated = true;
-				
-				String[] basePackages = ((ComponentScan) anno).basePackages();
-				logger.info(Arrays.toString(basePackages));
-				
-				logger.info("Service Started");
+	public static void run(Class<?> source, String... args) throws Throwable {
+		try {
+			ServiceScan scan = source.getAnnotation(ServiceScan.class);
+			if (scan.classes().length > 0) {
+				for (Class<?> clazz : scan.classes())
+					loadService(clazz);
+			} else if (scan.basePackages().length > 0) {
+				for (String basePackage : scan.basePackages())
+					loadConfig(basePackage);
+			} else {
+				// no ServiceScan found, scan based on the package of the source class
+				loadConfig(source.getPackage().getName());
+				logger.info("Service started");
 			}
-		}
-		
-		if (!packageAnnotated) {
-			logger.info("No ComponentScan configuration class found");
-			loadConfig(source);
+		} catch (Throwable th) {
+			logger.error("Service start failed");
+			th.printStackTrace();
 		}
 	}
 	
-	private static Class<?>[] loadConfig(Class<?> baseClass) {
-		
-		return loadConfig(baseClass.getPackage());
-		
+	private static void loadService(Class<?> clazz) {
+		ServiceAnnotation service = clazz.getAnnotation(ServiceAnnotation.class);
+		System.out.println(service.name());
 	}
-	
-	private static Class<?>[] loadConfig(Package basePackage) {
+
+	private static Class<?>[] loadConfig(String basePackage) {
 		
 		return null;
 		

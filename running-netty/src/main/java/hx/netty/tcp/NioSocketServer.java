@@ -1,4 +1,4 @@
-package hx.netty.demo;
+package hx.netty.tcp;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
@@ -14,13 +14,13 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.util.ReferenceCountUtil;
 
-public class NettyServer {
+public class NioSocketServer {
 
 	public static void main(String[] args){
-	    EventLoopGroup bossGroup=new NioEventLoopGroup();
-	    EventLoopGroup workerGroup = new NioEventLoopGroup();
+	    EventLoopGroup bossGroup = new NioEventLoopGroup(2);
+	    EventLoopGroup workerGroup = new NioEventLoopGroup(3);
 	    try {
-	        ServerBootstrap serverBootstrap=new ServerBootstrap();
+	        ServerBootstrap serverBootstrap = new ServerBootstrap();
 	        serverBootstrap.group(bossGroup,workerGroup)
 	            .channel(NioServerSocketChannel.class)
 	            .childHandler(new ChannelInitializer<SocketChannel>() {
@@ -42,12 +42,12 @@ public class NettyServer {
 		                                    assert f == future;
 		                                    ctx.close();
 		                                }
-		                            }); // (4)
+		                            }); 
 		                        }                    	                	
 	                	});
 	                }
 	            });
-	        ChannelFuture f=serverBootstrap.bind(8080).sync();
+	        ChannelFuture f = serverBootstrap.bind(8080).sync();
 	        f.channel().closeFuture().sync();
 	    } catch (InterruptedException e) {
 	        e.printStackTrace();
@@ -62,12 +62,12 @@ public class NettyServer {
 		public void channelRead(ChannelHandlerContext ctx, Object msg) {
 		    ByteBuf in = (ByteBuf) msg;
 		    try {
-		        while (in.isReadable()) { // (1)
+		        while (in.isReadable()) { 
 		            System.out.print((char) in.readByte());
 		            System.out.flush();
 		        }
 		    } finally {
-		        ReferenceCountUtil.release(msg); // (2)
+		        ReferenceCountUtil.release(msg); 
 		    }
 		}
 		

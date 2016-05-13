@@ -11,8 +11,8 @@ import org.apache.zookeeper.ZooKeeper;
 public class ZKConnectionWatcher implements Watcher {
 
 	private static final int SESSION_TIMEOUT = 5000;
-	protected ZooKeeper zk;
 	private CountDownLatch connectedSignal = new CountDownLatch(1);
+	protected ZooKeeper zk;
 	
 	public void connect(String server) throws IOException, InterruptedException {
 		zk = new ZooKeeper(server, SESSION_TIMEOUT, this);

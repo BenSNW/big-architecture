@@ -1,4 +1,4 @@
-package hx.dubbo.service.registry;
+package hx.dubbo.registry;
 
 public class RegistryUri {
 
@@ -7,8 +7,10 @@ public class RegistryUri {
 	private String host;
 	private String port;
 	
+	public static final RegistryUri ZOOKEEPER = new RegistryUri("zookeeper://localhost:2181");
+	public static final RegistryUri REDIS = new RegistryUri("redis://localhost:");
+	
 	public RegistryUri(String uri) {
-		super();
 		this.uri = uri;
 	}
 

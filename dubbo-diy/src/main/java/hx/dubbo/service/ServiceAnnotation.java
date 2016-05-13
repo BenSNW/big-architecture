@@ -1,4 +1,4 @@
-package hx.dubbo.service.provider;
+package hx.dubbo.service;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;
@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 @Inherited
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Service {
+public @interface ServiceAnnotation {
 		
 	String name();
 	int port() default 1088;
