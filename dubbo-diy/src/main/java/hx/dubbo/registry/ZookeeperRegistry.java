@@ -1,21 +1,31 @@
 package hx.dubbo.registry;
 
+import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import hx.dubbo.service.ServiceException;
 
 public class ZookeeperRegistry extends AbstractServiceRegistry {
 
-	private CuratorFramework client;
+	private final CuratorFramework client;
+	private static final Logger logger = LoggerFactory.getLogger(ZookeeperRegistry.class);
 	
-	public ZookeeperRegistry(RegistryUri uri) {
+	public ZookeeperRegistry(RegistryUri uri, RetryPolicy policy) {
 		super(uri);
-		
+		client = CuratorFrameworkFactory.newClient(uri.getUri(), policy);
 	}
 
 	@Override
-	public void doRegister(Class<?> service) throws ServiceException {
-		client.close();
+	protected void doRegister(Class<?> service) throws ServiceException {
+		try {
+			client.create().inBackground().forPath("", "".getBytes());
+		} catch (Exception ex) {
+			logger.error("", ex);
+			throw new ServiceException("");
+		}
 	}
 
 }

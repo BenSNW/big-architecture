@@ -63,7 +63,7 @@ public class CopyUtil {
 		}
 	}
 	
-	//if des doesn't exist, FileNotFoundException may be thrown if using FileChannel.open() directly
+	// if des doesn't exist, FileNotFoundException may be thrown if using FileChannel.open() directly
 	public static void copyWithChannel(File src, File des) throws IOException {
 		if(isSameFile(src, des)) return;
 		FileChannel srcChannel = null;
@@ -75,7 +75,7 @@ public class CopyUtil {
 		try {
 			srcChannel = FileChannel.open(src.toPath(), StandardOpenOption.READ);
 			
-			//take care with this!!
+			// take care with this !!
 //			if(!des.exists()) des.createNewFile();  
 			if(!des.exists()) {
 				desChannel = new FileOutputStream(des).getChannel();
@@ -90,7 +90,8 @@ public class CopyUtil {
 		}
 	}
 	
-	//if file already exists, FileAlreadyExistsException will be thrown
+	// if file already exists, FileAlreadyExistsException will be thrown
+	// internally it's just a wrapper for stream copy as used in the first method
 	public static void copyWithJava7(File src, File des) throws IOException {
 		if(isSameFile(src, des)) return;
 		Files.copy( src.toPath(), des.toPath(), 

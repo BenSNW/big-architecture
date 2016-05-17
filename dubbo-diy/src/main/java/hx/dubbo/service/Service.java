@@ -4,6 +4,7 @@ import hx.dubbo.registry.RegistryUri;
 
 public interface Service {
 
+	String id();
 	String name();
 	int port();
 	int timeout();

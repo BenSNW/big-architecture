@@ -5,6 +5,11 @@ import hx.dubbo.registry.RegistryUri;
 public abstract class AbstarctService implements Service {
 
 	@Override
+	public final String id() {
+		return "";
+	}
+	
+	@Override
 	public int port() {
 		return 10880;
 	}

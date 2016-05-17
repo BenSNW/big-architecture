@@ -3,6 +3,8 @@
 *.war
 *.ear
 
+.DS_Store
+
 *.rar
 *.zip
 *.7z
