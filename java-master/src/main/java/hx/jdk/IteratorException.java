@@ -1,4 +1,4 @@
-package hx.concurrency.jdk;
+package hx.jdk;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
