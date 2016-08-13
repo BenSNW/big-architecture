@@ -10,6 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.*;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,6 +18,7 @@ import javax.persistence.Id;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 
 /**
@@ -144,24 +146,22 @@ interface BookmarkRepository extends JpaRepository<Bookmark, Long> {
     Bookmark findByUserIdAndId(String userId, Long id);
 
     List<Bookmark> findByUserId(String userId);
+    
+    Optional<Bookmark> findById(Long id);
 }
 
 @Entity
 class Bookmark {
 
-    private String userId;
+	@Id
+	@GeneratedValue
+	private Long id;
+	private String userId;
+	private String href;
+	private String description;
+	private String label;
 
-    @Id
-    @GeneratedValue
-    private Long id;
-
-    private String href;
-
-    private String description;
-
-    private String label;
-    
-    public Bookmark() {}
+	public Bookmark() { }
 
     public Bookmark(String userId, String href, String description, String label) {
         this.userId = userId;

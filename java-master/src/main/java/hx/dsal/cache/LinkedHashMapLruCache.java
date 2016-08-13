@@ -1,6 +1,5 @@
-package hx.dsal.cache.lru;
+package hx.dsal.cache;
 
-import hx.dsal.cache.LruCache;
 
 public class LinkedHashMapLruCache implements LruCache {
 

@@ -1,4 +1,4 @@
-package hx.dsal.cache.lru;
+package hx.dsal.cache;
 
 public class GuavaLruCache {
 

@@ -66,7 +66,7 @@ public class MybatisUserApplication implements CommandLineRunner {
 @Mapper
 interface UserMapper {
 
-	@Insert("insert into users(name, email) values(#{name},#{email})")
+	@Insert("insert into users(name, email) values(#{name}, #{email})")
 	@SelectKey(statement = "call identity()", keyProperty = "id", before = false, resultType = Integer.class)
 	void insertUser(User user);
 

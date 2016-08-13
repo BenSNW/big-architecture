@@ -17,11 +17,10 @@
 
 	<modules>
 		<module>maven-parent</module>
-		<module>spring-boot-in-action</module>
-		<module>dynamic-proxy</module>
-		<module>getting-distributed</module>
-		<module>running-netty</module>
+		<module>spring-boot-in-action</module>	
+		<module>getting-distributed</module>		
 		<module>dubbo-diy</module>
 		<module>java-master</module>
+		<module>streaming-pipeline</module>
 	</modules>
 </project>
