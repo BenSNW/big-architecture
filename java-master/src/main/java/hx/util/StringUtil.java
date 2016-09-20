@@ -1,16 +1,45 @@
 package hx.util;
 
+import static java.lang.Character.isUpperCase;
+import static java.lang.Character.toLowerCase;
+
 import java.lang.Character.UnicodeScript;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.google.common.base.CaseFormat;
+
 public class StringUtil {
 
+	public static String camelToUnderscore(String camel) {
+//    	CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, camel);
+
+//    	Chars.asList(camel.toCharArray()).stream().skip(0);
+    	return IntStream.range(1, camel.length())
+    		.mapToObj( i -> upToLow(camel, i, "_"))
+    		.collect(Collectors.joining("", upToLow(camel, 0, ""), ""));
+//    	StringBuilder sb = new StringBuilder(camel.length() + 3);
+//    	sb.append(Character.toLowerCase(camel.charAt(0)));
+//    	IntStream.range(1, camel.length()).mapToObj(camel::charAt)
+//    		.forEach(c -> sb.append(
+//    			Character.isUpperCase(c) ? "_" + Character.toLowerCase(c) : c));
+//    	return sb.toString();
+    }
+	
+	private static String upToLow(String s, int i, String prefix) {
+		return isUpperCase(s.charAt(i)) ? prefix + toLowerCase(s.charAt(i)) : "" + s.charAt(i);
+	}
+	
+	public static String underScoreToCamel(String underscore) {
+		return CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, underscore);
+	}
+	
 	public static String[] splitByComma(String s) {
 		return s.replaceAll("\uff0c", ",").split(",");
 	}

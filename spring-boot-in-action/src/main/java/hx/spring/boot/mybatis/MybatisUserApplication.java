@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
+import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +33,8 @@ public class MybatisUserApplication implements CommandLineRunner {
 
 	@Autowired
 	private UserMapper userMapper;
+	@Autowired
+	private SqlSession sqlSession;
 
 	public static void main(String... args) {
 		logger.debug("Starting JpaMybatisApplication...");
@@ -59,6 +62,8 @@ public class MybatisUserApplication implements CommandLineRunner {
         userMapper.insertUser(user);
         logger.info(userMapper.findUserById(user.getId()).toString());
         logger.info(userMapper.findAllUsers().toString());
+        
+        logger.info(sqlSession.selectList("findUserByName", "Siva").toString());
 	}
 
 }
@@ -66,12 +71,15 @@ public class MybatisUserApplication implements CommandLineRunner {
 @Mapper
 interface UserMapper {
 
-	@Insert("insert into users(name, email) values(#{name}, #{email})")
+	@Insert("insert into users (name, email) values(#{name}, #{email})")
 	@SelectKey(statement = "call identity()", keyProperty = "id", before = false, resultType = Integer.class)
-	void insertUser(User user);
+	int insertUser(User user);
 
-	@Select("select id, name, email from users WHERE id=#{id}")
+	@Select("select id, name, email from users where id=#{id}")
 	User findUserById(@Param("id") Integer id);
+	
+	@Select("select id, name, email from users where name=#{name}")
+	List<User> findUserByName(@Param("name") String name);
 
 	@Select("select id, name, email from users")
 	List<User> findAllUsers();
@@ -88,12 +96,10 @@ class User implements Serializable {
 	private Integer id;
 	private String name;
 	private String email;
-	private static int ID = 0;
 
 	public User() { }
 
 	public User(String name, String email) {
-		this.id = ++ID;
 		this.name = name;
 		this.email = email;
 	}

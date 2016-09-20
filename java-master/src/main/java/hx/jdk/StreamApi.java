@@ -5,10 +5,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
 /**
+ * http://www.ibm.com/developerworks/library/j-java-streams-2-brian-goetz/index.html
  * http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
  * https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/
  * 
@@ -46,8 +49,8 @@ public class StreamApi {
 		
 		System.out.println(
 			IntStream.of(1,2,2,4,5)
-				.reduce(0, (sum, i) -> {
-					return sum += i;
+				.reduce(0, (i, j) -> {
+					return i + j;
 		}));
 		
 		System.out.println(IntStream.of(1,2,2,4,5).reduce(0, Integer::max));
@@ -64,6 +67,20 @@ public class StreamApi {
 		
 		int sum = IntStream.rangeClosed(520, 20000).reduce(0, Integer::sum);
 		System.out.println(sum);	// 199875060
+		
+		// intermediate operation and terminal operation must be chained together
+		// DoubleStream -> DoublePipeline -> AbstractPipeline.linkedOrConsumered
+		try {
+			DoubleStream stream = new Random().doubles(10);
+			stream.peek(System.out::println);
+			stream.count();
+		} catch (RuntimeException e) {
+			System.err.println(e.getClass().getName() + ": " + e.getMessage());
+		}
+		
+		// while this is OK
+		DoubleStream stream = new Random().doubles(10);
+		System.out.println(stream.peek(System.out::println).count());
 		
 	}
 }
