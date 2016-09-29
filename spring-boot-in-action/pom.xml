@@ -5,6 +5,8 @@
 		<groupId>com.hx.wang</groupId>
 		<artifactId>maven-parent</artifactId>
 		<version>1.0</version>
+		<!-- The relative path, if not given explicitly, defaults to ..,
+			 i.e. the pom in the parent directory of the current project. -->
 		<relativePath>../maven-parent</relativePath>
 	</parent>
 	<artifactId>spring-boot-in-action</artifactId>

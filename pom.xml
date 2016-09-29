@@ -21,6 +21,7 @@
 		<module>getting-distributed</module>		
 		<module>dubbo-diy</module>
 		<module>java-master</module>
-		<module>streaming-pipeline</module>
+		<module>stream-pipeline</module>
 	</modules>
+
 </project>

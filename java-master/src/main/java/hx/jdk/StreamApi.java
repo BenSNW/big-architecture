@@ -9,6 +9,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * http://www.ibm.com/developerworks/library/j-java-streams-2-brian-goetz/index.html
@@ -81,6 +82,15 @@ public class StreamApi {
 		// while this is OK
 		DoubleStream stream = new Random().doubles(10);
 		System.out.println(stream.peek(System.out::println).count());
+		
+		// notice the execution order
+		System.out.println(Arrays.toString(
+			Stream.of("one", "two", "three", "four")
+			      .filter(e -> e.length() > 3)
+			      .peek(e -> System.out.println("Filtered value: " + e))
+			      .map(String::toUpperCase)
+			      .peek(e -> System.out.println("Mapped value: " + e))
+			      .toArray()));
 		
 	}
 }
