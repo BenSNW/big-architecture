@@ -13,6 +13,8 @@
 .project
 .classpath
 
-target/
-build/
+.idea/
+
 bin/
+build/
+target/

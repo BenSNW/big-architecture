@@ -1,9 +1,9 @@
 package hx.concurrency.jdk;
 
-import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
@@ -13,18 +13,10 @@ import java.util.concurrent.FutureTask;
  * to avoid two threads execute the expensive task simultaneously.
  * 
  * @author BenSNW
- *
- * @param <K>
- * @param <V>
  */
 public class ConcurrentCache<K, V> implements Cachable<K, V> {
 
-	private final Map<K, Future<V>> cache = new ConcurrentHashMap<>();
-	private final Cachable<K, V> c;
-	
-	public ConcurrentCache(Cachable<K, V> c) {
-		this.c = c;
-	}
+	private final ConcurrentMap<K, Future<V>> cache = new ConcurrentHashMap<>();
 	
 	@Override
 	public V get(K key) throws InterruptedException {
@@ -35,7 +27,7 @@ public class ConcurrentCache<K, V> implements Cachable<K, V> {
                 	@Override
                 	public V call() throws InterruptedException {
                         // execute the task by the real worker
-                		return c.get(key);
+                		return compute(key);
                     }
                 };
                 FutureTask<V> ft = new FutureTask<V>(eval);
@@ -53,6 +45,10 @@ public class ConcurrentCache<K, V> implements Cachable<K, V> {
                 
             }
         }
+	}
+
+	private V compute(K key) {
+		return null;
 	}
 
 }

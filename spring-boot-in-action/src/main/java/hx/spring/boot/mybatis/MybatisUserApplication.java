@@ -2,13 +2,17 @@ package hx.spring.boot.mybatis;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
+import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +27,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 // https://objectpartners.com/2011/04/05/using-mybatis-annotations-with-spring-3-0-and-maven/
 
 @SpringBootApplication
-// @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 @MapperScan("com.hx.wang.mybatis")
 public class MybatisUserApplication implements CommandLineRunner {
 
@@ -32,6 +35,8 @@ public class MybatisUserApplication implements CommandLineRunner {
 
 	@Autowired
 	private UserMapper userMapper;
+	@Autowired
+	private SqlSession sqlSession;
 
 	public static void main(String... args) {
 		logger.debug("Starting JpaMybatisApplication...");
@@ -41,6 +46,7 @@ public class MybatisUserApplication implements CommandLineRunner {
 				.web(false)
 				.build()
 				.run("--info");
+		
 		if (context != null)
 			logger.info("JpaMybatisApplication Started");
 		else
@@ -59,22 +65,56 @@ public class MybatisUserApplication implements CommandLineRunner {
         userMapper.insertUser(user);
         logger.info(userMapper.findUserById(user.getId()).toString());
         logger.info(userMapper.findAllUsers().toString());
+        
+        logger.info(sqlSession.getClass().toString());
+        logger.info(sqlSession.selectList("findUserByName", "Siva").toString());
+        
+        
+        Map<String, Object> condition = new HashMap<>(4);
+        condition.put("name", "Siva");
+        condition.put("email", "sivaer@gmail.com");
+        String conString = condition.entrySet().stream()
+        		.map(entry -> entry.getKey() + "=" + entry.getValue())
+        		.collect(Collectors.joining(" and "));
+        logger.info(conString);
+//        logger.info(userMapper.findUsers(conString).toString());
 	}
 
+}
+
+interface MybatisCrudTemplate<T> {
+	
+	T findById(int id);
+	
+	T findOne(T conditions);
+	
+	List<T> findAll(T conditions);
+	
+	int insert(T entity);
+	
+	int update(T conditions, T newValues);
 }
 
 @Mapper
 interface UserMapper {
 
-	@Insert("insert into users(name, email) values(#{name},#{email})")
+	@Insert("insert into users (name, email) values(#{name}, #{email})")
 	@SelectKey(statement = "call identity()", keyProperty = "id", before = false, resultType = Integer.class)
-	void insertUser(User user);
+	int insertUser(User user);
 
-	@Select("select id, name, email from users WHERE id=#{id}")
+	@Select("select id, name, email from users where id=#{id}")
 	User findUserById(@Param("id") Integer id);
+	
+	@Select("select id, name, email from users where name=#{name}")
+	List<User> findUserByName(@Param("name") String name);
 
 	@Select("select id, name, email from users")
 	List<User> findAllUsers();
+	
+	// doesn't work
+//	@Select("select * from users where #{condition}")
+//	List<User> findUsers(@Param("condition") String condition);
+	
 }
 
 // http://stackoverflow.com/questions/4381290/hibernate-exception-org-hibernate-annotationexception-no-identifier-specified
@@ -88,12 +128,10 @@ class User implements Serializable {
 	private Integer id;
 	private String name;
 	private String email;
-	private static int ID = 0;
 
 	public User() { }
 
 	public User(String name, String email) {
-		this.id = ++ID;
 		this.name = name;
 		this.email = email;
 	}

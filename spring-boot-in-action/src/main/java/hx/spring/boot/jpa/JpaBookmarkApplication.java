@@ -1,5 +1,15 @@
 package hx.spring.boot.jpa;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,15 +19,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.web.bind.annotation.*;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.function.Function;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author BenSNW
@@ -100,6 +107,15 @@ public class JpaBookmarkApplication {
             			  new Bookmark( userId,
             					  "http://some-other-host" + userId + ".com/",
             					  "A description for " + userId + "'s link", userId)));
+            
+            bookmarkRepository.findAll().forEach(System.out::println);
+            
+            Bookmark bookmark = bookmarkRepository.findOne(1);
+            bookmarkRepository.save(bookmark);
+            
+            bookmark.setHref(null);
+            
+            bookmarkRepository.findAll().forEach(System.out::println);
         };
         
     }
@@ -119,8 +135,8 @@ class BookmarkRestController {
 
     @RequestMapping(value = "/{bookmarkId}", method = RequestMethod.GET)
     Bookmark getBookmark(@PathVariable String userId,
-                         @PathVariable Long bookmarkId) {
-        return this.bookmarkRepository.findByUserIdAndId(userId, bookmarkId);
+                         @PathVariable Integer bookmarkId) {
+        return bookmarkRepository.findByUserIdAndId(userId, bookmarkId).get();
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -139,29 +155,29 @@ class BookmarkRestController {
 }
 
 
-interface BookmarkRepository extends JpaRepository<Bookmark, Long> {
+interface BookmarkRepository extends JpaRepository<Bookmark, Integer> {
 
-    Bookmark findByUserIdAndId(String userId, Long id);
+	Optional<Bookmark> findByUserIdAndId(String userId, Integer id);
 
     List<Bookmark> findByUserId(String userId);
+    
+    @Query
+    int updateByAttr();
+    
 }
 
 @Entity
 class Bookmark {
 
-    private String userId;
+	@Id
+	@GeneratedValue
+	private Integer id;
+	private String userId;
+	private String href;
+	private String description;
+	private String label;
 
-    @Id
-    @GeneratedValue
-    private Long id;
-
-    private String href;
-
-    private String description;
-
-    private String label;
-    
-    public Bookmark() {}
+	public Bookmark() { }
 
     public Bookmark(String userId, String href, String description, String label) {
         this.userId = userId;
@@ -178,7 +194,7 @@ class Bookmark {
         return userId;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -189,5 +205,31 @@ class Bookmark {
     public String getDescription() {
         return description;
     }
+    
+    public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public void setHref(String href) {
+		this.href = href;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+	}
+
+	@Override
+	public String toString() {
+		return "Bookmark [id=" + id + ", userId=" + userId + ", href=" + href
+				+ ", description=" + description + ", label=" + label + "]";
+	}
 
 }

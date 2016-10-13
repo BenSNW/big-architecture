@@ -194,17 +194,16 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	@Override
-	// Override to configure  configure Spring Security’s filter chain
+	// Override to configure Spring Security’s filter chain
 	public void configure(WebSecurity webSecurity) throws Exception {
 		
 	}
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth
-			.inMemoryAuthentication()
-				.withUser("user").password("user").roles("USER").and()
-				.withUser("admin").password("admin").roles("USER", "ADMIN");
+		auth.inMemoryAuthentication()
+			.withUser("user").password("user").roles("USER").and()
+			.withUser("admin").password("admin").roles("USER", "ADMIN");
 	}
 
 }
