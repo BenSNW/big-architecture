@@ -78,8 +78,8 @@ public class DynamicProgramming {
 		lookup.add(matrixes[0].multiplyOps(matrixes[1])); // sub(0,1)
 		System.out.println("0 1 " + lookup.get(0));
 		
-		for (int j=2; j<N; j++)  		// sub(i, j): i<j<N
-			for (int i=j-1; i>=0; i--) 	// from bottom (larger i) up because they are the sub-problems
+		for (int j=2; j<N; j++)  // sub(i, j): i<j<N
+			for (int i=j-1; i>=0; i--) // from bottom (larger i) up because they are the sub-problems
 				lookup.add( optimalCombination(lookup, matrixes, i, j));
 				
 		return lookup.get(N * (N-1) / 2 - 1);
@@ -146,24 +146,23 @@ public class DynamicProgramming {
 			return rows * cols * m.cols;
 		}
 		
-		void dump() {			
-			for (int[] row : elements) {
-				for (int element : row)
-					System.out.print(element + "\t");
-				System.out.println();
-			}
+		void print() {
+			for (int[] row : elements)
+				System.out.println(Arrays.toString(row));
 		}
 	}
 	
 	public static void main(String[] args) {
 		System.out.println(Arrays.toString(longestIncreasingSubsequence(new int[] {5,2,8,6,3,6,9,7})));
 		System.out.println(editDistance("exponential", "polynomial"));
-				
-		new Matrix(3, new int[] {1,2,2,3,4,5,8,8,6,9}).dump();;
+		
+		
+		new Matrix(3, new int[] {1,2,2,3,4,5,8,8,6,9}).print();;
 		Matrix a = new Matrix(50, 20);
 		Matrix b = new Matrix(20, 1);
 		Matrix c = new Matrix(1, 10);
 		Matrix d = new Matrix(10, 100);
-		System.out.println(matrixChainMultiplication( new Matrix[] { a, b, c, d} ));		
+		System.out.println(matrixChainMultiplication( new Matrix[] { a, b, c, d} ));
+		
 	}
 }
