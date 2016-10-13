@@ -66,7 +66,7 @@ public class DynamicProgramming {
 		return a < b ? ( a < c ? a : c ) : ( b < c ? b : c);
 	}
 	
-	public static Integer matrixChainMultiplication(Matrix[] matrixes) {
+	public static int matrixChainMultiplication(Matrix[] matrixes) {
 		if (matrixes == null || matrixes.length == 1)
 			throw new IllegalArgumentException();
 		for (int i=1; i<matrixes.length; i++)
@@ -78,8 +78,8 @@ public class DynamicProgramming {
 		lookup.add(matrixes[0].multiplyOps(matrixes[1])); // sub(0,1)
 		System.out.println("0 1 " + lookup.get(0));
 		
-		for (int j=2; j<N; j++)  // sub(i, j): i<j<N
-			for (int i=j-1; i>=0; i--) // from bottom (larger i) up because they are the sub-problems
+		for (int j=2; j<N; j++)  		// sub(i, j): i<j<N
+			for (int i=j-1; i>=0; i--) 	// from bottom (larger i) up because they are the sub-problems
 				lookup.add( optimalCombination(lookup, matrixes, i, j));
 				
 		return lookup.get(N * (N-1) / 2 - 1);
@@ -140,38 +140,30 @@ public class DynamicProgramming {
 			return cols == m.rows;
 		}
 		
-		Integer multiplyOps(Matrix m) {
+		int multiplyOps(Matrix m) {
 			if (! multiplyMatch(m))
 				throw new IllegalArgumentException();
 			return rows * cols * m.cols;
 		}
 		
-		void print() {
-			for (int[] row : elements)
-				System.out.println(Arrays.toString(row));
+		void dump() {			
+			for (int[] row : elements) {
+				for (int element : row)
+					System.out.print(element + "\t");
+				System.out.println();
+			}
 		}
 	}
 	
-	public static void doubleOrFloat(double p) {
-		System.out.println("double");
-	}
-	
-	public static void doubleOrFloat(float p) {
-		System.out.println("float");
-	}
-
 	public static void main(String[] args) {
 		System.out.println(Arrays.toString(longestIncreasingSubsequence(new int[] {5,2,8,6,3,6,9,7})));
 		System.out.println(editDistance("exponential", "polynomial"));
-		
-		doubleOrFloat(1.0); doubleOrFloat(1.0d); doubleOrFloat(1.0f);
-		
-		new Matrix(3, new int[] {1,2,2,3,4,5,8,8,6,9}).print();;
+				
+		new Matrix(3, new int[] {1,2,2,3,4,5,8,8,6,9}).dump();;
 		Matrix a = new Matrix(50, 20);
 		Matrix b = new Matrix(20, 1);
 		Matrix c = new Matrix(1, 10);
 		Matrix d = new Matrix(10, 100);
-		System.out.println(matrixChainMultiplication( new Matrix[] { a, b, c, d} ));
-		
+		System.out.println(matrixChainMultiplication( new Matrix[] { a, b, c, d} ));		
 	}
 }
