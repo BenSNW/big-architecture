@@ -1,0 +1,89 @@
+format version: 5
+output mode:
+1 items
+0 -> multiple
+output directories:
+2 items
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\resources -> D:\Document\Engineering\eclipse\big-architecture\spark-scala\target\classes
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\scala -> D:\Document\Engineering\eclipse\big-architecture\spark-scala\target\classes
+compile options:
+6 items
+0 -> -javabootclasspath
+1 -> D:\App\Java\jdk1.8.0_73\jre\lib\resources.jar;D:\App\Java\jdk1.8.0_73\jre\lib\rt.jar;D:\App\Java\jdk1.8.0_73\jre\lib\jsse.jar;D:\App\Java\jdk1.8.0_73\jre\lib\jce.jar;D:\App\Java\jdk1.8.0_73\jre\lib\charsets.jar;D:\App\Java\jdk1.8.0_73\jre\lib\jfr.jar;D:\App\Java\jdk1.8.0_73\jre\lib\ext\access-bridge-64.jar;D:\App\Java\jdk1.8.0_73\jre\lib\ext\cldrdata.jar;D:\App\Java\jdk1.8.0_73\jre\lib\ext\dnsns.jar;D:\App\Java\jdk1.8.0_73\jre\lib\ext\jaccess.jar;D:\App\Java\jdk1.8.0_73\jre\lib\ext\jfxrt.jar;D:\App\Java\jdk1.8.0_73\jre\lib\ext\localedata.jar;D:\App\Java\jdk1.8.0_73\jre\lib\ext\nashorn.jar;D:\App\Java\jdk1.8.0_73\jre\lib\ext\sunec.jar;D:\App\Java\jdk1.8.0_73\jre\lib\ext\sunjce_provider.jar;D:\App\Java\jdk1.8.0_73\jre\lib\ext\sunmscapi.jar;D:\App\Java\jdk1.8.0_73\jre\lib\ext\sunpkcs11.jar;D:\App\Java\jdk1.8.0_73\jre\lib\ext\zipfs.jar
+2 -> -javaextdirs
+3 ->  
+4 -> -bootclasspath
+5 -> C:\Users\cm\.m2\repository\org\scala-lang\scala-library\2.10.6\scala-library-2.10.6.jar
+javac options:
+0 items
+compiler version:
+1 items
+0 -> 2.10.6
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> false
+products:
+3 items
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\scala\hx\wang\spark\scala\Main.scala -> D:\Document\Engineering\eclipse\big-architecture\spark-scala\target\classes\hx\wang\spark\scala\Main$$anonfun$main$1.class
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\scala\hx\wang\spark\scala\Main.scala -> D:\Document\Engineering\eclipse\big-architecture\spark-scala\target\classes\hx\wang\spark\scala\Main$.class
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\scala\hx\wang\spark\scala\Main.scala -> D:\Document\Engineering\eclipse\big-architecture\spark-scala\target\classes\hx\wang\spark\scala\Main.class
+binary dependencies:
+2 items
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\scala\hx\wang\spark\scala\Main.scala -> C:\Users\cm\.m2\repository\org\scala-lang\scala-library\2.10.6\scala-library-2.10.6.jar
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\scala\hx\wang\spark\scala\Main.scala -> D:\App\Java\jdk1.8.0_73\jre\lib\rt.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+3 items
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\scala\hx\wang\spark\scala\Main.scala -> hx.wang.spark.scala.Main
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\scala\hx\wang\spark\scala\Main.scala -> hx.wang.spark.scala.Main$
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\scala\hx\wang\spark\scala\Main.scala -> hx.wang.spark.scala.Main$$anonfun$main$1
+used names:
+0 items
+product stamps:
+3 items
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\target\classes\hx\wang\spark\scala\Main$$anonfun$main$1.class -> lastModified(1477627279554)
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\target\classes\hx\wang\spark\scala\Main$.class -> lastModified(1477627279548)
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\target\classes\hx\wang\spark\scala\Main.class -> lastModified(1477627279544)
+source stamps:
+1 items
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\scala\hx\wang\spark\scala\Main.scala -> hash(e148c6b388121cfcfb6baecab19950378cf2e804)
+binary stamps:
+2 items
+C:\Users\cm\.m2\repository\org\scala-lang\scala-library\2.10.6\scala-library-2.10.6.jar -> lastModified(1477625631218)
+D:\App\Java\jdk1.8.0_73\jre\lib\rt.jar -> lastModified(1464659104839)
+class names:
+2 items
+C:\Users\cm\.m2\repository\org\scala-lang\scala-library\2.10.6\scala-library-2.10.6.jar -> scala.LowPriorityImplicits
+D:\App\Java\jdk1.8.0_73\jre\lib\rt.jar -> java.lang.Object
+internal apis:
+1 items
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\scala\hx\wang\spark\scala\Main.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHBQ/Mp3AHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAAHNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+ABV4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAdAAYaHgud2FuZy5zcGFyay5zY2FsYS5NYWludXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsO5FPEfRFTMkCAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAXNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBwc3EAfgAuAXNyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgAVTAAJaW5oZXJpdGVkcQB+ABVMAAdwYXJlbnRzcQB+ABV4cQB+ADVzcQB+AC4BdXEAfgAQAAAAAXNyAA14c2J0aS5hcGkuRGVmUr6f4ny0NmkCAAJMAApyZXR1cm5UeXBldAAQTHhzYnRpL2FwaS9UeXBlO1sAD3ZhbHVlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1BhcmFtZXRlckxpc3Q7eHEAfgAWcQB+ACB1cQB+ACEAAAAAc3EAfgAjAHQABG1haW51cQB+ACYAAAAAc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgAcTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4ANHQABFVuaXRzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+ADRzcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAAJzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgAceHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABXNjYWxhc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AFF1cgAaW0x4c2J0aS5hcGkuUGFyYW1ldGVyTGlzdDv10zod8rNw7gIAAHhwAAAAAXNyABd4c2J0aS5hcGkuUGFyYW1ldGVyTGlzdNbFvBxkSXTjAgACWgAKaXNJbXBsaWNpdFsACnBhcmFtZXRlcnN0ABxbTHhzYnRpL2FwaS9NZXRob2RQYXJhbWV0ZXI7eHAAdXIAHFtMeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlcjvPuMVdpd21bQIAAHhwAAAAAXNyABl4c2J0aS5hcGkuTWV0aG9kUGFyYW1ldGVyH0WuF9NJsOoCAARaAApoYXNEZWZhdWx0TAAIbW9kaWZpZXJ0AB1MeHNidGkvYXBpL1BhcmFtZXRlck1vZGlmaWVyO0wABG5hbWVxAH4AHEwAA3RwZXEAfgA9eHAAfnIAG3hzYnRpLmFwaS5QYXJhbWV0ZXJNb2RpZmllcgAAAAAAAAAAEgAAeHEAfgApdAAFUGxhaW50AARhcmdzc3IAF3hzYnRpLmFwaS5QYXJhbWV0ZXJpemVkFmzuaQPJu38CAAJMAAhiYXNlVHlwZXEAfgBFWwANdHlwZUFyZ3VtZW50c3QAEVtMeHNidGkvYXBpL1R5cGU7eHEAfgA0c3EAfgBEdAAFQXJyYXlxAH4ASnVyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAABc3EAfgBEdAAGU3RyaW5nc3EAfgBIc3EAfgBLdXEAfgBOAAAAA3NxAH4AUHQABGphdmFzcQB+AFB0AARsYW5ncQB+AFVwc3EAfgAuAXVxAH4AEAAAAABwc3EAfgAuAXVxAH4AaQAAAAJzcQB+AER0AAZPYmplY3RxAH4AbXNxAH4ARHQAA0FueXEAfgBKcHB1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAABHNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgAceHB0ABNoeC53YW5nLnNwYXJrLnNjYWxhc3EAfgB+dAACaHhzcQB+AH50AA1oeC53YW5nLnNwYXJrc3EAfgB+dAAHaHgud2FuZ3NyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWAly8+h1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAnNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+ABxMAA9zb3VyY2VEaXJlY3RvcnlxAH4AHHhwdABLRDpcRG9jdW1lbnRcRW5naW5lZXJpbmdcZWNsaXBzZVxiaWctYXJjaGl0ZWN0dXJlXHNwYXJrLXNjYWxhXHRhcmdldFxjbGFzc2VzdABLRDpcRG9jdW1lbnRcRW5naW5lZXJpbmdcZWNsaXBzZVxiaWctYXJjaGl0ZWN0dXJlXHNwYXJrLXNjYWxhXHNyY1xtYWluXHNjYWxhc3EAfgCMdABLRDpcRG9jdW1lbnRcRW5naW5lZXJpbmdcZWNsaXBzZVxiaWctYXJjaGl0ZWN0dXJlXHNwYXJrLXNjYWxhXHRhcmdldFxjbGFzc2VzdABPRDpcRG9jdW1lbnRcRW5naW5lZXJpbmdcZWNsaXBzZVxiaWctYXJjaGl0ZWN0dXJlXHNwYXJrLXNjYWxhXHNyY1xtYWluXHJlc291cmNlc3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAU4UjGs4gSHPz7a67KsZlQN4zy6AQ=
+external apis:
+0 items
+source infos:
+1 items
+D:\Document\Engineering\eclipse\big-architecture\spark-scala\src\main\scala\hx\wang\spark\scala\Main.scala -> 
+AAAAAAAAAAA=
+compilations:
+2 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWAlyqVt1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAnNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAS0Q6XERvY3VtZW50XEVuZ2luZWVyaW5nXGVjbGlwc2VcYmlnLWFyY2hpdGVjdHVyZVxzcGFyay1zY2FsYVx0YXJnZXRcY2xhc3Nlc3QAS0Q6XERvY3VtZW50XEVuZ2luZWVyaW5nXGVjbGlwc2VcYmlnLWFyY2hpdGVjdHVyZVxzcGFyay1zY2FsYVxzcmNcbWFpblxzY2FsYXNxAH4ABXQAS0Q6XERvY3VtZW50XEVuZ2luZWVyaW5nXGVjbGlwc2VcYmlnLWFyY2hpdGVjdHVyZVxzcGFyay1zY2FsYVx0YXJnZXRcY2xhc3Nlc3QAT0Q6XERvY3VtZW50XEVuZ2luZWVyaW5nXGVjbGlwc2VcYmlnLWFyY2hpdGVjdHVyZVxzcGFyay1zY2FsYVxzcmNcbWFpblxyZXNvdXJjZXM=
+1 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWAly8+h1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAnNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAS0Q6XERvY3VtZW50XEVuZ2luZWVyaW5nXGVjbGlwc2VcYmlnLWFyY2hpdGVjdHVyZVxzcGFyay1zY2FsYVx0YXJnZXRcY2xhc3Nlc3QAS0Q6XERvY3VtZW50XEVuZ2luZWVyaW5nXGVjbGlwc2VcYmlnLWFyY2hpdGVjdHVyZVxzcGFyay1zY2FsYVxzcmNcbWFpblxzY2FsYXNxAH4ABXQAS0Q6XERvY3VtZW50XEVuZ2luZWVyaW5nXGVjbGlwc2VcYmlnLWFyY2hpdGVjdHVyZVxzcGFyay1zY2FsYVx0YXJnZXRcY2xhc3Nlc3QAT0Q6XERvY3VtZW50XEVuZ2luZWVyaW5nXGVjbGlwc2VcYmlnLWFyY2hpdGVjdHVyZVxzcGFyay1zY2FsYVxzcmNcbWFpblxyZXNvdXJjZXM=
