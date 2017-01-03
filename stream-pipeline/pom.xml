@@ -14,7 +14,7 @@
 		<dependency>
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-library</artifactId>
-			<scope>compile</scope>
+			<scope>runtime</scope>
 		</dependency>
 	        
 		<dependency>
@@ -26,6 +26,15 @@
 		    <groupId>org.apache.spark</groupId>
 		    <artifactId>spark-sql_2.10</artifactId>
 		</dependency>
+		<!-- Hive support -->
+		<dependency>
+	        <groupId>org.apache.spark</groupId>
+	        <artifactId>spark-hive_2.10</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-graphx_2.10</artifactId>
+		</dependency>
 		<dependency>
 		    <groupId>org.apache.spark</groupId>
 		    <artifactId>spark-mllib_2.10</artifactId>
@@ -34,7 +43,12 @@
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-streaming-kafka_2.10</artifactId>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>io.reactivex</groupId>
+			<artifactId>rxjava</artifactId>
+		</dependency>
+
 		<!-- logback StaticLoggerBinder for slf4j -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -47,16 +61,30 @@
 		<finalName>${project.artifactId}</finalName>
 
 		<plugins>
+			<!--<plugin>-->
+				<!--<groupId>org.springframework.boot</groupId>-->
+				<!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+				<!--<configuration>-->
+					<!--<mainClass>hx.stream.spark.SparkDataset</mainClass>-->
+				<!--</configuration>-->
+				<!--<executions>-->
+					<!--<execution>-->
+						<!--<goals>-->
+							<!--<goal>repackage</goal>-->
+						<!--</goals>-->
+					<!--</execution>-->
+				<!--</executions>-->
+			<!--</plugin>-->
+			
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
+		        <groupId>net.alchim31.maven</groupId>
+		        <artifactId>scala-maven-plugin</artifactId>
+		        <version>3.2.2</version>
+		    </plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>

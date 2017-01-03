@@ -1,6 +1,7 @@
 package hx.dsal;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 /**
  * Common Algorithms  asked in interviews
@@ -74,10 +75,27 @@ public class InterviewAlgorithms {
 			}
 		}
 	}
-
+	
+	/**
+	 * swap variables without using temporary variables
+	 * 
+	 * @see http://www.geeksforgeeks.org/swap-three-variables-without-using-temporary-variable/
+	 * 
+	 * @return a cyclic left-shifted array from original array
+	 */
+	public static int[] swap(int... vars) {
+		if (vars.length < 2)
+			return vars;
+		vars[0] = IntStream.of(vars).sum();
+		for (int i = vars.length -1; i >= 0; i--)
+			vars[i] = vars[0] - IntStream.of(vars).skip(1).sum();
+		return vars;
+	}
 	
 	public static void main(String[] args) {
 		System.out.println(Arrays.toString(mergeSortedArray( new int[] {1, 2, 4}, new int[] {1, 3, 4})));
+		System.out.println(Arrays.toString(swap(1, 2, 3, 4)));
+		System.out.println(Arrays.toString(swap()));
 	}
 	
 }

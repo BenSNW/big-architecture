@@ -13,6 +13,12 @@ import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * 
+ * <p>Created by BenSNW on Oct 12, 2016
+ *
+ * @see https://github.com/mission-peace/interview/blob/master/src/com/interview/suffixprefix/Trie.java
+ */
 public class HashMapTrie {
 
 	private final TrieNode root;
@@ -91,6 +97,7 @@ public class HashMapTrie {
 		TrieNode node = root;
 		for (int i = 0; i < word.length(); i++) {
 			// theoretically the transitions should not be null
+			// allocate transition size dynamically according to node depth
 			int size = Math.max(2, maxTransitions - i); // maxTransitions / ( i/2 + 1)
 			node.transitions.putIfAbsent(word.charAt(i), new TrieNode(size));
 			node = node.transitions.get(word.charAt(i));
@@ -132,11 +139,11 @@ public class HashMapTrie {
 	}
 	
 	static class TrieNode {
-		boolean endOfWord;								// is previous node endOfWord
+		boolean endOfWord;	// is previous node endOfWord, can also be achieved by retrieving the pattern set
 		ConcurrentMap<Character, TrieNode> transitions;	// transitions of previous node
 		
 		TrieNode(int size) {
-			// better to allocate dynamically according to node depth
+			// allocate size dynamically according to node depth
 			transitions = new ConcurrentHashMap<>(size);
 		}
 		

@@ -77,6 +77,8 @@
 		<jackson.version>2.6.5</jackson.version>
 		<netty.version>4.0.34.Final</netty.version>
 		<jboss.resteasy.version>3.0.7.Final</jboss.resteasy.version>
+
+		<rxjava.version>1.2.4</rxjava.version>
 								
 		<!-- old versions until 3.12.1.GA are maintained in javassist:javassist -->
 		<!-- newer versions since 3.13.0-GA have been moved to org.javassist:javassist -->
@@ -102,7 +104,13 @@
 			    <type>pom</type>
 		    <scope>import</scope>
 			</dependency>
-			
+
+			<dependency>
+				<groupId>io.reactivex</groupId>
+				<artifactId>rxjava</artifactId>
+				<version>${rxjava.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>cglib</groupId>
 				<artifactId>cglib</artifactId>
@@ -172,6 +180,16 @@
 			<dependency>
 			    <groupId>org.apache.spark</groupId>
 			    <artifactId>spark-sql_2.10</artifactId>
+			    <version>${spark.version}</version>
+			</dependency>
+			<dependency>
+		        <groupId>org.apache.spark</groupId>
+		        <artifactId>spark-hive_2.10</artifactId>
+		        <version>${spark.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.spark</groupId>
+			    <artifactId>spark-graphx_2.10</artifactId>
 			    <version>${spark.version}</version>
 			</dependency>
 			<dependency>

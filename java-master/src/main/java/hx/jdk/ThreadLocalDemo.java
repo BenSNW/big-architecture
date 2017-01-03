@@ -1,6 +1,6 @@
 package hx.jdk;
 
-public class ThreadDemo {
+public class ThreadLocalDemo {
 
 	public void threadLocal() {
 		
