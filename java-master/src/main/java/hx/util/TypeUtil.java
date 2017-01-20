@@ -34,6 +34,7 @@ public class TypeUtil {
 	}
 	
 	private static final BigDecimal ONE = new BigDecimal(1);
+
 	/**
 	 * @param src the object to be converted to Integer 
 	 * @param roundingMode as specified by {@link java.math.RoundingMode}

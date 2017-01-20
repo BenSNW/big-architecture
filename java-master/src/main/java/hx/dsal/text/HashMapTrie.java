@@ -1,6 +1,8 @@
 package hx.dsal.text;
 
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -24,7 +26,7 @@ public class HashMapTrie {
 	private final TrieNode root;
 	private int maxTransitions;
 	// http://stackoverflow.com/questions/6720396/different-types-of-thread-safe-sets-in-java
-	private ConcurrentSkipListSet<String> keys;
+	private final ConcurrentSkipListSet<String> keys;
 	
 	public HashMapTrie() {
 		this(8);
@@ -35,21 +37,31 @@ public class HashMapTrie {
 		this.maxTransitions = maxTransitions;
 		keys = new ConcurrentSkipListSet<>();
 	}
-	
+
+	/**
+	 * number of all words
+     */
 	public int size() {
 		return keys.size();
 	}
 	
 	/**
-	 * number of all non-empty nodes
+	 * number of all non-empty nodes, namely character nodes
 	 */
-	public int nodeSize() {
+	public int nodeCount() {
 		return root.nodeSize();
 	}
 
+	// String -> Stream<Character>
+	// http://stackoverflow.com/questions/26320910/how-to-convert-a-string-to-a-java-8-stream-of-characters
+	public long characterCount() {
+		return keys.stream().flatMap(word -> word.chars().mapToObj(code -> (char) code))
+				.distinct().count();
+	}
+
 	public String match(String text) {
-		if (text == null)
-			return null;
+		if (StringUtils.isBlank(text))
+			return "";
 		StringBuilder sb = new StringBuilder();
 		for (int index = 0; index < text.length(); index++) {
 			TrieNode node = root;
@@ -66,13 +78,13 @@ public class HashMapTrie {
 			}
 		}
 		// the whole text has been traversed over
-		return null;
+		return "";
 	}
 	
 	public Set<String> matchAny(String text) {
 		Set<String> match = new HashSet<>();
-		if (text == null)
-			return null;
+		if (StringUtils.isBlank(text))
+			return match;
 		StringBuilder sb = new StringBuilder();
 		for (int index = 0; index < text.length(); index++) {
 			TrieNode node = root;
@@ -137,6 +149,11 @@ public class HashMapTrie {
 //		keys.toArray(new String[keys.size()]);
 		return Collections.unmodifiableSet(keys).stream();
 	}
+
+	@Override
+	public String toString() {
+		return Arrays.toString(keyStream().toArray());
+	}
 	
 	static class TrieNode {
 		boolean endOfWord;	// is previous node endOfWord, can also be achieved by retrieving the pattern set
@@ -153,11 +170,7 @@ public class HashMapTrie {
 			return transitions.size() + transitions.values().stream().collect(
 					Collectors.summingInt(node->node.nodeSize()));
 		}
-		
-		@Override
-		public String toString() {
-			return Arrays.toString(transitions.keySet().stream().toArray());
-		}
+
 	}
 	
 	public static void main(String[] args) {
@@ -184,6 +197,11 @@ public class HashMapTrie {
 		
 		System.out.println(trie.matchAny("no try, no die"));
 		System.out.println(trie.root.nodeSize());
+
+		Stream.of("中国平安", "平安", "中国平安发展银行", "催收").forEach(trie::insert);
+		System.out.println(trie.matchAny("中国平安发展银行催收"));
+		System.out.println(trie);
+		System.out.println(trie.nodeCount() + " " + trie.characterCount());
 	}
 
 }
