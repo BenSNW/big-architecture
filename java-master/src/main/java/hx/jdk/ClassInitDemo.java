@@ -36,7 +36,7 @@ enum SomeEnum {
 	private int number;
 	private static int max = 10;
 	
-	private SomeEnum(int n) {
+	SomeEnum(int n) {
 //		this.number = n > max ? max : n;
 		this.number = n;
 		System.out.println("enum ctor");

@@ -1,3 +1,5 @@
+Stanford CS166 http://web.stanford.edu/class/cs166/
+CS97SI http://web.stanford.edu/class/cs97si/10-string-algorithms.pdf
 
 A trie is a tree that stores a collection of strings over some alphabet Σ.
 Tries are sometimes called prefix trees, since each node in a trie corresponds

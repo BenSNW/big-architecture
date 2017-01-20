@@ -98,7 +98,7 @@ public class StringUtil {
 	}
 	
 	@FunctionalInterface
-	public static interface ObjectBuilder<T> {
+	public interface ObjectBuilder<T> {
 		T buildObject(String... args) throws RuntimeException;
 	}
 	

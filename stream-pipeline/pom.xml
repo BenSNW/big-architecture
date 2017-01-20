@@ -14,34 +14,15 @@
 		<dependency>
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-library</artifactId>
-			<scope>runtime</scope>
 		</dependency>
-	        
+
 		<dependency>
 			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-core_2.10</artifactId>
-			<scope>provided</scope>
+			<artifactId>spark-core_${scala.major.version}</artifactId>
 		</dependency>
-		<dependency>
-		    <groupId>org.apache.spark</groupId>
-		    <artifactId>spark-sql_2.10</artifactId>
-		</dependency>
-		<!-- Hive support -->
-		<dependency>
-	        <groupId>org.apache.spark</groupId>
-	        <artifactId>spark-hive_2.10</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.spark</groupId>
-		    <artifactId>spark-graphx_2.10</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.spark</groupId>
-		    <artifactId>spark-mllib_2.10</artifactId>
-		</dependency>	
 		<dependency>
 			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-streaming-kafka_2.10</artifactId>
+			<artifactId>spark-sql_${scala.major.version}</artifactId>
 		</dependency>
 
 		<dependency>
@@ -50,10 +31,10 @@
 		</dependency>
 
 		<!-- logback StaticLoggerBinder for slf4j -->
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>ch.qos.logback</groupId>-->
+			<!--<artifactId>logback-classic</artifactId>-->
+		<!--</dependency>-->
 		
 	</dependencies>
 	

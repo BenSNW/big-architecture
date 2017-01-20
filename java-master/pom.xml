@@ -30,12 +30,7 @@
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
 		</dependency>
-		
-		<dependency>
-		    <groupId>commons-io</groupId>
-		    <artifactId>commons-io</artifactId>
-	    </dependency>
-		
+
 	    <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -46,6 +41,16 @@
 		    <groupId>com.google.guava</groupId>
 		    <artifactId>guava</artifactId>
 	    </dependency>
+
+		<dependency>
+			<groupId>io.reactivex</groupId>
+			<artifactId>rxjava</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openjdk.jol</groupId>
+			<artifactId>jol-core</artifactId>
+		</dependency>
 	    
 		<dependency>
 			<groupId>junit</groupId>
@@ -60,6 +65,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
+					<excludes>
+						<exclude>hx/jdk/forkjoin/*.java</exclude>
+					</excludes>
 					<testExcludes>
  						<testExclude>hx/proxy/test/ProxyPerformanceTest.java</testExclude>
 					</testExcludes>

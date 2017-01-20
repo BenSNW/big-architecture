@@ -64,9 +64,7 @@ public class StreamApi {
 		
 		System.out.println(
 			IntStream.of(1,2,2,4,5)
-				.reduce(0, (i, j) -> {
-					return i + j;
-		}));
+				.reduce(0, (i, j) -> i + j));
 		
 		System.out.println(IntStream.of(1,2,2,4,5).reduce(0, Integer::max));
 		

@@ -1,8 +1,8 @@
-package hx.wang.spark.scala
+package hx.wang.scala
 
 import scala.collection.immutable.List
 
-object Main {
+object ScalaOption {
   
    /** We need an abstract base class for trees. Subclasses with 
    *  the 'case' modifier can be used in pattern matching expressions 
@@ -46,7 +46,7 @@ object Main {
   }
 
   def printFinds[A](xs: List[(A, String)], x: A) =
-    find(xs.elements, x) match {
+    find(xs.iterator, x) match {
       case Some(y) => println(y)
       case None => println("no match")
   }

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 /**
- * Common Algorithms  asked in interviews
+ * Algorithms commonly asked in interviews
  * 
  * Created by BenSNW on Jun 3, 2016
  *

@@ -1,14 +1,9 @@
 package hx.guava;
 
-import java.util.concurrent.Callable;
+import com.google.common.util.concurrent.*;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.ListeningExecutorService;
-import com.google.common.util.concurrent.MoreExecutors;
 
 /**
  * https://github.com/google/guava/wiki/ListenableFutureExplained
@@ -32,12 +27,8 @@ public class AdvancedFuture {
 	public static void main(String[] args) {
 		ExecutorService executor = Executors.newFixedThreadPool(10);
 		ListeningExecutorService service = MoreExecutors.listeningDecorator(executor);
-		ListenableFuture<Integer> explosion = service
-				.submit(new Callable<Integer>() {
-					public Integer call() {
-						return 555;
-					}
-				});
+		ListenableFuture<Integer> explosion = service.submit(() -> 555);
+
 		Futures.addCallback(explosion, new FutureCallback<Integer>() {
 			
 			public void onSuccess(Integer explosion) {

@@ -5,6 +5,7 @@
 		<groupId>com.hx.wang</groupId>
 		<artifactId>maven-parent</artifactId>
 		<version>1.0</version>
+		<relativePath>../maven-parent</relativePath>
 	</parent>
 	<artifactId>spark-scala</artifactId>
 
@@ -13,31 +14,35 @@
 		<dependency>
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-library</artifactId>
-			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-core_2.10</artifactId>
-			<scope>provided</scope>
+			<artifactId>spark-core_${scala.major.version}</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-sql_2.10</artifactId>
+			<artifactId>spark-sql_${scala.major.version}</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-mllib_2.10</artifactId>
+			<artifactId>spark-mllib_${scala.major.version}</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-streaming-kafka_2.10</artifactId>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.apache.spark</groupId>-->
+			<!--<artifactId>spark-streaming-kafka_${scala.major.version}</artifactId>-->
+			<!--<version>2.0.0</version>-->
+		<!--</dependency>-->
 
 		<!-- logback StaticLoggerBinder for slf4j -->
+		<!--<dependency>-->
+			<!--<groupId>ch.qos.logback</groupId>-->
+			<!--<artifactId>logback-classic</artifactId>-->
+		<!--</dependency>-->
 		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
+			<groupId>org.codehaus.janino</groupId>
+			<artifactId>commons-compiler</artifactId>
+			<version>2.7.5</version>
 		</dependency>
 	</dependencies>
 
