@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * 
  * <p>Created by BenSNW on Oct 12, 2016
  *
  * @see https://github.com/mission-peace/interview/blob/master/src/com/interview/suffixprefix/Trie.java
@@ -59,7 +58,7 @@ public class HashMapTrie {
 				.distinct().count();
 	}
 
-	public String match(String text) {
+	public String matchFirst(String text) {
 		if (StringUtils.isBlank(text))
 			return "";
 		StringBuilder sb = new StringBuilder();
@@ -81,7 +80,7 @@ public class HashMapTrie {
 		return "";
 	}
 	
-	public Set<String> matchAny(String text) {
+	public Set<String> matchAll(String text) {
 		Set<String> match = new HashSet<>();
 		if (StringUtils.isBlank(text))
 			return match;
@@ -176,30 +175,30 @@ public class HashMapTrie {
 	public static void main(String[] args) {
 		HashMapTrie trie = new HashMapTrie();
 		Stream.of("word", "words", "trie", "weekend").forEach(trie::insert);		
-		System.out.println(trie.match("keywords"));
-		System.out.println(trie.matchAny("keywords trie is not tree"));
+		System.out.println(trie.matchFirst("keywords"));
+		System.out.println(trie.matchAll("keywords trie is not tree"));
 		System.out.println(trie.root.nodeSize());
 		
 		trie.delete("word"); trie.delete("trie");
-		System.out.println(trie.match("keyword"));
-		System.out.println(trie.match("keywords"));
-		System.out.println(trie.matchAny("keywords trie is not tree"));
+		System.out.println(trie.matchFirst("keyword"));
+		System.out.println(trie.matchFirst("keywords"));
+		System.out.println(trie.matchAll("keywords trie is not tree"));
 		System.out.println(trie.root.nodeSize());
 		
 		Stream.of("weak", "trie", "try").forEach(trie::insert);
 		System.out.println(trie.keys);
-		System.out.println(trie.matchAny("weak after weekend"));
+		System.out.println(trie.matchAll("weak after weekend"));
 		System.out.println(trie.root.nodeSize());
 		
 		trie.delete("weak"); trie.delete("words");
-		System.out.println(trie.matchAny("weak after weekend"));
+		System.out.println(trie.matchAll("weak after weekend"));
 		System.out.println(trie.root.nodeSize());
 		
-		System.out.println(trie.matchAny("no try, no die"));
+		System.out.println(trie.matchAll("no try, no die"));
 		System.out.println(trie.root.nodeSize());
 
 		Stream.of("中国平安", "平安", "中国平安发展银行", "催收").forEach(trie::insert);
-		System.out.println(trie.matchAny("中国平安发展银行催收"));
+		System.out.println(trie.matchAll("中国平安发展银行催收"));
 		System.out.println(trie);
 		System.out.println(trie.nodeCount() + " " + trie.characterCount());
 	}

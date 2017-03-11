@@ -67,7 +67,7 @@ public class LongSumDemo {
 //
 //                if (sum != calcSum) {
 //
-//                    System.out.println("pa.sum() value=" + sum + " does not match seq sum=" + calcSum);
+//                    System.out.println("pa.sum() value=" + sum + " does not matchFirst seq sum=" + calcSum);
 //                    System.exit(1);
 //                }
 //            }

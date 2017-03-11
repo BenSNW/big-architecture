@@ -116,7 +116,7 @@ static void uselessCalc (long n) {
        
     System.out.printf("F/J Sum time:  %7.9f\n", back);  
        
-    // When sums don't match
+    // When sums don't matchFirst
     if  (sum != total) {
         
        System.out.println("Seq Sum= " + sum + " F/J Sum= " + total);

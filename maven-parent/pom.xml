@@ -33,10 +33,14 @@
 		<spring.boot.mybatis.version>1.1.1</spring.boot.mybatis.version>
 
 		<scala.major.version>2.11</scala.major.version>
-		<scala.version>2.11.8</scala.version> <!-- latest version is 2.11.8 -->
+		<scala.version>2.11.8</scala.version>
+		<akka.version>2.4.16</akka.version>
 		<kafka.version>0.10.0.0</kafka.version>
 		<spark.version>2.1.0</spark.version>
 		<spark-streaming-kafka.version>2.1.0</spark-streaming-kafka.version>
+		<spark-corenlp.version>0.2.0-s</spark-corenlp.version>
+		<stanford-corenlp.version>3.6.0</stanford-corenlp.version>
+
 		<storm.version>1.0.2</storm.version>
 		<hadoop.version>2.6.0</hadoop.version>
 		<zookeeper.version>3.4.6</zookeeper.version>
@@ -170,17 +174,38 @@
 	          	<artifactId>scala-library</artifactId>
 	          	<version>${scala.version}</version>
 	        </dependency>
-			
+
+			<dependency>
+				<groupId>com.typesafe.akka</groupId>
+				<artifactId>akka-actor_${scala.major.version}</artifactId>
+				<version>${akka.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.typesafe.akka</groupId>
+				<artifactId>akka-stream_${scala.major.version}</artifactId>
+				<version>${akka.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.typesafe.akka</groupId>
+				<artifactId>akka-slf4j_${scala.major.version}</artifactId>
+				<version>${akka.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.typesafe.akka</groupId>
+				<artifactId>akka-remote_${scala.major.version}</artifactId>
+				<version>${akka.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.apache.spark</groupId>
 				<artifactId>spark-core_${scala.major.version}</artifactId>
 				<version>${spark.version}</version>
-				<!--<exclusions>-->
-					<!--<exclusion>-->
-						<!--<groupId>org.slf4j</groupId>-->
-						<!--<artifactId>slf4j-log4j12</artifactId>-->
-					<!--</exclusion>-->
-				<!--</exclusions>-->
+				<exclusions>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-log4j12</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency>
 			    <groupId>org.apache.spark</groupId>
@@ -217,14 +242,29 @@
 				<groupId>org.apache.spark</groupId>
 				<artifactId>spark-streaming-kafka_${scala.major.version}</artifactId>
 				<version>${spark-streaming-kafka.version}</version>
-				<exclusions>
+				<!-- <exclusions>
 					<exclusion>
 						<groupId>org.slf4j</groupId>
 						<artifactId>slf4j-log4j12</artifactId>
 					</exclusion>
-				</exclusions>
+				</exclusions> -->
 			</dependency>
-			
+
+			<dependency>
+				<groupId>databricks</groupId>
+				<artifactId>spark-corenlp</artifactId>
+				<version>${spark-corenlp.version}_${scala.major.version}</version>
+				<!--<version>0.2.0-s_2.11</version>-->
+				<scope>system</scope>
+				<systemPath>/Users/Benchun/Documents/Engineering/eclipse/big-architecture/maven-parent/lib/spark-corenlp-0.2.0-s_2.11.jar</systemPath>
+			</dependency>
+
+			<dependency>
+				<groupId>edu.stanford.nlp</groupId>
+				<artifactId>stanford-corenlp</artifactId>
+				<version>${stanford-corenlp.version}</version>
+			</dependency>
+
 			<!-- https://mvnrepository.com/artifact/org.apache.storm/storm-core -->
 			<dependency>
 			    <groupId>org.apache.storm</groupId>

@@ -77,7 +77,6 @@ public class ObjectUtil {
 			return ((Map) obj).isEmpty();
 		}
 
-		// else
 		return false;
 	}
 	
@@ -194,6 +193,10 @@ public class ObjectUtil {
 			}
 		}
 		return false;
+	}
+
+	public static int sizeOf(Object o) {
+		return 0;
 	}
 	
 	public static void main(String[] args) {

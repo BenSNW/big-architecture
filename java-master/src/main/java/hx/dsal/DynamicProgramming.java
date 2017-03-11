@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DynamicProgramming {
+public class  DynamicProgramming {
 
 	// Algorithms 6.2 P159
 	public static Integer[] longestIncreasingSubsequence(int[] input) {
@@ -165,7 +165,7 @@ public class DynamicProgramming {
 		Matrix c = new Matrix(1, 10);
 		Matrix d = new Matrix(10, 100);
 		
-		System.out.println(matrixChainMultiplication( new Matrix[] { a, b, c, d} ));
+		System.out.println(matrixChainMultiplication( new Matrix[] { a, b, c, d } ));
 		
 	}
 }

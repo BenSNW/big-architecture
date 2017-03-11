@@ -7,7 +7,26 @@ import org.apache.spark.ml.{Pipeline, PipelineModel}
 import org.apache.spark.sql.{Row, SparkSession}
 
 /**
-  * Created by Benchun on 1/20/17
+  * A ML Pipeline chains multiple Transformers and Estimators together to specify an ML workflow.
+  * All Transformers and Estimators now share a common Parameter API for specifying parameters.
+  *
+  * <p>A Transformer is an abstraction that includes feature transformers and learned models.
+  * Technically, a Transformer implements a method transform(), which converts one DataFrame into another.
+  *
+  * <li>A feature transformer might take a DataFrame, read a column (e.g., text), map it into a new
+  * column (e.g., feature vectors), and output a new DataFrame with the mapped column appended.
+  *
+  * <li>A learning model might take a DataFrame, read the column containing feature vectors, predict the
+  * label for each feature vector, and output a new DataFrame with predicted labels appended as a column.
+  *
+  * <p>An Estimator abstracts the concept of a learning algorithm or any algorithm that fits or trains on data.
+  * Technically, an Estimator implements a method fit(), which accepts a DataFrame and produces a Model,
+  * which is a Transformer. For example, a learning algorithm such as LogisticRegression is an Estimator,
+  * and calling fit() trains a LogisticRegressionModel, which is a Model and hence a Transformer.
+  *
+  * @see https://spark.apache.org/docs/latest/ml-pipeline.html
+  *
+  * <p>Created by Benchun on 1/20/17
   */
 object LRPipeline extends App {
 

@@ -13,7 +13,7 @@ public class MapUtil {
 			throw new IllegalArgumentException("parameter configuration error: "
 					+ "keys " + Arrays.toString(keys)
 					+ ", values " + Arrays.toString(values)
-					+ "; the length of keys and values array doesn't match");
+					+ "; the length of keys and values array doesn't matchFirst");
 		if (!isArraySorted(keys, true)) // Ints.asList
 			throw new IllegalArgumentException("map keys must be sorted in ascending order");	
 		
@@ -38,7 +38,7 @@ public class MapUtil {
 			throw new IllegalArgumentException("parameter configuration error: "
 					+ "keys " + Arrays.toString(keys)
 					+ ", values " + Arrays.toString(values)
-					+ "; the length of keys and values array doesn't match");
+					+ "; the length of keys and values array doesn't matchFirst");
 		if (!isArraySorted(Doubles.asList(keys), true)) // Ints.asList
 			throw new IllegalArgumentException("map keys must be sorted in ascending order");	
 		

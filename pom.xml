@@ -22,7 +22,6 @@
 		<module>dubbo-diy</module>
 		<module>java-master</module>
 		<module>stream-pipeline</module>
-		
 		<module>spark-scala</module>
 	</modules>
 

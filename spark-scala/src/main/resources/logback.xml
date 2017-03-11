@@ -71,6 +71,14 @@
 			level="warn" additivity="false">
 		<appender-ref ref="FILE-AUDIT" />
 	</logger>
-	
+	<logger name="org.apache" level="warn" additivity="false">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
+	<logger name="org.codehaus" level="warn" additivity="false">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
+	<logger name="parquet" level="warn" additivity="false">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
 	
 </configuration>

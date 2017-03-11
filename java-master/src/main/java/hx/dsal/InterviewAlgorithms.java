@@ -39,7 +39,7 @@ public class InterviewAlgorithms {
 	public static <T> void reverseList(final SingleLinkedList<T> list) {
 		if(list == null || list.size <= 1)
 			return;
-		list.reverse();;
+		list.reverse();
 	}
 	
 	static class SingleLinkedList<T> {
@@ -91,11 +91,21 @@ public class InterviewAlgorithms {
 			vars[i] = vars[0] - IntStream.of(vars).skip(1).sum();
 		return vars;
 	}
+
+	public static double sqrt(double x, double error) {
+		System.out.println(Math.sqrt(x));
+		double val = x/2;
+		while (Math.abs(val * val - x) > error)
+			val = 0.5 * ( val + x/val );
+		return val;
+	}
 	
 	public static void main(String[] args) {
 		System.out.println(Arrays.toString(mergeSortedArray( new int[] {1, 2, 4}, new int[] {1, 3, 4})));
 		System.out.println(Arrays.toString(swap(1, 2, 3, 4)));
 		System.out.println(Arrays.toString(swap()));
+
+		System.out.println(sqrt(2, 0.00001));
 	}
 	
 }

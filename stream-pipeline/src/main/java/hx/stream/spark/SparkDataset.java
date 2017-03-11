@@ -94,7 +94,7 @@ public class SparkDataset {
 						return new Person(row.getInt(0), row.getString(1), row.getInt(2));
 					}
 				},
-				Encoders.bean(Person.class));
+				Encoders.bean(Person.class)).cache();
 		List<Person> persons = dataSet.collectAsList();
 		persons.forEach(System.out::println);
 				
