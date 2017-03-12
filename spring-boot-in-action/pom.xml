@@ -28,7 +28,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>hx.spring.boot.jpa.JpaBookmarkApplication</mainClass>
+					<mainClass>hx.sboot.jpa.JpaBookmarkApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

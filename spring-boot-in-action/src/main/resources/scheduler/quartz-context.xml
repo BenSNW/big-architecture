@@ -26,7 +26,7 @@
  
     <!-- For times when you need more complex processing, passing data to the scheduled job -->
     <bean name="complexJobDetail"    class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
-        <property name="jobClass" value="hx.spring.boot.scheduler.SimpleQuartzJob" />
+        <property name="jobClass" value="hx.sboot.scheduler.SimpleQuartzJob" />
         <property name="jobDataMap">
             <!-- The job detail configuration has all information it needs to run the job (SimpleQuartzJob).
             The job data map is available through the JobExecutionContext (passed to you at execution time),
