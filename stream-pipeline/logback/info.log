@@ -1,0 +1,372 @@
+2016-12-28 15:41:38 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Running Spark version 2.0.0
+2016-12-28 15:41:38 WARN  [main] o.a.hadoop.util.NativeCodeLoader [NativeCodeLoader.java:62] : Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2016-12-28 15:41:39 INFO  [main] org.apache.spark.SecurityManager [Logging.scala:54] : Changing view acls to: Benchun
+2016-12-28 15:41:39 INFO  [main] org.apache.spark.SecurityManager [Logging.scala:54] : Changing modify acls to: Benchun
+2016-12-28 15:41:39 INFO  [main] org.apache.spark.SecurityManager [Logging.scala:54] : Changing view acls groups to: 
+2016-12-28 15:41:39 INFO  [main] org.apache.spark.SecurityManager [Logging.scala:54] : Changing modify acls groups to: 
+2016-12-28 15:41:39 INFO  [main] org.apache.spark.SecurityManager [Logging.scala:54] : SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(Benchun); groups with view permissions: Set(); users  with modify permissions: Set(Benchun); groups with modify permissions: Set()
+2016-12-28 15:41:39 INFO  [main] org.apache.spark.util.Utils [Logging.scala:54] : Successfully started service 'sparkDriver' on port 52576.
+2016-12-28 15:41:39 INFO  [main] org.apache.spark.SparkEnv [Logging.scala:54] : Registering MapOutputTracker
+2016-12-28 15:41:39 INFO  [main] org.apache.spark.SparkEnv [Logging.scala:54] : Registering BlockManagerMaster
+2016-12-28 15:41:39 INFO  [main] o.a.spark.storage.DiskBlockManager [Logging.scala:54] : Created local directory at /private/var/folders/_z/4sz05tlx0c9_lmn2lplzh3w00000gn/T/blockmgr-9b6c7bf3-d7bb-4c18-ad42-327ffded3834
+2016-12-28 15:41:39 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : MemoryStore started with capacity 912.3 MB
+2016-12-28 15:41:39 INFO  [main] org.apache.spark.SparkEnv [Logging.scala:54] : Registering OutputCommitCoordinator
+2016-12-28 15:41:40 INFO  [main] org.spark_project.jetty.util.log [Log.java:186] : Logging initialized @2842ms
+2016-12-28 15:41:40 INFO  [main] o.spark_project.jetty.server.Server [Server.java:327] : jetty-9.2.z-SNAPSHOT
+2016-12-28 15:41:40 INFO  [main] o.s.jetty.server.ServerConnector [AbstractConnector.java:266] : Started ServerConnector@5b43fbf6{HTTP/1.1}{0.0.0.0:4040}
+2016-12-28 15:41:40 INFO  [main] o.spark_project.jetty.server.Server [Server.java:379] : Started @3015ms
+2016-12-28 15:41:40 INFO  [main] org.apache.spark.util.Utils [Logging.scala:54] : Successfully started service 'SparkUI' on port 4040.
+2016-12-28 15:41:40 INFO  [main] org.apache.spark.ui.SparkUI [Logging.scala:54] : Bound SparkUI to 0.0.0.0, and started at http://172.16.130.249:4040
+2016-12-28 15:41:40 INFO  [main] org.apache.spark.executor.Executor [Logging.scala:54] : Starting executor ID driver on host localhost
+2016-12-28 15:41:40 INFO  [main] org.apache.spark.util.Utils [Logging.scala:54] : Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 52578.
+2016-12-28 15:41:40 INFO  [main] o.a.s.n.n.NettyBlockTransferService [Logging.scala:54] : Server created on 172.16.130.249:52578
+2016-12-28 15:41:40 INFO  [main] o.a.s.storage.BlockManagerMaster [Logging.scala:54] : Registering BlockManager BlockManagerId(driver, 172.16.130.249, 52578)
+2016-12-28 15:41:40 INFO  [dispatcher-event-loop-2] o.a.s.s.BlockManagerMasterEndpoint [Logging.scala:54] : Registering block manager 172.16.130.249:52578 with 912.3 MB RAM, BlockManagerId(driver, 172.16.130.249, 52578)
+2016-12-28 15:41:40 INFO  [main] o.a.s.storage.BlockManagerMaster [Logging.scala:54] : Registered BlockManager BlockManagerId(driver, 172.16.130.249, 52578)
+2016-12-28 15:41:40 WARN  [main] org.apache.spark.SparkContext [Logging.scala:66] : Use an existing SparkContext, some configuration may not take effect.
+2016-12-28 15:41:40 INFO  [main] o.a.spark.sql.internal.SharedState [Logging.scala:54] : Warehouse path is 'file:/Users/Benchun/Documents/Engineering/eclipse/big-architecture/stream-pipeline/spark-warehouse'.
+2016-12-28 15:41:43 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruning directories with: 
+2016-12-28 15:41:43 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Post-Scan Filters: 
+2016-12-28 15:41:43 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruned Data Schema: struct<id: int, name: string, age: int ... 1 more fields>
+2016-12-28 15:41:43 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pushed Filters: 
+2016-12-28 15:41:43 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_0 stored as values in memory (estimated size 131.9 KB, free 912.2 MB)
+2016-12-28 15:41:43 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_0_piece0 stored as bytes in memory (estimated size 14.6 KB, free 912.2 MB)
+2016-12-28 15:41:43 INFO  [dispatcher-event-loop-0] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_0_piece0 in memory on 172.16.130.249:52578 (size: 14.6 KB, free: 912.3 MB)
+2016-12-28 15:41:43 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 0 from show at SparkDataset.java:48
+2016-12-28 15:41:43 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+2016-12-28 15:41:44 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 482.965167 ms
+2016-12-28 15:41:44 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Starting job: show at SparkDataset.java:48
+2016-12-28 15:41:44 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Got job 0 (show at SparkDataset.java:48) with 1 output partitions
+2016-12-28 15:41:44 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Final stage: ResultStage 0 (show at SparkDataset.java:48)
+2016-12-28 15:41:44 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Parents of final stage: List()
+2016-12-28 15:41:44 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Missing parents: List()
+2016-12-28 15:41:44 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting ResultStage 0 (MapPartitionsRDD[2] at show at SparkDataset.java:48), which has no missing parents
+2016-12-28 15:41:44 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_1 stored as values in memory (estimated size 7.3 KB, free 912.1 MB)
+2016-12-28 15:41:44 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_1_piece0 stored as bytes in memory (estimated size 4.1 KB, free 912.1 MB)
+2016-12-28 15:41:44 INFO  [dispatcher-event-loop-1] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_1_piece0 in memory on 172.16.130.249:52578 (size: 4.1 KB, free: 912.3 MB)
+2016-12-28 15:41:44 INFO  [dag-scheduler-event-loop] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 1 from broadcast at DAGScheduler.scala:1012
+2016-12-28 15:41:44 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[2] at show at SparkDataset.java:48)
+2016-12-28 15:41:44 INFO  [dag-scheduler-event-loop] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Adding task set 0.0 with 1 tasks
+2016-12-28 15:41:44 INFO  [dispatcher-event-loop-2] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0, PROCESS_LOCAL, 5855 bytes)
+2016-12-28 15:41:44 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Running task 0.0 in stage 0.0 (TID 0)
+2016-12-28 15:41:44 INFO  [Executor task launch worker-0] o.a.s.s.e.datasources.FileScanRDD [Logging.scala:54] : Reading File path: file:///Users/Benchun/Documents/Engineering/eclipse/big-architecture/stream-pipeline/src/main/resources/person.json, range: 0-223, partition values: [empty row]
+2016-12-28 15:41:44 INFO  [Executor task launch worker-0] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 21.885979 ms
+2016-12-28 15:41:45 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Finished task 0.0 in stage 0.0 (TID 0). 1381 bytes result sent to driver
+2016-12-28 15:41:45 INFO  [task-result-getter-0] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Finished task 0.0 in stage 0.0 (TID 0) in 193 ms on localhost (1/1)
+2016-12-28 15:41:45 INFO  [task-result-getter-0] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : ResultStage 0 (show at SparkDataset.java:48) finished in 0.219 s
+2016-12-28 15:41:45 INFO  [main] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Job 0 finished: show at SparkDataset.java:48, took 0.411243 s
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 15.336265 ms
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruning directories with: 
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Post-Scan Filters: 
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruned Data Schema: struct<name: string>
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pushed Filters: 
+2016-12-28 15:41:45 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_2 stored as values in memory (estimated size 131.9 KB, free 912.0 MB)
+2016-12-28 15:41:45 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_2_piece0 stored as bytes in memory (estimated size 14.6 KB, free 912.0 MB)
+2016-12-28 15:41:45 INFO  [dispatcher-event-loop-1] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_2_piece0 in memory on 172.16.130.249:52578 (size: 14.6 KB, free: 912.3 MB)
+2016-12-28 15:41:45 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 2 from show at SparkDataset.java:50
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+2016-12-28 15:41:45 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Starting job: show at SparkDataset.java:50
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Got job 1 (show at SparkDataset.java:50) with 1 output partitions
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Final stage: ResultStage 1 (show at SparkDataset.java:50)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Parents of final stage: List()
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Missing parents: List()
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting ResultStage 1 (MapPartitionsRDD[5] at show at SparkDataset.java:50), which has no missing parents
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_3 stored as values in memory (estimated size 7.1 KB, free 912.0 MB)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.0 KB, free 912.0 MB)
+2016-12-28 15:41:45 INFO  [dispatcher-event-loop-2] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_3_piece0 in memory on 172.16.130.249:52578 (size: 4.0 KB, free: 912.3 MB)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 3 from broadcast at DAGScheduler.scala:1012
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[5] at show at SparkDataset.java:50)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Adding task set 1.0 with 1 tasks
+2016-12-28 15:41:45 INFO  [dispatcher-event-loop-3] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Starting task 0.0 in stage 1.0 (TID 1, localhost, partition 0, PROCESS_LOCAL, 5855 bytes)
+2016-12-28 15:41:45 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Running task 0.0 in stage 1.0 (TID 1)
+2016-12-28 15:41:45 INFO  [Executor task launch worker-0] o.a.s.s.e.datasources.FileScanRDD [Logging.scala:54] : Reading File path: file:///Users/Benchun/Documents/Engineering/eclipse/big-architecture/stream-pipeline/src/main/resources/person.json, range: 0-223, partition values: [empty row]
+2016-12-28 15:41:45 INFO  [Executor task launch worker-0] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 9.847632 ms
+2016-12-28 15:41:45 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Finished task 0.0 in stage 1.0 (TID 1). 1336 bytes result sent to driver
+2016-12-28 15:41:45 INFO  [task-result-getter-1] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Finished task 0.0 in stage 1.0 (TID 1) in 29 ms on localhost (1/1)
+2016-12-28 15:41:45 INFO  [task-result-getter-1] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Removed TaskSet 1.0, whose tasks have all completed, from pool 
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : ResultStage 1 (show at SparkDataset.java:50) finished in 0.030 s
+2016-12-28 15:41:45 INFO  [main] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Job 1 finished: show at SparkDataset.java:50, took 0.042655 s
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 12.138029 ms
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruning directories with: 
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Post-Scan Filters: 
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruned Data Schema: struct<id: int>
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pushed Filters: 
+2016-12-28 15:41:45 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_4 stored as values in memory (estimated size 131.9 KB, free 911.9 MB)
+2016-12-28 15:41:45 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_4_piece0 stored as bytes in memory (estimated size 14.6 KB, free 911.8 MB)
+2016-12-28 15:41:45 INFO  [dispatcher-event-loop-2] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_4_piece0 in memory on 172.16.130.249:52578 (size: 14.6 KB, free: 912.2 MB)
+2016-12-28 15:41:45 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 4 from describe at SparkDataset.java:51
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+2016-12-28 15:41:45 INFO  [dispatcher-event-loop-1] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Removed broadcast_1_piece0 on 172.16.130.249:52578 in memory (size: 4.1 KB, free: 912.3 MB)
+2016-12-28 15:41:45 INFO  [dispatcher-event-loop-0] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Removed broadcast_2_piece0 on 172.16.130.249:52578 in memory (size: 14.6 KB, free: 912.3 MB)
+2016-12-28 15:41:45 INFO  [Spark Context Cleaner] org.apache.spark.ContextCleaner [Logging.scala:54] : Cleaned accumulator 46
+2016-12-28 15:41:45 INFO  [Spark Context Cleaner] org.apache.spark.ContextCleaner [Logging.scala:54] : Cleaned accumulator 47
+2016-12-28 15:41:45 INFO  [dispatcher-event-loop-3] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Removed broadcast_3_piece0 on 172.16.130.249:52578 in memory (size: 4.0 KB, free: 912.3 MB)
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 65.290043 ms
+2016-12-28 15:41:45 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 29.20744 ms
+2016-12-28 15:41:45 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Starting job: describe at SparkDataset.java:51
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Registering RDD 8 (describe at SparkDataset.java:51)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Got job 2 (describe at SparkDataset.java:51) with 1 output partitions
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Final stage: ResultStage 3 (describe at SparkDataset.java:51)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Parents of final stage: List(ShuffleMapStage 2)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Missing parents: List(ShuffleMapStage 2)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting ShuffleMapStage 2 (MapPartitionsRDD[8] at describe at SparkDataset.java:51), which has no missing parents
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_5 stored as values in memory (estimated size 16.9 KB, free 912.0 MB)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_5_piece0 stored as bytes in memory (estimated size 7.8 KB, free 912.0 MB)
+2016-12-28 15:41:45 INFO  [dispatcher-event-loop-0] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_5_piece0 in memory on 172.16.130.249:52578 (size: 7.8 KB, free: 912.3 MB)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 5 from broadcast at DAGScheduler.scala:1012
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting 1 missing tasks from ShuffleMapStage 2 (MapPartitionsRDD[8] at describe at SparkDataset.java:51)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Adding task set 2.0 with 1 tasks
+2016-12-28 15:41:45 INFO  [dispatcher-event-loop-2] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Starting task 0.0 in stage 2.0 (TID 2, localhost, partition 0, PROCESS_LOCAL, 5844 bytes)
+2016-12-28 15:41:45 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Running task 0.0 in stage 2.0 (TID 2)
+2016-12-28 15:41:45 INFO  [Executor task launch worker-0] o.a.s.s.e.datasources.FileScanRDD [Logging.scala:54] : Reading File path: file:///Users/Benchun/Documents/Engineering/eclipse/big-architecture/stream-pipeline/src/main/resources/person.json, range: 0-223, partition values: [empty row]
+2016-12-28 15:41:45 INFO  [Executor task launch worker-0] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 9.769055 ms
+2016-12-28 15:41:45 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Finished task 0.0 in stage 2.0 (TID 2). 1888 bytes result sent to driver
+2016-12-28 15:41:45 INFO  [task-result-getter-2] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Finished task 0.0 in stage 2.0 (TID 2) in 75 ms on localhost (1/1)
+2016-12-28 15:41:45 INFO  [task-result-getter-2] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Removed TaskSet 2.0, whose tasks have all completed, from pool 
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : ShuffleMapStage 2 (describe at SparkDataset.java:51) finished in 0.077 s
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : looking for newly runnable stages
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : running: Set()
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : waiting: Set(ResultStage 3)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : failed: Set()
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting ResultStage 3 (MapPartitionsRDD[11] at describe at SparkDataset.java:51), which has no missing parents
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_6 stored as values in memory (estimated size 15.3 KB, free 912.0 MB)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_6_piece0 stored as bytes in memory (estimated size 6.6 KB, free 912.0 MB)
+2016-12-28 15:41:45 INFO  [dispatcher-event-loop-0] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_6_piece0 in memory on 172.16.130.249:52578 (size: 6.6 KB, free: 912.3 MB)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 6 from broadcast at DAGScheduler.scala:1012
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[11] at describe at SparkDataset.java:51)
+2016-12-28 15:41:45 INFO  [dag-scheduler-event-loop] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Adding task set 3.0 with 1 tasks
+2016-12-28 15:41:45 INFO  [dispatcher-event-loop-2] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Starting task 0.0 in stage 3.0 (TID 3, localhost, partition 0, ANY, 5190 bytes)
+2016-12-28 15:41:45 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Running task 0.0 in stage 3.0 (TID 3)
+2016-12-28 15:41:45 INFO  [Executor task launch worker-0] o.a.s.s.ShuffleBlockFetcherIterator [Logging.scala:54] : Getting 1 non-empty blocks out of 1 blocks
+2016-12-28 15:41:45 INFO  [Executor task launch worker-0] o.a.s.s.ShuffleBlockFetcherIterator [Logging.scala:54] : Started 0 remote fetches in 6 ms
+2016-12-28 15:41:46 INFO  [Spark Context Cleaner] org.apache.spark.ContextCleaner [Logging.scala:54] : Cleaned accumulator 1
+2016-12-28 15:41:46 INFO  [Spark Context Cleaner] org.apache.spark.ContextCleaner [Logging.scala:54] : Cleaned accumulator 0
+2016-12-28 15:41:46 INFO  [dispatcher-event-loop-2] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Removed broadcast_0_piece0 on 172.16.130.249:52578 in memory (size: 14.6 KB, free: 912.3 MB)
+2016-12-28 15:41:46 INFO  [dispatcher-event-loop-3] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Removed broadcast_5_piece0 on 172.16.130.249:52578 in memory (size: 7.8 KB, free: 912.3 MB)
+2016-12-28 15:41:46 INFO  [Spark Context Cleaner] org.apache.spark.ContextCleaner [Logging.scala:54] : Cleaned accumulator 92
+2016-12-28 15:41:46 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Finished task 0.0 in stage 3.0 (TID 3). 1999 bytes result sent to driver
+2016-12-28 15:41:46 INFO  [task-result-getter-3] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Finished task 0.0 in stage 3.0 (TID 3) in 175 ms on localhost (1/1)
+2016-12-28 15:41:46 INFO  [task-result-getter-3] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Removed TaskSet 3.0, whose tasks have all completed, from pool 
+2016-12-28 15:41:46 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : ResultStage 3 (describe at SparkDataset.java:51) finished in 0.176 s
+2016-12-28 15:41:46 INFO  [main] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Job 2 finished: describe at SparkDataset.java:51, took 0.321704 s
+2016-12-28 15:41:46 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 11.737878 ms
+2016-12-28 15:41:46 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 8.574893 ms
+2016-12-28 15:41:46 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 10.944483 ms
+2016-12-28 15:41:46 INFO  [main] o.a.s.sql.execution.SparkSqlParser [Logging.scala:54] : Parsing command: person
+2016-12-28 15:41:46 INFO  [main] o.a.s.sql.execution.SparkSqlParser [Logging.scala:54] : Parsing command: select * from person
+2016-12-28 15:41:46 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruning directories with: 
+2016-12-28 15:41:46 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Post-Scan Filters: 
+2016-12-28 15:41:46 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruned Data Schema: struct<id: int, name: string, age: int ... 1 more fields>
+2016-12-28 15:41:46 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pushed Filters: 
+2016-12-28 15:41:46 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_7 stored as values in memory (estimated size 131.9 KB, free 912.0 MB)
+2016-12-28 15:41:46 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_7_piece0 stored as bytes in memory (estimated size 14.6 KB, free 912.0 MB)
+2016-12-28 15:41:46 INFO  [dispatcher-event-loop-0] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_7_piece0 in memory on 172.16.130.249:52578 (size: 14.6 KB, free: 912.3 MB)
+2016-12-28 15:41:46 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 7 from show at SparkDataset.java:55
+2016-12-28 15:41:46 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+2016-12-28 15:41:46 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Starting job: show at SparkDataset.java:55
+2016-12-28 15:41:46 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Got job 3 (show at SparkDataset.java:55) with 1 output partitions
+2016-12-28 15:41:46 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Final stage: ResultStage 4 (show at SparkDataset.java:55)
+2016-12-28 15:41:46 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Parents of final stage: List()
+2016-12-28 15:41:46 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Missing parents: List()
+2016-12-28 15:41:46 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting ResultStage 4 (MapPartitionsRDD[15] at show at SparkDataset.java:55), which has no missing parents
+2016-12-28 15:41:46 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_8 stored as values in memory (estimated size 7.3 KB, free 912.0 MB)
+2016-12-28 15:41:46 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_8_piece0 stored as bytes in memory (estimated size 4.1 KB, free 912.0 MB)
+2016-12-28 15:41:46 INFO  [dispatcher-event-loop-1] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_8_piece0 in memory on 172.16.130.249:52578 (size: 4.1 KB, free: 912.3 MB)
+2016-12-28 15:41:46 INFO  [dag-scheduler-event-loop] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 8 from broadcast at DAGScheduler.scala:1012
+2016-12-28 15:41:46 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting 1 missing tasks from ResultStage 4 (MapPartitionsRDD[15] at show at SparkDataset.java:55)
+2016-12-28 15:41:46 INFO  [dag-scheduler-event-loop] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Adding task set 4.0 with 1 tasks
+2016-12-28 15:41:46 INFO  [dispatcher-event-loop-3] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Starting task 0.0 in stage 4.0 (TID 4, localhost, partition 0, PROCESS_LOCAL, 5855 bytes)
+2016-12-28 15:41:46 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Running task 0.0 in stage 4.0 (TID 4)
+2016-12-28 15:41:46 INFO  [Executor task launch worker-0] o.a.s.s.e.datasources.FileScanRDD [Logging.scala:54] : Reading File path: file:///Users/Benchun/Documents/Engineering/eclipse/big-architecture/stream-pipeline/src/main/resources/person.json, range: 0-223, partition values: [empty row]
+2016-12-28 15:41:46 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Finished task 0.0 in stage 4.0 (TID 4). 1381 bytes result sent to driver
+2016-12-28 15:41:46 INFO  [task-result-getter-0] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Finished task 0.0 in stage 4.0 (TID 4) in 11 ms on localhost (1/1)
+2016-12-28 15:41:46 INFO  [task-result-getter-0] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Removed TaskSet 4.0, whose tasks have all completed, from pool 
+2016-12-28 15:41:46 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : ResultStage 4 (show at SparkDataset.java:55) finished in 0.012 s
+2016-12-28 15:41:46 INFO  [main] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Job 3 finished: show at SparkDataset.java:55, took 0.021842 s
+2016-12-28 15:41:46 INFO  [main] o.a.s.sql.execution.SparkSqlParser [Logging.scala:54] : Parsing command: person
+2016-12-28 15:41:47 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 10.027181 ms
+2016-12-28 15:41:47 INFO  [main] o.a.s.sql.execution.SparkSqlParser [Logging.scala:54] : Parsing command: drop table if exists person
+2016-12-28 15:41:47 INFO  [main] o.a.s.sql.execution.SparkSqlParser [Logging.scala:54] : Parsing command: t_person
+2016-12-28 15:41:47 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruning directories with: 
+2016-12-28 15:41:47 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Post-Scan Filters: 
+2016-12-28 15:41:47 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruned Data Schema: struct<id: int, name: string, age: int ... 1 more fields>
+2016-12-28 15:41:47 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pushed Filters: 
+2016-12-28 15:41:47 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_9 stored as values in memory (estimated size 131.9 KB, free 911.9 MB)
+2016-12-28 15:41:47 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_9_piece0 stored as bytes in memory (estimated size 14.6 KB, free 911.8 MB)
+2016-12-28 15:41:47 INFO  [dispatcher-event-loop-1] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_9_piece0 in memory on 172.16.130.249:52578 (size: 14.6 KB, free: 912.2 MB)
+2016-12-28 15:41:47 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 9 from saveAsTable at SparkDataset.java:88
+2016-12-28 15:41:47 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+2016-12-28 15:41:47 INFO  [main] o.a.h.c.Configuration.deprecation [Configuration.java:840] : mapred.job.id is deprecated. Instead, use mapreduce.job.id
+2016-12-28 15:41:47 INFO  [main] o.a.h.c.Configuration.deprecation [Configuration.java:840] : mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+2016-12-28 15:41:47 INFO  [main] o.a.h.c.Configuration.deprecation [Configuration.java:840] : mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+2016-12-28 15:41:47 INFO  [main] o.a.h.c.Configuration.deprecation [Configuration.java:840] : mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+2016-12-28 15:41:47 INFO  [main] o.a.h.c.Configuration.deprecation [Configuration.java:840] : mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+2016-12-28 15:41:47 INFO  [main] o.a.s.s.e.d.p.ParquetFileFormat [Logging.scala:54] : Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+2016-12-28 15:41:47 INFO  [main] o.a.s.s.e.d.DefaultWriterContainer [Logging.scala:54] : Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+2016-12-28 15:41:47 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Starting job: saveAsTable at SparkDataset.java:88
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Registering RDD 19 (saveAsTable at SparkDataset.java:88)
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Got job 4 (saveAsTable at SparkDataset.java:88) with 1 output partitions
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Final stage: ResultStage 6 (saveAsTable at SparkDataset.java:88)
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Parents of final stage: List(ShuffleMapStage 5)
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Missing parents: List(ShuffleMapStage 5)
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting ShuffleMapStage 5 (MapPartitionsRDD[19] at saveAsTable at SparkDataset.java:88), which has no missing parents
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_10 stored as values in memory (estimated size 8.7 KB, free 911.8 MB)
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_10_piece0 stored as bytes in memory (estimated size 4.8 KB, free 911.8 MB)
+2016-12-28 15:41:47 INFO  [dispatcher-event-loop-3] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_10_piece0 in memory on 172.16.130.249:52578 (size: 4.8 KB, free: 912.2 MB)
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 10 from broadcast at DAGScheduler.scala:1012
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting 1 missing tasks from ShuffleMapStage 5 (MapPartitionsRDD[19] at saveAsTable at SparkDataset.java:88)
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Adding task set 5.0 with 1 tasks
+2016-12-28 15:41:47 INFO  [dispatcher-event-loop-2] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Starting task 0.0 in stage 5.0 (TID 5, localhost, partition 0, PROCESS_LOCAL, 5937 bytes)
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Running task 0.0 in stage 5.0 (TID 5)
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] o.a.s.s.e.datasources.FileScanRDD [Logging.scala:54] : Reading File path: file:///Users/Benchun/Documents/Engineering/eclipse/big-architecture/stream-pipeline/src/main/resources/person.json, range: 0-223, partition values: [empty row]
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Finished task 0.0 in stage 5.0 (TID 5). 1643 bytes result sent to driver
+2016-12-28 15:41:47 INFO  [task-result-getter-1] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Finished task 0.0 in stage 5.0 (TID 5) in 15 ms on localhost (1/1)
+2016-12-28 15:41:47 INFO  [task-result-getter-1] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Removed TaskSet 5.0, whose tasks have all completed, from pool 
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : ShuffleMapStage 5 (saveAsTable at SparkDataset.java:88) finished in 0.015 s
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : looking for newly runnable stages
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : running: Set()
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : waiting: Set(ResultStage 6)
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : failed: Set()
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting ResultStage 6 (ShuffledRowRDD[20] at saveAsTable at SparkDataset.java:88), which has no missing parents
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_11 stored as values in memory (estimated size 51.2 KB, free 911.8 MB)
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_11_piece0 stored as bytes in memory (estimated size 18.8 KB, free 911.8 MB)
+2016-12-28 15:41:47 INFO  [dispatcher-event-loop-3] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_11_piece0 in memory on 172.16.130.249:52578 (size: 18.8 KB, free: 912.2 MB)
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 11 from broadcast at DAGScheduler.scala:1012
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting 1 missing tasks from ResultStage 6 (ShuffledRowRDD[20] at saveAsTable at SparkDataset.java:88)
+2016-12-28 15:41:47 INFO  [dag-scheduler-event-loop] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Adding task set 6.0 with 1 tasks
+2016-12-28 15:41:47 INFO  [dispatcher-event-loop-2] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Starting task 0.0 in stage 6.0 (TID 6, localhost, partition 0, ANY, 5283 bytes)
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Running task 0.0 in stage 6.0 (TID 6)
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] o.a.h.c.Configuration.deprecation [Configuration.java:840] : mapreduce.outputformat.class is deprecated. Instead, use mapreduce.job.outputformat.class
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] o.a.h.c.Configuration.deprecation [Configuration.java:840] : mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] o.a.h.c.Configuration.deprecation [Configuration.java:840] : mapred.output.key.class is deprecated. Instead, use mapreduce.job.output.key.class
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] o.a.h.c.Configuration.deprecation [Configuration.java:840] : mapred.output.value.class is deprecated. Instead, use mapreduce.job.output.value.class
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] o.a.s.s.ShuffleBlockFetcherIterator [Logging.scala:54] : Getting 1 non-empty blocks out of 1 blocks
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] o.a.s.s.ShuffleBlockFetcherIterator [Logging.scala:54] : Started 0 remote fetches in 1 ms
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] o.a.s.s.e.d.DefaultWriterContainer [Logging.scala:54] : Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] o.a.s.s.e.d.p.ParquetWriteSupport [Logging.scala:54] : Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "id",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "age",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 id;
+  optional binary name (UTF8);
+  optional int32 age;
+}
+
+       
+2016-12-28 15:41:47 INFO  [Executor task launch worker-0] o.a.hadoop.io.compress.CodecPool [CodecPool.java:150] : Got brand-new compressor [.snappy]
+2016-12-28 15:41:47 INFO  [Spark Context Cleaner] org.apache.spark.ContextCleaner [Logging.scala:54] : Cleaned accumulator 193
+2016-12-28 15:41:47 INFO  [dispatcher-event-loop-2] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Removed broadcast_7_piece0 on 172.16.130.249:52578 in memory (size: 14.6 KB, free: 912.2 MB)
+2016-12-28 15:41:47 INFO  [Spark Context Cleaner] org.apache.spark.ContextCleaner [Logging.scala:54] : Cleaned accumulator 194
+2016-12-28 15:41:47 INFO  [Spark Context Cleaner] org.apache.spark.ContextCleaner [Logging.scala:54] : Cleaned accumulator 195
+2016-12-28 15:41:47 INFO  [dispatcher-event-loop-1] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Removed broadcast_8_piece0 on 172.16.130.249:52578 in memory (size: 4.1 KB, free: 912.2 MB)
+2016-12-28 15:41:47 INFO  [Spark Context Cleaner] org.apache.spark.ContextCleaner [Logging.scala:54] : Cleaned accumulator 241
+2016-12-28 15:41:47 INFO  [dispatcher-event-loop-0] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Removed broadcast_10_piece0 on 172.16.130.249:52578 in memory (size: 4.8 KB, free: 912.2 MB)
+2016-12-28 15:41:48 INFO  [Executor task launch worker-0] o.a.h.m.l.o.FileOutputCommitter [FileOutputCommitter.java:439] : Saved output of task 'attempt_201612281541_0006_m_000000_0' to file:/Users/Benchun/Documents/Engineering/eclipse/big-architecture/stream-pipeline/spark-warehouse/t_person/_temporary/0/task_201612281541_0006_m_000000
+2016-12-28 15:41:48 INFO  [Executor task launch worker-0] o.a.s.mapred.SparkHadoopMapRedUtil [Logging.scala:54] : attempt_201612281541_0006_m_000000_0: Committed
+2016-12-28 15:41:48 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Finished task 0.0 in stage 6.0 (TID 6). 1691 bytes result sent to driver
+2016-12-28 15:41:48 INFO  [task-result-getter-2] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Finished task 0.0 in stage 6.0 (TID 6) in 894 ms on localhost (1/1)
+2016-12-28 15:41:48 INFO  [task-result-getter-2] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Removed TaskSet 6.0, whose tasks have all completed, from pool 
+2016-12-28 15:41:48 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : ResultStage 6 (saveAsTable at SparkDataset.java:88) finished in 0.895 s
+2016-12-28 15:41:48 INFO  [main] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Job 4 finished: saveAsTable at SparkDataset.java:88, took 0.946944 s
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.e.d.DefaultWriterContainer [Logging.scala:54] : Job job_201612281541_0000 committed.
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.e.c.CreateDataSourceTableUtils [Logging.scala:54] : Persisting data source relation `t_person` with a single input path into Hive metastore in Hive compatible format. Input path: file:/Users/Benchun/Documents/Engineering/eclipse/big-architecture/stream-pipeline/spark-warehouse/t_person.
+2016-12-28 15:41:48 INFO  [main] o.a.s.sql.execution.SparkSqlParser [Logging.scala:54] : Parsing command: select * from t_person
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.c.parser.CatalystSqlParser [Logging.scala:54] : Parsing command: int
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.c.parser.CatalystSqlParser [Logging.scala:54] : Parsing command: string
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.c.parser.CatalystSqlParser [Logging.scala:54] : Parsing command: int
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.c.parser.CatalystSqlParser [Logging.scala:54] : Parsing command: int
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.c.parser.CatalystSqlParser [Logging.scala:54] : Parsing command: string
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.c.parser.CatalystSqlParser [Logging.scala:54] : Parsing command: int
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruning directories with: 
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Post-Scan Filters: 
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruned Data Schema: struct<id: int, name: string, age: int ... 1 more fields>
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pushed Filters: 
+2016-12-28 15:41:48 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_12 stored as values in memory (estimated size 138.2 KB, free 911.8 MB)
+2016-12-28 15:41:48 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_12_piece0 stored as bytes in memory (estimated size 15.1 KB, free 911.8 MB)
+2016-12-28 15:41:48 INFO  [dispatcher-event-loop-2] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_12_piece0 in memory on 172.16.130.249:52578 (size: 15.1 KB, free: 912.2 MB)
+2016-12-28 15:41:48 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 12 from show at SparkDataset.java:89
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 30.421658 ms
+2016-12-28 15:41:48 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Starting job: show at SparkDataset.java:89
+2016-12-28 15:41:48 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Got job 5 (show at SparkDataset.java:89) with 1 output partitions
+2016-12-28 15:41:48 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Final stage: ResultStage 7 (show at SparkDataset.java:89)
+2016-12-28 15:41:48 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Parents of final stage: List()
+2016-12-28 15:41:48 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Missing parents: List()
+2016-12-28 15:41:48 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting ResultStage 7 (MapPartitionsRDD[25] at show at SparkDataset.java:89), which has no missing parents
+2016-12-28 15:41:48 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_13 stored as values in memory (estimated size 8.7 KB, free 911.8 MB)
+2016-12-28 15:41:48 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_13_piece0 stored as bytes in memory (estimated size 4.3 KB, free 911.8 MB)
+2016-12-28 15:41:48 INFO  [dispatcher-event-loop-0] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_13_piece0 in memory on 172.16.130.249:52578 (size: 4.3 KB, free: 912.2 MB)
+2016-12-28 15:41:48 INFO  [dag-scheduler-event-loop] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 13 from broadcast at DAGScheduler.scala:1012
+2016-12-28 15:41:48 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting 1 missing tasks from ResultStage 7 (MapPartitionsRDD[25] at show at SparkDataset.java:89)
+2016-12-28 15:41:48 INFO  [dag-scheduler-event-loop] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Adding task set 7.0 with 1 tasks
+2016-12-28 15:41:48 INFO  [dispatcher-event-loop-1] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Starting task 0.0 in stage 7.0 (TID 7, localhost, partition 0, PROCESS_LOCAL, 5914 bytes)
+2016-12-28 15:41:48 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Running task 0.0 in stage 7.0 (TID 7)
+2016-12-28 15:41:48 INFO  [Executor task launch worker-0] o.a.s.s.e.datasources.FileScanRDD [Logging.scala:54] : Reading File path: file:///Users/Benchun/Documents/Engineering/eclipse/big-architecture/stream-pipeline/spark-warehouse/t_person/part-r-00000-9fed4e0c-c166-4840-80a7-55465fafb3c9.snappy.parquet, range: 0-757, partition values: [empty row]
+2016-12-28 15:41:48 INFO  [Executor task launch worker-0] o.a.hadoop.io.compress.CodecPool [CodecPool.java:178] : Got brand-new decompressor [.snappy]
+2016-12-28 15:41:48 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Finished task 0.0 in stage 7.0 (TID 7). 1472 bytes result sent to driver
+2016-12-28 15:41:48 INFO  [task-result-getter-3] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Finished task 0.0 in stage 7.0 (TID 7) in 106 ms on localhost (1/1)
+2016-12-28 15:41:48 INFO  [task-result-getter-3] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Removed TaskSet 7.0, whose tasks have all completed, from pool 
+2016-12-28 15:41:48 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : ResultStage 7 (show at SparkDataset.java:89) finished in 0.108 s
+2016-12-28 15:41:48 INFO  [main] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Job 5 finished: show at SparkDataset.java:89, took 0.125058 s
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruning directories with: 
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Post-Scan Filters: 
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pruned Data Schema: struct<id: int, name: string, age: int ... 1 more fields>
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Pushed Filters: 
+2016-12-28 15:41:48 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_14 stored as values in memory (estimated size 131.9 KB, free 911.6 MB)
+2016-12-28 15:41:48 INFO  [main] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_14_piece0 stored as bytes in memory (estimated size 14.6 KB, free 911.6 MB)
+2016-12-28 15:41:48 INFO  [dispatcher-event-loop-0] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_14_piece0 in memory on 172.16.130.249:52578 (size: 14.6 KB, free: 912.2 MB)
+2016-12-28 15:41:48 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 14 from collectAsList at SparkDataset.java:100
+2016-12-28 15:41:48 INFO  [main] o.a.s.s.e.d.FileSourceStrategy [Logging.scala:54] : Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+2016-12-28 15:41:49 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 48.653374 ms
+2016-12-28 15:41:49 INFO  [main] org.apache.spark.SparkContext [Logging.scala:54] : Starting job: collectAsList at SparkDataset.java:100
+2016-12-28 15:41:49 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Got job 6 (collectAsList at SparkDataset.java:100) with 1 output partitions
+2016-12-28 15:41:49 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Final stage: ResultStage 8 (collectAsList at SparkDataset.java:100)
+2016-12-28 15:41:49 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Parents of final stage: List()
+2016-12-28 15:41:49 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Missing parents: List()
+2016-12-28 15:41:49 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting ResultStage 8 (MapPartitionsRDD[28] at collectAsList at SparkDataset.java:100), which has no missing parents
+2016-12-28 15:41:49 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_15 stored as values in memory (estimated size 12.8 KB, free 911.6 MB)
+2016-12-28 15:41:49 INFO  [dag-scheduler-event-loop] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : Block broadcast_15_piece0 stored as bytes in memory (estimated size 5.8 KB, free 911.6 MB)
+2016-12-28 15:41:49 INFO  [dispatcher-event-loop-1] o.a.spark.storage.BlockManagerInfo [Logging.scala:54] : Added broadcast_15_piece0 in memory on 172.16.130.249:52578 (size: 5.8 KB, free: 912.2 MB)
+2016-12-28 15:41:49 INFO  [dag-scheduler-event-loop] org.apache.spark.SparkContext [Logging.scala:54] : Created broadcast 15 from broadcast at DAGScheduler.scala:1012
+2016-12-28 15:41:49 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Submitting 1 missing tasks from ResultStage 8 (MapPartitionsRDD[28] at collectAsList at SparkDataset.java:100)
+2016-12-28 15:41:49 INFO  [dag-scheduler-event-loop] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Adding task set 8.0 with 1 tasks
+2016-12-28 15:41:49 INFO  [dispatcher-event-loop-3] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Starting task 0.0 in stage 8.0 (TID 8, localhost, partition 0, PROCESS_LOCAL, 5940 bytes)
+2016-12-28 15:41:49 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Running task 0.0 in stage 8.0 (TID 8)
+2016-12-28 15:41:49 INFO  [Executor task launch worker-0] o.a.s.s.e.datasources.FileScanRDD [Logging.scala:54] : Reading File path: file:///Users/Benchun/Documents/Engineering/eclipse/big-architecture/stream-pipeline/src/main/resources/person.json, range: 0-223, partition values: [empty row]
+2016-12-28 15:41:49 INFO  [Executor task launch worker-0] org.apache.spark.executor.Executor [Logging.scala:54] : Finished task 0.0 in stage 8.0 (TID 8). 1404 bytes result sent to driver
+2016-12-28 15:41:49 INFO  [task-result-getter-0] o.a.spark.scheduler.TaskSetManager [Logging.scala:54] : Finished task 0.0 in stage 8.0 (TID 8) in 23 ms on localhost (1/1)
+2016-12-28 15:41:49 INFO  [task-result-getter-0] o.a.s.scheduler.TaskSchedulerImpl [Logging.scala:54] : Removed TaskSet 8.0, whose tasks have all completed, from pool 
+2016-12-28 15:41:49 INFO  [dag-scheduler-event-loop] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : ResultStage 8 (collectAsList at SparkDataset.java:100) finished in 0.023 s
+2016-12-28 15:41:49 INFO  [main] o.a.spark.scheduler.DAGScheduler [Logging.scala:54] : Job 6 finished: collectAsList at SparkDataset.java:100, took 0.033299 s
+2016-12-28 15:41:49 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 13.042107 ms
+2016-12-28 15:41:49 INFO  [main] o.a.s.s.c.e.codegen.CodeGenerator [Logging.scala:54] : Code generated in 12.163317 ms
+2016-12-28 15:41:49 INFO  [Thread-1] org.apache.spark.SparkContext [Logging.scala:54] : Invoking stop() from shutdown hook
+2016-12-28 15:41:49 INFO  [Thread-1] o.s.jetty.server.ServerConnector [AbstractConnector.java:306] : Stopped ServerConnector@5b43fbf6{HTTP/1.1}{0.0.0.0:4040}
+2016-12-28 15:41:49 INFO  [Thread-1] org.apache.spark.ui.SparkUI [Logging.scala:54] : Stopped Spark web UI at http://172.16.130.249:4040
+2016-12-28 15:41:49 INFO  [dispatcher-event-loop-2] o.a.s.MapOutputTrackerMasterEndpoint [Logging.scala:54] : MapOutputTrackerMasterEndpoint stopped!
+2016-12-28 15:41:49 INFO  [Thread-1] o.a.s.storage.memory.MemoryStore [Logging.scala:54] : MemoryStore cleared
+2016-12-28 15:41:49 INFO  [Thread-1] o.apache.spark.storage.BlockManager [Logging.scala:54] : BlockManager stopped
+2016-12-28 15:41:49 INFO  [Thread-1] o.a.s.storage.BlockManagerMaster [Logging.scala:54] : BlockManagerMaster stopped
+2016-12-28 15:41:49 INFO  [dispatcher-event-loop-2] o.a.s.s.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint [Logging.scala:54] : OutputCommitCoordinator stopped!
+2016-12-28 15:41:49 INFO  [Thread-1] org.apache.spark.SparkContext [Logging.scala:54] : Successfully stopped SparkContext
+2016-12-28 15:41:49 INFO  [Thread-1] o.a.spark.util.ShutdownHookManager [Logging.scala:54] : Shutdown hook called
+2016-12-28 15:41:49 INFO  [Thread-1] o.a.spark.util.ShutdownHookManager [Logging.scala:54] : Deleting directory /private/var/folders/_z/4sz05tlx0c9_lmn2lplzh3w00000gn/T/spark-855f3a13-7fba-41d1-b4f6-ef13478fd92e
