@@ -1,4 +1,4 @@
-package hx.concurrency.jdk;
+package hx.concurrency;
 
 import java.io.File;
 import java.io.FileFilter;

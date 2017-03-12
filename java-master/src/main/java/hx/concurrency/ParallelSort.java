@@ -1,4 +1,4 @@
-package hx.concurrency.jdk;
+package hx.concurrency;
 
 /**
  * Well-Groundded Java 4.5
