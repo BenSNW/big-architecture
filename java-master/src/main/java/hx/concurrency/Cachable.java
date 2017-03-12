@@ -1,4 +1,4 @@
-package hx.concurrency.jdk;
+package hx.concurrency;
 
 public interface Cachable<K, V> {
 
