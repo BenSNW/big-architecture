@@ -73,6 +73,11 @@
 		</dependency>
 
 		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>com.github.axet</groupId>
 			<artifactId>wget</artifactId>
 			<version>1.4.3</version>
