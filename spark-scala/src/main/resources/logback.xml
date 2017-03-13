@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+	<property name="LOG_HOME" value="${LOG_PATH:-${LOG_TEMP:-logback}}" />	
+<!-- 	<property name="LOG_HOME_DEFAULT" scope="local" value="/root/credit/1.0/logback" /> -->
+<!-- 	<property name="LOG_HOME" value="${logging.logback.dir:-${LOG_HOME_DEFAULT}}" /> -->
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{35} [%file:%line] : %msg%n%ex{full}
+			</Pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	
+	<appender name="FILE-AUDIT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/info.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{35} [%file:%line] : %msg%n%ex{full}
+			</Pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${LOG_HOME}/archived/info-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="FILE-ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/error.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{35} [%file:%line] : %msg%n%ex{full}
+			</Pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${LOG_HOME}/archived/error-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+<!-- 	<root level="info"> -->
+<!-- 		<appender-ref ref="STDOUT" /> -->
+<!-- 		<appender-ref ref="FILE-AUDIT" /> -->
+<!-- 	</root> -->
+	
+	<root level="info">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE-AUDIT" />
+	</root>
+	
+	<logger name="hx.stream" level="debug" additivity="false">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
+	<logger name="org.spark_project.jetty.server.handler.ContextHandler"
+			level="warn" additivity="false">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
+	<logger name="org.apache" level="warn" additivity="false">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
+	<logger name="org.codehaus" level="warn" additivity="false">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
+	<logger name="parquet" level="warn" additivity="false">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
+	
+</configuration>

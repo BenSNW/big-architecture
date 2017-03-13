@@ -1,0 +1,126 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>What is in here</title>
+</head>
+
+<body>
+
+<blockquote>
+  <p>What is in here:</p>
+  <blockquote>
+  <p>The simple sum of a long array.</p>
+    <blockquote>
+      <p><b>LongSum.java</b></p>
+      <blockquote>
+        <p>This demo simply sums an array of long integers sequentially and then 
+        using the F/J framework.</p>
+      </blockquote>
+    </blockquote>
+    <p>The summation test code for comparing the F/J framework to TymeacDSE.</p>
+    <blockquote>
+      <p><b>&nbsp;LongSumDemo.java</b></p>
+      <blockquote>
+        <p>The F/J framework requires either Java 7, or, Java 6 and the <i>
+        jsr166y.jar</i> file from the
+        <a href="http://gee.cs.oswego.edu/dl/concurrency-interest/">concurrency 
+        interest site</a>,&nbsp; (http://gee.cs.oswego.edu/dl/concurrency-interest/)&nbsp; 
+        You will also need the <i>extra166y.jar</i> (for the parallel array 
+        classes) from the same place.</p>
+      </blockquote>
+      <p><b>SingleSumLongsDemo.java</b></p>
+      <blockquote>
+        <p>The TymeacDSE sample requires the download package from
+        <a href="http://sourceforge.net/projects/tymeacdse/files/">
+        sourceForge.net</a><br>
+        &nbsp;&nbsp;&nbsp; (http://sourceforge.net/projects/tymeacdse/files/)</p>
+      </blockquote>
+    </blockquote>
+        <p>Comparison between using the F/J pool to handle multiple submissions 
+        against a thread pool.</p>
+      <blockquote>
+        <p><b>MultiSubmitFJDemo.java</b></p>
+        <blockquote>
+        <p>This demo has the pool being used by many threads.
+        You will need lots of memory for this<br>
+&nbsp; -Xmx600m</p>
+        <ul>
+          <li>It creates threads. Each thread creates a long array to sum.</li>
+          <li>It wakes up the threads.</li>
+          <li>The threads submit the arrays for summing using the F/J pool.</li>
+          <li>The time to complete is printed.</li>
+          <li>Change the size of the arrays, number of threads to submit array objects 
+        and number of threads in the pool as you wish.</li>
+        </ul>
+        </blockquote>
+        <p><b>MultiSubmitTPoolDemo.java</b></p>
+        <blockquote>
+        <p>This demo simulates a thread pool used for sum.</p>
+          <ul>
+            <li>It creates threads to sum the arrays.</li>
+            <li>It creates the long arrays and puts them into a queue.</li>
+            <li>It wakes up the threads.</li>
+            <li>The threads fetch the long[] and sum.</li>
+            <li>The time to complete is printed.</li>
+            <li>Change the size of the arrays, number of array objects and number of 
+        threads as you wish.</li>
+          </ul>
+        </blockquote>
+    </blockquote>
+  <p>The multiple recursion demo </p>
+    <blockquote>
+      <p><b>MultiRecurSubmit.java</b></p>
+      <blockquote>
+        <p>This demo is for both the Java7 and Java8 (test) versions.</p>
+        <p>For Java7 - uncomment the import java.util.concurrent.*; and comment 
+        the import jsr166e.*; This demo will show the excessive thread creation. 
+        Use of a profiler is recommended.</p>
+        <p>For the proposed Java8 - download the current jar or source code for
+        <b>jsr166e</b> found at:<br>
+&nbsp;&nbsp;&nbsp; <a href="http://gee.cs.oswego.edu/dl/concurrency-interest/">
+        http://gee.cs.oswego.edu/dl/concurrency-interest/</a><br>
+        Use of a profiler is necessary to see the thread stalls.</p>
+      </blockquote>
+    </blockquote>
+  <p>The tiered Phaser demo </p>
+    <blockquote>
+      <p><b>TieredPhaser.java</b></p>
+      <blockquote>
+        <p>This demo is for both the Java7 and Java8 (test) versions. It 
+        demonstrates the excessive &quot;compensation threads&quot; the framework uses for 
+        tiered&nbsp; phasers.</p>
+        <p>For the proposed Java8 - download the current source code for
+        <b>jsr166e</b> found at:<br>
+&nbsp;&nbsp;&nbsp; <a href="http://gee.cs.oswego.edu/dl/concurrency-interest/">
+        http://gee.cs.oswego.edu/dl/concurrency-interest/</a><br>
+        Follow instructions in the source demo for including the Java7 Phaser 
+        class in the downloaded directory.</p>
+      </blockquote>
+    </blockquote>
+  <p>The CompletableFuture demo </p>
+    <blockquote>
+        <p><b>MultiCompletables.java</b></p>
+      <blockquote>
+        <p>This demo is for the Java8 (test) versions. It demonstrates the 
+        excessive &quot;compensation threads&quot; the framework uses for the 
+        CompletableFuture Class.</p>
+        <p>For the proposed Java8 - download the current source code for
+        <b>jsr166e</b> found at:<br>
+&nbsp;&nbsp;&nbsp; <a href="http://gee.cs.oswego.edu/dl/concurrency-interest/">
+        http://gee.cs.oswego.edu/dl/concurrency-interest/</a><br>
+        &nbsp;</p>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>
