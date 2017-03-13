@@ -9,6 +9,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.1.5" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.1.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.curator:curator-recipes:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.curator:curator-framework:2.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.curator:curator-client:2.10.0" level="project" />
