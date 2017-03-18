@@ -14,7 +14,19 @@
 .classpath
 
 .idea/
+*.iml
 
 bin/
 build/
 target/
+
+edu/
+data/
+!data/mllib
+
+
+**/log/**
+**/logs/**
+**/logback/**
+
+

@@ -77,6 +77,12 @@
 			<artifactId>stanford-corenlp</artifactId>
 		</dependency>
 
+		<!-- logback StaticLoggerBinder for slf4j-->
+		<dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-classic</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>com.github.axet</groupId>
 			<artifactId>wget</artifactId>

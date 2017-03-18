@@ -54,10 +54,10 @@
 			<artifactId>spark-corenlp</artifactId>
 		</dependency>
 
-		<!--<dependency>-->
-			<!--<groupId>edu.stanford.nlp</groupId>-->
-			<!--<artifactId>stanford-corenlp</artifactId>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.codehaus.janino</groupId>
@@ -106,7 +106,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<!-- <version>1.3.3.RELEASE</version> -->
 				<configuration>
-					<mainClass>hx.wang.spark.mllib.LinearSVMClassifier</mainClass>
+					<mainClass>hx.spark.mllib.LinearSVMClassifier</mainClass>
 					<excludeGroupIds>org.projectlombok</excludeGroupIds>
 				</configuration>
 				<executions>
