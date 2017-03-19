@@ -52,9 +52,9 @@ public class HanLPDependencyParser {
                 }
             }
 
-            date.stream().map(word -> word.LEMMA).collect(Collectors.joining());
-            orgs.stream().map(word -> word.LEMMA).collect(Collectors.joining());
-            normalizedSentence.stream().map(word -> word.LEMMA).collect(Collectors.joining());
+            System.out.println(date.stream().map(word -> word.LEMMA).collect(Collectors.joining()));
+            System.out.println(orgs.stream().map(word -> word.LEMMA).collect(Collectors.joining()));
+            System.out.println(normalizedSentence.stream().map(word -> word.LEMMA).collect(Collectors.joining()));
         });
     }
 
@@ -64,7 +64,8 @@ public class HanLPDependencyParser {
     }
 
     static boolean isAssociatedDate(CoNLLWord coNLLWord) {
-        return coNLLWord.CPOSTAG.matches("(m|v?f)"); // can not be ORG
+        return !isDate(coNLLWord) &&
+            coNLLWord.CPOSTAG.matches("(m|v?f)") || coNLLWord.POSTAG.matches("(m|v?f)"); // can not be ORG
     }
 
     static boolean isOrg(CoNLLWord coNLLWord) {

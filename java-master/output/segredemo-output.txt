@@ -1,0 +1,1530 @@
+"工商银行昨天的股价", "中国工商银行上周的股价", "工商银行3天前的股价", "工商银行3月5日到3月10日的股价走势",
+"工商银行的资金流入", "工商银行的股价和市盈率分别是多少", "资金流入前10位",
+"工商银行涨停了", "今天涨停的公司", "连续3天涨停的公司", "涨幅超过百分之三的公司",
+"603991市值三亿美元", "603991市值多少钱", "603991是哪家公司",
+"工商银行好不好", "工商银行呢，这个怎么样？", "有推荐的吗", "有什么推荐的", "有没有什么推荐的" };
+			
+			
+D:\App\Java\jdk1.8.0_121\bin\java -Didea.launcher.port=7532 -Didea.launcher.bin.path=D:\App\IntelliJ\bin -Dfile.encoding=UTF-8 -classpath D:\App\Java\jdk1.8.0_121\jre\lib\charsets.jar;D:\App\Java\jdk1.8.0_121\jre\lib\deploy.jar;D:\App\Java\jdk1.8.0_121\jre\lib\ext\access-bridge-64.jar;D:\App\Java\jdk1.8.0_121\jre\lib\ext\cldrdata.jar;D:\App\Java\jdk1.8.0_121\jre\lib\ext\dnsns.jar;D:\App\Java\jdk1.8.0_121\jre\lib\ext\jaccess.jar;D:\App\Java\jdk1.8.0_121\jre\lib\ext\jfxrt.jar;D:\App\Java\jdk1.8.0_121\jre\lib\ext\localedata.jar;D:\App\Java\jdk1.8.0_121\jre\lib\ext\nashorn.jar;D:\App\Java\jdk1.8.0_121\jre\lib\ext\sunec.jar;D:\App\Java\jdk1.8.0_121\jre\lib\ext\sunjce_provider.jar;D:\App\Java\jdk1.8.0_121\jre\lib\ext\sunmscapi.jar;D:\App\Java\jdk1.8.0_121\jre\lib\ext\sunpkcs11.jar;D:\App\Java\jdk1.8.0_121\jre\lib\ext\zipfs.jar;D:\App\Java\jdk1.8.0_121\jre\lib\javaws.jar;D:\App\Java\jdk1.8.0_121\jre\lib\jce.jar;D:\App\Java\jdk1.8.0_121\jre\lib\jfr.jar;D:\App\Java\jdk1.8.0_121\jre\lib\jfxswt.jar;D:\App\Java\jdk1.8.0_121\jre\lib\jsse.jar;D:\App\Java\jdk1.8.0_121\jre\lib\management-agent.jar;D:\App\Java\jdk1.8.0_121\jre\lib\plugin.jar;D:\App\Java\jdk1.8.0_121\jre\lib\resources.jar;D:\App\Java\jdk1.8.0_121\jre\lib\rt.jar;D:\Document\Engineering\eclipse\big-architecture\java-master\target\classes;C:\Users\zhipeng.wang\.m2\repository\io\netty\netty-all\4.0.34.Final\netty-all-4.0.34.Final.jar;C:\Users\zhipeng.wang\.m2\repository\org\javassist\javassist\3.18.1-GA\javassist-3.18.1-GA.jar;C:\Users\zhipeng.wang\.m2\repository\cglib\cglib\2.2.2\cglib-2.2.2.jar;C:\Users\zhipeng.wang\.m2\repository\asm\asm\3.3.1\asm-3.3.1.jar;C:\Users\zhipeng.wang\.m2\repository\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar;C:\Users\zhipeng.wang\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar;C:\Users\zhipeng.wang\.m2\repository\io\reactivex\rxjava\1.2.4\rxjava-1.2.4.jar;C:\Users\zhipeng.wang\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.6.5\jackson-core-2.6.5.jar;C:\Users\zhipeng.wang\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.6.5\jackson-databind-2.6.5.jar;C:\Users\zhipeng.wang\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.6.5\jackson-annotations-2.6.5.jar;C:\Users\zhipeng.wang\.m2\repository\org\openjdk\jol\jol-core\0.6\jol-core-0.6.jar;C:\Users\zhipeng.wang\.m2\repository\com\huaban\jieba-analysis\1.0.2\jieba-analysis-1.0.2.jar;C:\Users\zhipeng.wang\.m2\repository\com\hankcs\hanlp\1.4.0\hanlp-1.4.0.jar;C:\Users\zhipeng.wang\.m2\repository\edu\stanford\nlp\stanford-corenlp\3.7.0\stanford-corenlp-3.7.0.jar;C:\Users\zhipeng.wang\.m2\repository\com\apple\AppleJavaExtensions\1.4\AppleJavaExtensions-1.4.jar;C:\Users\zhipeng.wang\.m2\repository\de\jollyday\jollyday\0.4.9\jollyday-0.4.9.jar;C:\Users\zhipeng.wang\.m2\repository\javax\xml\bind\jaxb-api\2.2.7\jaxb-api-2.2.7.jar;C:\Users\zhipeng.wang\.m2\repository\org\apache\lucene\lucene-queryparser\4.10.3\lucene-queryparser-4.10.3.jar;C:\Users\zhipeng.wang\.m2\repository\org\apache\lucene\lucene-sandbox\4.10.3\lucene-sandbox-4.10.3.jar;C:\Users\zhipeng.wang\.m2\repository\org\apache\lucene\lucene-analyzers-common\4.10.3\lucene-analyzers-common-4.10.3.jar;C:\Users\zhipeng.wang\.m2\repository\org\apache\lucene\lucene-queries\4.10.3\lucene-queries-4.10.3.jar;C:\Users\zhipeng.wang\.m2\repository\org\apache\lucene\lucene-core\4.10.3\lucene-core-4.10.3.jar;C:\Users\zhipeng.wang\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\zhipeng.wang\.m2\repository\com\io7m\xom\xom\1.2.10\xom-1.2.10.jar;C:\Users\zhipeng.wang\.m2\repository\xml-apis\xml-apis\1.3.03\xml-apis-1.3.03.jar;C:\Users\zhipeng.wang\.m2\repository\xerces\xercesImpl\2.8.0\xercesImpl-2.8.0.jar;C:\Users\zhipeng.wang\.m2\repository\xalan\xalan\2.7.0\xalan-2.7.0.jar;C:\Users\zhipeng.wang\.m2\repository\joda-time\joda-time\2.8.2\joda-time-2.8.2.jar;C:\Users\zhipeng.wang\.m2\repository\com\googlecode\efficient-java-matrix-library\ejml\0.23\ejml-0.23.jar;C:\Users\zhipeng.wang\.m2\repository\org\glassfish\javax.json\1.0.4\javax.json-1.0.4.jar;C:\Users\zhipeng.wang\.m2\repository\org\slf4j\slf4j-api\1.7.16\slf4j-api-1.7.16.jar;C:\Users\zhipeng.wang\.m2\repository\com\google\protobuf\protobuf-java\2.6.1\protobuf-java-2.6.1.jar;C:\Users\zhipeng.wang\.m2\repository\ch\qos\logback\logback-classic\1.1.5\logback-classic-1.1.5.jar;C:\Users\zhipeng.wang\.m2\repository\ch\qos\logback\logback-core\1.1.5\logback-core-1.1.5.jar;C:\Users\zhipeng.wang\.m2\repository\com\github\axet\wget\1.4.3\wget-1.4.3.jar;C:\Users\zhipeng.wang\.m2\repository\commons-io\commons-io\2.4\commons-io-2.4.jar;C:\Users\zhipeng.wang\.m2\repository\com\thoughtworks\xstream\xstream\1.4.2\xstream-1.4.2.jar;C:\Users\zhipeng.wang\.m2\repository\xmlpull\xmlpull\1.1.3.1\xmlpull-1.1.3.1.jar;C:\Users\zhipeng.wang\.m2\repository\xpp3\xpp3_min\1.1.4c\xpp3_min-1.1.4c.jar;C:\Users\zhipeng.wang\.m2\repository\com\github\axet\threads\0.0.14\threads-0.0.14.jar;C:\Users\zhipeng.wang\.m2\repository\org\jsoup\jsoup\1.10.1\jsoup-1.10.1.jar;D:\App\IntelliJ\lib\idea_rt.jar com.intellij.rt.execution.application.AppMain hx.nlp.CoreNLPDemo
+11:07:12.178 [main] INFO  e.s.nlp.pipeline.StanfordCoreNLP - Searching for resource: chinese-parser.properties ... found.
+11:07:12.206 [main] INFO  e.s.nlp.pipeline.StanfordCoreNLP - Adding annotator tokenize
+11:07:19.550 [main] INFO  e.s.nlp.wordseg.ChineseDictionary - Loading Chinese dictionaries from 1 file:
+11:07:19.550 [main] INFO  e.s.nlp.wordseg.ChineseDictionary -   edu/stanford/nlp/models/segmenter/chinese/dict-chris6.ser.gz
+11:07:19.737 [main] INFO  e.s.nlp.wordseg.ChineseDictionary - Done. Unique words in ChineseDictionary is: 423200.
+11:07:19.738 [main] INFO  e.s.n.ie.AbstractSequenceClassifier - Loading classifier from edu/stanford/nlp/models/segmenter/chinese/ctb.gz ... done [7.5 sec].
+11:07:19.741 [main] INFO  e.s.nlp.pipeline.StanfordCoreNLP - Adding annotator ssplit
+11:07:19.743 [main] INFO  e.s.nlp.pipeline.StanfordCoreNLP - Adding annotator pos
+11:07:22.988 [main] INFO  e.s.nlp.tagger.maxent.MaxentTagger - Loading POS tagger from edu/stanford/nlp/models/pos-tagger/chinese-distsim/chinese-distsim.tagger ... done [3.2 sec].
+11:07:22.989 [main] INFO  e.s.nlp.pipeline.StanfordCoreNLP - Adding annotator lemma
+11:07:22.989 [main] INFO  e.s.nlp.pipeline.StanfordCoreNLP - Adding annotator ner
+11:07:25.017 [main] INFO  e.s.n.ie.AbstractSequenceClassifier - Loading classifier from edu/stanford/nlp/models/ner/chinese.misc.distsim.crf.ser.gz ... done [2.0 sec].
+11:07:25.020 [main] INFO  e.s.nlp.pipeline.StanfordCoreNLP - Adding annotator parse
+11:07:43.387 [main] INFO  e.s.nlp.parser.common.ParserGrammar - Loading parser from serialized file edu/stanford/nlp/models/srparser/chineseSR.ser.gz ... done [18.4 sec].
+11:07:43.391 [main] INFO  e.s.nlp.pipeline.StanfordCoreNLP - Adding annotator entitymentions
+11:07:43.453 [main] INFO  edu.stanford.nlp.wordseg.CorpusChar - Loading character dictionary file from edu/stanford/nlp/models/segmenter/chinese/dict/character_list [done].
+11:07:43.462 [main] INFO  e.s.nlp.wordseg.AffixDictionary - Loading affix dictionary from edu/stanford/nlp/models/segmenter/chinese/dict/in.ctb [done].
+root(ROOT-0, 股价-5)
+compound:nn(银行-2, 工商-1)
+dep(股价-5, 银行-2)
+nmod(股价-5, 昨天-3)
+case(昨天-3, 的-4)
+
+<dependencies style="typed">
+  <dep type="compound:nn">
+    <governor idx="2">银行</governor>
+    <dependent idx="1">工商</dependent>
+  </dep>
+  <dep type="dep">
+    <governor idx="5">股价</governor>
+    <dependent idx="2">银行</dependent>
+  </dep>
+  <dep type="nmod">
+    <governor idx="5">股价</governor>
+    <dependent idx="3">昨天</dependent>
+  </dep>
+  <dep type="case">
+    <governor idx="3">昨天</governor>
+    <dependent idx="4">的</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+股价/NN-5             root                root                
+工商/NN-1             compound:nn         银行/NN-2             
+银行/NN-2             dep                 股价/NN-5             
+昨天/NT-3             nmod                股价/NN-5             
+的/DEG-4             case                昨天/NT-3             
+
+-> 股价/NN (root)
+  -> 银行/NN (dep)
+    -> 工商/NN (compound:nn)
+  -> 昨天/NT (nmod)
+    -> 的/DEG (case)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 股价
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 股价
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 7
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 9
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 5
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation NN
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 股价
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 股价-5
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation NN-5
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 4
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 5
+工商银行
+1	工商	 NN	 
+2	银行	 NN	 
+昨天
+3	昨天	 NT	 XXXX-XX-XX
+dep(5-股价-null-null-null-O-null, 2-银行-null-null-null-ORGANIZATION-null)
+nmod(5-股价-null-null-null-O-null, 3-昨天-null-null-null-DATE-XXXX-XX-XX)
+(ROOT (NP (NP (NN 工商) (NN 银行)) (DNP (NP (NT 昨天)) (DEG 的)) (NP (NN 股价))))
+(ROOT
+  (NP
+    (NP (NN 工商) (NN 银行))
+    (DNP
+      (NP (NT 昨天))
+      (DEG 的))
+    (NP (NN 股价))))
+O-5-7
+resolving noun phrase tree, children count: 3
+O-5-7
+(NP
+  (NP (NN 工商) (NN 银行))
+  (DNP
+    (NP (NT 昨天))
+    (DEG 的))
+  (NP (NN 股价)))
+false
+root(ROOT-0, 股价-7)
+compound:nn(银行-3, 中国-1)
+compound:nn(银行-3, 工商-2)
+nmod(股价-7, 银行-3)
+dep(股价-7, 上-4)
+mark:clf(上-4, 周-5)
+case(上-4, 的-6)
+
+<dependencies style="typed">
+  <dep type="compound:nn">
+    <governor idx="3">银行</governor>
+    <dependent idx="1">中国</dependent>
+  </dep>
+  <dep type="compound:nn">
+    <governor idx="3">银行</governor>
+    <dependent idx="2">工商</dependent>
+  </dep>
+  <dep type="nmod">
+    <governor idx="7">股价</governor>
+    <dependent idx="3">银行</dependent>
+  </dep>
+  <dep type="dep">
+    <governor idx="7">股价</governor>
+    <dependent idx="4">上</dependent>
+  </dep>
+  <dep type="mark:clf">
+    <governor idx="4">上</governor>
+    <dependent idx="5">周</dependent>
+  </dep>
+  <dep type="case">
+    <governor idx="4">上</governor>
+    <dependent idx="6">的</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+股价/NN-7             root                root                
+中国/NR-1             compound:nn         银行/NN-3             
+工商/NN-2             compound:nn         银行/NN-3             
+银行/NN-3             nmod                股价/NN-7             
+上/DT-4              dep                 股价/NN-7             
+周/M-5               mark:clf            上/DT-4              
+的/DEG-6             case                上/DT-4              
+
+-> 股价/NN (root)
+  -> 银行/NN (nmod)
+    -> 中国/NR (compound:nn)
+    -> 工商/NN (compound:nn)
+  -> 上/DT (dep)
+    -> 周/M (mark:clf)
+    -> 的/DEG (case)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 股价
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 股价
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 9
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 11
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 7
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation NN
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 股价
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 股价-7
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation NN-7
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 6
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 7
+中国工商银行
+1	中国	 NR	 
+2	工商	 NN	 
+3	银行	 NN	 
+上周
+4	上	 DT	 
+5	周	 M	 
+nmod(7-股价-null-null-null-O-null, 3-银行-null-null-null-ORGANIZATION-null)
+dep(7-股价-null-null-null-O-null, 4-上-null-null-null-MISC-null)
+(ROOT (NP (NP (NR 中国) (NN 工商) (NN 银行)) (DNP (DP (DT 上) (CLP (M 周))) (DEG 的)) (NP (NN 股价))))
+(ROOT
+  (NP
+    (NP (NR 中国) (NN 工商) (NN 银行))
+    (DNP
+      (DP (DT 上)
+        (CLP (M 周)))
+      (DEG 的))
+    (NP (NN 股价))))
+O-7-9
+resolving noun phrase tree, children count: 3
+O-7-9
+(NP
+  (NP (NR 中国) (NN 工商) (NN 银行))
+  (DNP
+    (DP (DT 上)
+      (CLP (M 周)))
+    (DEG 的))
+  (NP (NN 股价)))
+false
+root(ROOT-0, 股价-7)
+compound:nn(银行-2, 工商-1)
+dep(股价-7, 银行-2)
+nmod(股价-7, 3-3)
+mark:clf(3-3, 天-4)
+case(3-3, 前-5)
+case(3-3, 的-6)
+
+<dependencies style="typed">
+  <dep type="compound:nn">
+    <governor idx="2">银行</governor>
+    <dependent idx="1">工商</dependent>
+  </dep>
+  <dep type="dep">
+    <governor idx="7">股价</governor>
+    <dependent idx="2">银行</dependent>
+  </dep>
+  <dep type="nmod">
+    <governor idx="7">股价</governor>
+    <dependent idx="3">3</dependent>
+  </dep>
+  <dep type="mark:clf">
+    <governor idx="3">3</governor>
+    <dependent idx="4">天</dependent>
+  </dep>
+  <dep type="case">
+    <governor idx="3">3</governor>
+    <dependent idx="5">前</dependent>
+  </dep>
+  <dep type="case">
+    <governor idx="3">3</governor>
+    <dependent idx="6">的</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+股价/NN-7             root                root                
+工商/NN-1             compound:nn         银行/NN-2             
+银行/NN-2             dep                 股价/NN-7             
+3/CD-3              nmod                股价/NN-7             
+天/M-4               mark:clf            3/CD-3              
+前/LC-5              case                3/CD-3              
+的/DEG-6             case                3/CD-3              
+
+-> 股价/NN (root)
+  -> 银行/NN (dep)
+    -> 工商/NN (compound:nn)
+  -> 3/CD (nmod)
+    -> 天/M (mark:clf)
+    -> 前/LC (case)
+    -> 的/DEG (case)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 股价
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 股价
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 8
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 10
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 7
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation NN
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 股价
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 股价-7
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation NN-7
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 6
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 7
+工商银行
+1	工商	 NN	 
+2	银行	 NN	 
+3
+3	3	 CD	 3
+天前
+4	天	 M	 
+5	前	 LC	 
+dep(7-股价-null-null-null-O-null, 2-银行-null-null-null-ORGANIZATION-null)
+nmod(7-股价-null-null-null-O-null, 3-3-null-null-null-NUMBER-3)
+(ROOT (NP (NP (NN 工商) (NN 银行)) (DNP (LCP (QP (CD 3) (CLP (M 天))) (LC 前)) (DEG 的)) (NP (NN 股价))))
+(ROOT
+  (NP
+    (NP (NN 工商) (NN 银行))
+    (DNP
+      (LCP
+        (QP (CD 3)
+          (CLP (M 天)))
+        (LC 前))
+      (DEG 的))
+    (NP (NN 股价))))
+O-7-8
+resolving noun phrase tree, children count: 3
+O-7-8
+(NP
+  (NP (NN 工商) (NN 银行))
+  (DNP
+    (LCP
+      (QP (CD 3)
+        (CLP (M 天)))
+      (LC 前))
+    (DEG 的))
+  (NP (NN 股价)))
+false
+root(ROOT-0, 走势-10)
+compound:nn(银行-2, 工商-1)
+compound:nn(10日-7, 银行-2)
+compound:nn(10日-7, 3月-3)
+conj(10日-7, 5日-4)
+cc(10日-7, 到-5)
+compound:nn(10日-7, 3月-6)
+nmod:assmod(走势-10, 10日-7)
+case(10日-7, 的-8)
+compound:nn(走势-10, 股价-9)
+
+<dependencies style="typed">
+  <dep type="compound:nn">
+    <governor idx="2">银行</governor>
+    <dependent idx="1">工商</dependent>
+  </dep>
+  <dep type="compound:nn">
+    <governor idx="7">10日</governor>
+    <dependent idx="2">银行</dependent>
+  </dep>
+  <dep type="compound:nn">
+    <governor idx="7">10日</governor>
+    <dependent idx="3">3月</dependent>
+  </dep>
+  <dep type="conj">
+    <governor idx="7">10日</governor>
+    <dependent idx="4">5日</dependent>
+  </dep>
+  <dep type="cc">
+    <governor idx="7">10日</governor>
+    <dependent idx="5">到</dependent>
+  </dep>
+  <dep type="compound:nn">
+    <governor idx="7">10日</governor>
+    <dependent idx="6">3月</dependent>
+  </dep>
+  <dep type="nmod:assmod">
+    <governor idx="10">走势</governor>
+    <dependent idx="7">10日</dependent>
+  </dep>
+  <dep type="case">
+    <governor idx="7">10日</governor>
+    <dependent idx="8">的</dependent>
+  </dep>
+  <dep type="compound:nn">
+    <governor idx="10">走势</governor>
+    <dependent idx="9">股价</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+走势/NN-10            root                root                
+工商/NN-1             compound:nn         银行/NN-2             
+银行/NN-2             compound:nn         10日/NT-7            
+3月/NT-3             compound:nn         10日/NT-7            
+5日/NT-4             conj                10日/NT-7            
+到/CC-5              cc                  10日/NT-7            
+3月/NT-6             compound:nn         10日/NT-7            
+10日/NT-7            nmod:assmod         走势/NN-10            
+的/DEG-8             case                10日/NT-7            
+股价/NN-9             compound:nn         走势/NN-10            
+
+-> 走势/NN (root)
+  -> 10日/NT (nmod:assmod)
+    -> 银行/NN (compound:nn)
+      -> 工商/NN (compound:nn)
+    -> 3月/NT (compound:nn)
+    -> 5日/NT (conj)
+    -> 到/CC (cc)
+    -> 3月/NT (compound:nn)
+    -> 的/DEG (case)
+  -> 股价/NN (compound:nn)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 走势
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 走势
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 17
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 19
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 10
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation NN
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 走势
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 走势-10
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation NN-10
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 9
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 10
+工商银行
+1	工商	 NN	 
+2	银行	 NN	 
+3月5日
+3	3月	 NT	 XXXX-03-05
+4	5日	 NT	 XXXX-03-05
+到
+5	到	 CC	 
+3月10日
+6	3月	 NT	 XXXX-03-10
+7	10日	 NT	 XXXX-03-10
+nmod:assmod(10-走势-null-null-null-O-null, 7-10日-null-null-null-DATE-XXXX-03-10)
+compound:nn(10-走势-null-null-null-O-null, 9-股价-null-null-null-O-null)
+(ROOT (NP (DNP (NP (NP (NN 工商) (NN 银行)) (NP (NT 3月) (NT 5日) (CC 到) (NT 3月) (NT 10日))) (DEG 的)) (NP (NN 股价) (NN 走势))))
+(ROOT
+  (NP
+    (DNP
+      (NP
+        (NP (NN 工商) (NN 银行))
+        (NP (NT 3月) (NT 5日)
+          (CC 到)
+          (NT 3月) (NT 10日)))
+      (DEG 的))
+    (NP (NN 股价) (NN 走势))))
+O-10-17
+resolving noun phrase tree, children count: 2
+O-10-17
+(NP
+  (DNP
+    (NP
+      (NP (NN 工商) (NN 银行))
+      (NP (NT 3月) (NT 5日)
+        (CC 到)
+        (NT 3月) (NT 10日)))
+    (DEG 的))
+  (NP (NN 股价) (NN 走势)))
+false
+root(ROOT-0, 流入-5)
+compound:nn(银行-2, 工商-1)
+nmod:assmod(资金-4, 银行-2)
+case(银行-2, 的-3)
+nsubj(流入-5, 资金-4)
+
+<dependencies style="typed">
+  <dep type="compound:nn">
+    <governor idx="2">银行</governor>
+    <dependent idx="1">工商</dependent>
+  </dep>
+  <dep type="nmod:assmod">
+    <governor idx="4">资金</governor>
+    <dependent idx="2">银行</dependent>
+  </dep>
+  <dep type="case">
+    <governor idx="2">银行</governor>
+    <dependent idx="3">的</dependent>
+  </dep>
+  <dep type="nsubj">
+    <governor idx="5">流入</governor>
+    <dependent idx="4">资金</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+流入/VV-5             root                root                
+工商/NN-1             compound:nn         银行/NN-2             
+银行/NN-2             nmod:assmod         资金/NN-4             
+的/DEG-3             case                银行/NN-2             
+资金/NN-4             nsubj               流入/VV-5             
+
+-> 流入/VV (root)
+  -> 资金/NN (nsubj)
+    -> 银行/NN (nmod:assmod)
+      -> 工商/NN (compound:nn)
+      -> 的/DEG (case)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 流入
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 流入
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 7
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 9
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 5
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation VV
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 流入
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 流入-5
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation VV-5
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 4
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 5
+工商银行
+1	工商	 NN	 
+2	银行	 NN	 
+nsubj(5-流入-null-null-null-O-null, 4-资金-null-null-null-O-null)
+资金/NN
+(ROOT (IP (NP (DNP (NP (NN 工商) (NN 银行)) (DEG 的)) (NP (NN 资金))) (VP (VV 流入))))
+(ROOT
+  (IP
+    (NP
+      (DNP
+        (NP (NN 工商) (NN 银行))
+        (DEG 的))
+      (NP (NN 资金)))
+    (VP (VV 流入))))
+O-5-7
+resolving sentence tree, children count: 2
+NP
+VP
+root(ROOT-0, 是-8)
+compound:nn(银行-2, 工商-1)
+nmod:assmod(市盈率-6, 银行-2)
+case(银行-2, 的-3)
+conj(市盈率-6, 股价-4)
+cc(市盈率-6, 和-5)
+nsubj(是-8, 市盈率-6)
+advmod(是-8, 分别-7)
+dep(是-8, 多少-9)
+
+<dependencies style="typed">
+  <dep type="compound:nn">
+    <governor idx="2">银行</governor>
+    <dependent idx="1">工商</dependent>
+  </dep>
+  <dep type="nmod:assmod">
+    <governor idx="6">市盈率</governor>
+    <dependent idx="2">银行</dependent>
+  </dep>
+  <dep type="case">
+    <governor idx="2">银行</governor>
+    <dependent idx="3">的</dependent>
+  </dep>
+  <dep type="conj">
+    <governor idx="6">市盈率</governor>
+    <dependent idx="4">股价</dependent>
+  </dep>
+  <dep type="cc">
+    <governor idx="6">市盈率</governor>
+    <dependent idx="5">和</dependent>
+  </dep>
+  <dep type="nsubj">
+    <governor idx="8">是</governor>
+    <dependent idx="6">市盈率</dependent>
+  </dep>
+  <dep type="advmod">
+    <governor idx="8">是</governor>
+    <dependent idx="7">分别</dependent>
+  </dep>
+  <dep type="dep">
+    <governor idx="8">是</governor>
+    <dependent idx="9">多少</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+是/VC-8              root                root                
+工商/NN-1             compound:nn         银行/NN-2             
+银行/NN-2             nmod:assmod         市盈率/NN-6            
+的/DEG-3             case                银行/NN-2             
+股价/NN-4             conj                市盈率/NN-6            
+和/CC-5              cc                  市盈率/NN-6            
+市盈率/NN-6            nsubj               是/VC-8              
+分别/AD-7             advmod              是/VC-8              
+多少/CD-9             dep                 是/VC-8              
+
+-> 是/VC (root)
+  -> 市盈率/NN (nsubj)
+    -> 银行/NN (nmod:assmod)
+      -> 工商/NN (compound:nn)
+      -> 的/DEG (case)
+    -> 股价/NN (conj)
+    -> 和/CC (cc)
+  -> 分别/AD (advmod)
+  -> 多少/CD (dep)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 是
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 是
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 13
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 14
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 8
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation VC
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 是
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 是-8
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation VC-8
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 7
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 8
+工商银行
+1	工商	 NN	 
+2	银行	 NN	 
+多少
+9	多少	 CD	 
+nsubj(8-是-null-null-null-O-null, 6-市盈率-null-null-null-O-null)
+advmod(8-是-null-null-null-O-null, 7-分别-null-null-null-O-null)
+dep(8-是-null-null-null-O-null, 9-多少-null-null-null-NUMBER-null)
+市盈率/NN
+(ROOT (IP (NP (DNP (NP (NN 工商) (NN 银行)) (DEG 的)) (NP (NN 股价) (CC 和) (NN 市盈率))) (VP (ADVP (AD 分别)) (VP (VC 是) (QP (CD 多少))))))
+(ROOT
+  (IP
+    (NP
+      (DNP
+        (NP (NN 工商) (NN 银行))
+        (DEG 的))
+      (NP (NN 股价)
+        (CC 和)
+        (NN 市盈率)))
+    (VP
+      (ADVP (AD 分别))
+      (VP (VC 是)
+        (QP (CD 多少))))))
+O-8-13
+resolving sentence tree, children count: 2
+NP
+VP
+root(ROOT-0, 10-4)
+nsubj(流入-2, 资金-1)
+dep(10-4, 流入-2)
+case(流入-2, 前-3)
+mark:clf(10-4, 位-5)
+
+<dependencies style="typed">
+  <dep type="nsubj">
+    <governor idx="2">流入</governor>
+    <dependent idx="1">资金</dependent>
+  </dep>
+  <dep type="dep">
+    <governor idx="4">10</governor>
+    <dependent idx="2">流入</dependent>
+  </dep>
+  <dep type="case">
+    <governor idx="2">流入</governor>
+    <dependent idx="3">前</dependent>
+  </dep>
+  <dep type="mark:clf">
+    <governor idx="4">10</governor>
+    <dependent idx="5">位</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+10/CD-4             root                root                
+资金/NN-1             nsubj               流入/VV-2             
+流入/VV-2             dep                 10/CD-4             
+前/LC-3              case                流入/VV-2             
+位/M-5               mark:clf            10/CD-4             
+
+-> 10/CD (root)
+  -> 流入/VV (dep)
+    -> 资金/NN (nsubj)
+    -> 前/LC (case)
+  -> 位/M (mark:clf)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 10
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 10
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 5
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 7
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 4
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation CD
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 10
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation NUMBER
+edu.stanford.nlp.ling.CoreAnnotations$NormalizedNamedEntityTagAnnotation 10
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 10-4
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation CD-4
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 3
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 4
+10
+4	10	 CD	 10
+dep(4-10-null-null-null-NUMBER-10, 2-流入-null-null-null-O-null)
+mark:clf(4-10-null-null-null-NUMBER-10, 5-位-null-null-null-O-null)
+(ROOT (QP (LCP (IP (NP (NN 资金)) (VP (VV 流入))) (LC 前)) (QP (CD 10) (CLP (M 位)))))
+(ROOT
+  (QP
+    (LCP
+      (IP
+        (NP (NN 资金))
+        (VP (VV 流入)))
+      (LC 前))
+    (QP (CD 10)
+      (CLP (M 位)))))
+O-5-7
+QP null
+root(ROOT-0, 涨-3)
+compound:nn(银行-2, 工商-1)
+nsubj(涨-3, 银行-2)
+dobj(涨-3, 停了-4)
+
+<dependencies style="typed">
+  <dep type="compound:nn">
+    <governor idx="2">银行</governor>
+    <dependent idx="1">工商</dependent>
+  </dep>
+  <dep type="nsubj">
+    <governor idx="3">涨</governor>
+    <dependent idx="2">银行</dependent>
+  </dep>
+  <dep type="dobj">
+    <governor idx="3">涨</governor>
+    <dependent idx="4">停了</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+涨/VV-3              root                root                
+工商/NN-1             compound:nn         银行/NN-2             
+银行/NN-2             nsubj               涨/VV-3              
+停了/NN-4             dobj                涨/VV-3              
+
+-> 涨/VV (root)
+  -> 银行/NN (nsubj)
+    -> 工商/NN (compound:nn)
+  -> 停了/NN (dobj)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 涨
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 涨
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 4
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 5
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 3
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation VV
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 涨
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 涨-3
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation VV-3
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 2
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 3
+工商银行
+1	工商	 NN	 
+2	银行	 NN	 
+nsubj(3-涨-null-null-null-O-null, 2-银行-null-null-null-ORGANIZATION-null)
+dobj(3-涨-null-null-null-O-null, 4-停了-null-null-null-O-null)
+银行/NN
+(ROOT (IP (NP (NN 工商) (NN 银行)) (VP (VV 涨) (NP (NN 停了)))))
+(ROOT
+  (IP
+    (NP (NN 工商) (NN 银行))
+    (VP (VV 涨)
+      (NP (NN 停了)))))
+O-3-4
+resolving sentence tree, children count: 2
+NP
+VP
+root(ROOT-0, 公司-5)
+nmod:tmod(涨-2, 今天-1)
+acl(公司-5, 涨-2)
+compound:vc(涨-2, 停-3)
+mark(涨-2, 的-4)
+
+<dependencies style="typed">
+  <dep type="nmod:tmod">
+    <governor idx="2">涨</governor>
+    <dependent idx="1">今天</dependent>
+  </dep>
+  <dep type="acl">
+    <governor idx="5">公司</governor>
+    <dependent idx="2">涨</dependent>
+  </dep>
+  <dep type="compound:vc">
+    <governor idx="2">涨</governor>
+    <dependent idx="3">停</dependent>
+  </dep>
+  <dep type="mark">
+    <governor idx="2">涨</governor>
+    <dependent idx="4">的</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+公司/NN-5             root                root                
+今天/NT-1             nmod:tmod           涨/VV-2              
+涨/VV-2              acl                 公司/NN-5             
+停/VV-3              compound:vc         涨/VV-2              
+的/DEC-4             mark                涨/VV-2              
+
+-> 公司/NN (root)
+  -> 涨/VV (acl)
+    -> 今天/NT (nmod:tmod)
+    -> 停/VV (compound:vc)
+    -> 的/DEC (mark)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 公司
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 公司
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 5
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 7
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 5
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation NN
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 公司
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 公司-5
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation NN-5
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 4
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 5
+今天
+1	今天	 NT	 XXXX-XX-XX
+acl(5-公司-null-null-null-O-null, 2-涨-null-null-null-O-null)
+(ROOT (NP (CP (IP (VP (NP (NT 今天)) (VP (VCD (VV 涨) (VV 停))))) (DEC 的)) (NP (NN 公司))))
+(ROOT
+  (NP
+    (CP
+      (IP
+        (VP
+          (NP (NT 今天))
+          (VP
+            (VCD (VV 涨) (VV 停)))))
+      (DEC 的))
+    (NP (NN 公司))))
+O-5-5
+resolving noun phrase tree, children count: 2
+O-5-5
+(NP
+  (CP
+    (IP
+      (VP
+        (NP (NT 今天))
+        (VP
+          (VCD (VV 涨) (VV 停)))))
+    (DEC 的))
+  (NP (NN 公司)))
+false
+root(ROOT-0, 公司-7)
+advmod(3-2, 连续-1)
+dep(涨-4, 3-2)
+mark:clf(3-2, 天-3)
+acl(公司-7, 涨-4)
+ccomp(涨-4, 停-5)
+mark(涨-4, 的-6)
+
+<dependencies style="typed">
+  <dep type="advmod">
+    <governor idx="2">3</governor>
+    <dependent idx="1">连续</dependent>
+  </dep>
+  <dep type="dep">
+    <governor idx="4">涨</governor>
+    <dependent idx="2">3</dependent>
+  </dep>
+  <dep type="mark:clf">
+    <governor idx="2">3</governor>
+    <dependent idx="3">天</dependent>
+  </dep>
+  <dep type="acl">
+    <governor idx="7">公司</governor>
+    <dependent idx="4">涨</dependent>
+  </dep>
+  <dep type="ccomp">
+    <governor idx="4">涨</governor>
+    <dependent idx="5">停</dependent>
+  </dep>
+  <dep type="mark">
+    <governor idx="4">涨</governor>
+    <dependent idx="6">的</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+公司/NN-7             root                root                
+连续/AD-1             advmod              3/CD-2              
+3/CD-2              dep                 涨/VV-4              
+天/M-3               mark:clf            3/CD-2              
+涨/VV-4              acl                 公司/NN-7             
+停/VV-5              ccomp               涨/VV-4              
+的/DEC-6             mark                涨/VV-4              
+
+-> 公司/NN (root)
+  -> 涨/VV (acl)
+    -> 3/CD (dep)
+      -> 连续/AD (advmod)
+      -> 天/M (mark:clf)
+    -> 停/VV (ccomp)
+    -> 的/DEC (mark)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 公司
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 公司
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 7
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 9
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 7
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation NN
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 公司
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 公司-7
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation NN-7
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 6
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 7
+3
+2	3	 CD	 3
+天
+3	天	 M	 
+acl(7-公司-null-null-null-O-null, 4-涨-null-null-null-O-null)
+(ROOT (NP (CP (IP (VP (QP (ADVP (AD 连续)) (QP (CD 3) (CLP (M 天)))) (VP (VV 涨) (IP (VP (VV 停)))))) (DEC 的)) (NP (NN 公司))))
+(ROOT
+  (NP
+    (CP
+      (IP
+        (VP
+          (QP
+            (ADVP (AD 连续))
+            (QP (CD 3)
+              (CLP (M 天))))
+          (VP (VV 涨)
+            (IP
+              (VP (VV 停))))))
+      (DEC 的))
+    (NP (NN 公司))))
+O-7-7
+resolving noun phrase tree, children count: 2
+O-7-7
+(NP
+  (CP
+    (IP
+      (VP
+        (QP
+          (ADVP (AD 连续))
+          (QP (CD 3)
+            (CLP (M 天))))
+        (VP (VV 涨)
+          (IP
+            (VP (VV 停))))))
+    (DEC 的))
+  (NP (NN 公司)))
+false
+root(ROOT-0, 公司-5)
+nsubj(超过-2, 涨幅-1)
+acl(公司-5, 超过-2)
+nmod:range(超过-2, 百分之三-3)
+mark(超过-2, 的-4)
+
+<dependencies style="typed">
+  <dep type="nsubj">
+    <governor idx="2">超过</governor>
+    <dependent idx="1">涨幅</dependent>
+  </dep>
+  <dep type="acl">
+    <governor idx="5">公司</governor>
+    <dependent idx="2">超过</dependent>
+  </dep>
+  <dep type="nmod:range">
+    <governor idx="2">超过</governor>
+    <dependent idx="3">百分之三</dependent>
+  </dep>
+  <dep type="mark">
+    <governor idx="2">超过</governor>
+    <dependent idx="4">的</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+公司/NN-5             root                root                
+涨幅/NN-1             nsubj               超过/VV-2             
+超过/VV-2             acl                 公司/NN-5             
+百分之三/CD-3           nmod:range          超过/VV-2             
+的/DEC-4             mark                超过/VV-2             
+
+-> 公司/NN (root)
+  -> 超过/VV (acl)
+    -> 涨幅/NN (nsubj)
+    -> 百分之三/CD (nmod:range)
+    -> 的/DEC (mark)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 公司
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 公司
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 9
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 11
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 5
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation NN
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 公司
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 公司-5
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation NN-5
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 4
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 5
+百分之三
+3	百分之三	 CD	 3%
+acl(5-公司-null-null-null-O-null, 2-超过-null-null-null-O-null)
+(ROOT (NP (CP (IP (NP (NN 涨幅)) (VP (VV 超过) (QP (CD 百分之三)))) (DEC 的)) (NP (NN 公司))))
+(ROOT
+  (NP
+    (CP
+      (IP
+        (NP (NN 涨幅))
+        (VP (VV 超过)
+          (QP (CD 百分之三))))
+      (DEC 的))
+    (NP (NN 公司))))
+O-5-9
+resolving noun phrase tree, children count: 2
+O-5-9
+(NP
+  (CP
+    (IP
+      (NP (NN 涨幅))
+      (VP (VV 超过)
+        (QP (CD 百分之三))))
+    (DEC 的))
+  (NP (NN 公司)))
+false
+root(ROOT-0, 三亿-3)
+dep(市值-2, 603991-1)
+nsubj(三亿-3, 市值-2)
+mark:clf(三亿-3, 美元-4)
+
+<dependencies style="typed">
+  <dep type="dep">
+    <governor idx="2">市值</governor>
+    <dependent idx="1">603991</dependent>
+  </dep>
+  <dep type="nsubj">
+    <governor idx="3">三亿</governor>
+    <dependent idx="2">市值</dependent>
+  </dep>
+  <dep type="mark:clf">
+    <governor idx="3">三亿</governor>
+    <dependent idx="4">美元</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+三亿/CD-3             root                root                
+603991/CD-1         dep                 市值/NN-2             
+市值/NN-2             nsubj               三亿/CD-3             
+美元/M-4              mark:clf            三亿/CD-3             
+
+-> 三亿/CD (root)
+  -> 市值/NN (nsubj)
+    -> 603991/CD (dep)
+  -> 美元/M (mark:clf)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 三亿
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 三亿
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 8
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 10
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 3
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation CD
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 三亿
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation MONEY
+edu.stanford.nlp.ling.CoreAnnotations$NormalizedNamedEntityTagAnnotation $300000000
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 三亿-3
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation CD-3
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 2
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 3
+603991
+1	603991	 CD	 603991
+三亿美元
+3	三亿	 CD	 $300000000
+4	美元	 M	 $300000000
+nsubj(3-三亿-null-null-null-MONEY-$300000000, 2-市值-null-null-null-O-null)
+mark:clf(3-三亿-null-null-null-MONEY-$300000000, 4-美元-null-null-null-MONEY-$300000000)
+市值/NN
+(ROOT (IP (NP (QP (CD 603991)) (NP (NN 市值))) (VP (QP (CD 三亿) (CLP (M 美元))))))
+(ROOT
+  (IP
+    (NP
+      (QP (CD 603991))
+      (NP (NN 市值)))
+    (VP
+      (QP (CD 三亿)
+        (CLP (M 美元))))))
+MONEY-4-10
+resolving sentence tree, children count: 2
+NP
+VP
+root(ROOT-0, 钱-4)
+dep(市值-2, 603991-1)
+compound:nn(钱-4, 市值-2)
+dep(钱-4, 多少-3)
+
+<dependencies style="typed">
+  <dep type="dep">
+    <governor idx="2">市值</governor>
+    <dependent idx="1">603991</dependent>
+  </dep>
+  <dep type="compound:nn">
+    <governor idx="4">钱</governor>
+    <dependent idx="2">市值</dependent>
+  </dep>
+  <dep type="dep">
+    <governor idx="4">钱</governor>
+    <dependent idx="3">多少</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+钱/NN-4              root                root                
+603991/CD-1         dep                 市值/NN-2             
+市值/NN-2             compound:nn         钱/NN-4              
+多少/CD-3             dep                 钱/NN-4              
+
+-> 钱/NN (root)
+  -> 市值/NN (compound:nn)
+    -> 603991/CD (dep)
+  -> 多少/CD (dep)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 钱
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 钱
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 10
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 11
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 4
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation NN
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 钱
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 钱-4
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation NN-4
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 3
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 4
+603991
+1	603991	 CD	 603991
+多少
+3	多少	 CD	 
+compound:nn(4-钱-null-null-null-O-null, 2-市值-null-null-null-O-null)
+dep(4-钱-null-null-null-O-null, 3-多少-null-null-null-NUMBER-null)
+(ROOT (NP (NP (QP (CD 603991)) (NP (NN 市值))) (QP (CD 多少)) (NP (NN 钱))))
+(ROOT
+  (NP
+    (NP
+      (QP (CD 603991))
+      (NP (NN 市值)))
+    (QP (CD 多少))
+    (NP (NN 钱))))
+O-4-10
+resolving noun phrase tree, children count: 3
+O-4-10
+(NP
+  (NP
+    (QP (CD 603991))
+    (NP (NN 市值)))
+  (QP (CD 多少))
+  (NP (NN 钱)))
+false
+root(ROOT-0, 公司-5)
+dep(公司-5, 603991-1)
+cop(公司-5, 是-2)
+det(公司-5, 哪-3)
+mark:clf(哪-3, 家-4)
+
+<dependencies style="typed">
+  <dep type="dep">
+    <governor idx="5">公司</governor>
+    <dependent idx="1">603991</dependent>
+  </dep>
+  <dep type="cop">
+    <governor idx="5">公司</governor>
+    <dependent idx="2">是</dependent>
+  </dep>
+  <dep type="det">
+    <governor idx="5">公司</governor>
+    <dependent idx="3">哪</dependent>
+  </dep>
+  <dep type="mark:clf">
+    <governor idx="3">哪</governor>
+    <dependent idx="4">家</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+公司/NN-5             root                root                
+603991/CD-1         dep                 公司/NN-5             
+是/VC-2              cop                 公司/NN-5             
+哪/DT-3              det                 公司/NN-5             
+家/M-4               mark:clf            哪/DT-3              
+
+-> 公司/NN (root)
+  -> 603991/CD (dep)
+  -> 是/VC (cop)
+  -> 哪/DT (det)
+    -> 家/M (mark:clf)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 公司
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 公司
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 9
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 11
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 5
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation NN
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 公司
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 公司-5
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation NN-5
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 4
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 5
+603991
+1	603991	 CD	 603991
+dep(5-公司-null-null-null-O-null, 1-603991-null-null-null-NUMBER-603991)
+cop(5-公司-null-null-null-O-null, 2-是-null-null-null-O-null)
+det(5-公司-null-null-null-O-null, 3-哪-null-null-null-O-null)
+(ROOT (IP (QP (CD 603991)) (VP (VC 是) (NP (DP (DT 哪) (CLP (M 家))) (NP (NN 公司))))))
+(ROOT
+  (IP
+    (QP (CD 603991))
+    (VP (VC 是)
+      (NP
+        (DP (DT 哪)
+          (CLP (M 家)))
+        (NP (NN 公司))))))
+O-2-6
+resolving sentence tree, children count: 2
+QP
+VP
+root(ROOT-0, 好不好-3)
+compound:nn(银行-2, 工商-1)
+nsubj(好不好-3, 银行-2)
+
+<dependencies style="typed">
+  <dep type="compound:nn">
+    <governor idx="2">银行</governor>
+    <dependent idx="1">工商</dependent>
+  </dep>
+  <dep type="nsubj">
+    <governor idx="3">好不好</governor>
+    <dependent idx="2">银行</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+好不好/VV-3            root                root                
+工商/NN-1             compound:nn         银行/NN-2             
+银行/NN-2             nsubj               好不好/VV-3            
+
+-> 好不好/VV (root)
+  -> 银行/NN (nsubj)
+    -> 工商/NN (compound:nn)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 好不好
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 好不好
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 4
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 7
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 3
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation VV
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 好不好
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 好不好-3
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation VV-3
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 2
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 3
+工商银行
+1	工商	 NN	 
+2	银行	 NN	 
+nsubj(3-好不好-null-null-null-O-null, 2-银行-null-null-null-ORGANIZATION-null)
+银行/NN
+(ROOT (IP (NP (NN 工商) (NN 银行)) (VP (VV 好不好))))
+(ROOT
+  (IP
+    (NP (NN 工商) (NN 银行))
+    (VP (VV 好不好))))
+O-3-4
+resolving sentence tree, children count: 2
+NP
+VP
+root(ROOT-0, 怎么样-6)
+compound:nn(银行-2, 工商-1)
+dep(怎么样-6, 银行-2)
+dep(怎么样-6, 呢-3)
+punct(怎么样-6, ，-4)
+dep(怎么样-6, 这个-5)
+punct(怎么样-6, ？-7)
+
+<dependencies style="typed">
+  <dep type="compound:nn">
+    <governor idx="2">银行</governor>
+    <dependent idx="1">工商</dependent>
+  </dep>
+  <dep type="dep">
+    <governor idx="6">怎么样</governor>
+    <dependent idx="2">银行</dependent>
+  </dep>
+  <dep type="dep">
+    <governor idx="6">怎么样</governor>
+    <dependent idx="3">呢</dependent>
+  </dep>
+  <dep type="punct">
+    <governor idx="6">怎么样</governor>
+    <dependent idx="4">，</dependent>
+  </dep>
+  <dep type="dep">
+    <governor idx="6">怎么样</governor>
+    <dependent idx="5">这个</dependent>
+  </dep>
+  <dep type="punct">
+    <governor idx="6">怎么样</governor>
+    <dependent idx="7">？</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+怎么样/VV-6            root                root                
+工商/NN-1             compound:nn         银行/NN-2             
+银行/NN-2             dep                 怎么样/VV-6            
+呢/SP-3              dep                 怎么样/VV-6            
+，/PU-4              punct               怎么样/VV-6            
+这个/PN-5             dep                 怎么样/VV-6            
+？/PU-7              punct               怎么样/VV-6            
+
+-> 怎么样/VV (root)
+  -> 银行/NN (dep)
+    -> 工商/NN (compound:nn)
+  -> 呢/SP (dep)
+  -> ，/PU (punct)
+  -> 这个/PN (dep)
+  -> ？/PU (punct)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 怎么样
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 怎么样
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 8
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 11
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 6
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation VV
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 怎么样
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 怎么样-6
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation VV-6
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 5
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 6
+工商银行
+1	工商	 NN	 
+2	银行	 NN	 
+dep(6-怎么样-null-null-null-O-null, 2-银行-null-null-null-ORGANIZATION-null)
+dep(6-怎么样-null-null-null-O-null, 3-呢-null-null-null-O-null)
+punct(6-怎么样-null-null-null-O-null, 4-，-null-null-null-O-null)
+dep(6-怎么样-null-null-null-O-null, 5-这个-null-null-null-O-null)
+punct(6-怎么样-null-null-null-O-null, 7-？-null-null-null-O-null)
+(ROOT (IP (NP (NN 工商) (NN 银行)) (FLR (SP 呢)) (PU ，) (FLR (PN 这个)) (VP (VV 怎么样)) (PU ？)))
+(ROOT
+  (IP
+    (NP (NN 工商) (NN 银行))
+    (FLR (SP 呢))
+    (PU ，)
+    (FLR (PN 这个))
+    (VP (VV 怎么样))
+    (PU ？)))
+O-6-8
+resolving sentence tree, children count: 6
+NP
+FLR
+PU
+FLR
+VP
+PU
+root(ROOT-0, 有-1)
+dobj(有-1, 推荐-2)
+discourse(有-1, 的-3)
+discourse(有-1, 吗-4)
+
+<dependencies style="typed">
+  <dep type="dobj">
+    <governor idx="1">有</governor>
+    <dependent idx="2">推荐</dependent>
+  </dep>
+  <dep type="discourse">
+    <governor idx="1">有</governor>
+    <dependent idx="3">的</dependent>
+  </dep>
+  <dep type="discourse">
+    <governor idx="1">有</governor>
+    <dependent idx="4">吗</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+有/VE-1              root                root                
+推荐/NN-2             dobj                有/VE-1              
+的/SP-3              discourse           有/VE-1              
+吗/SP-4              discourse           有/VE-1              
+
+-> 有/VE (root)
+  -> 推荐/NN (dobj)
+  -> 的/SP (discourse)
+  -> 吗/SP (discourse)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 有
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 有
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 1
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 1
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation VE
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 有
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 有-1
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation VE-1
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 1
+dobj(1-有-null-null-null-O-null, 2-推荐-null-null-null-O-null)
+discourse(1-有-null-null-null-O-null, 3-的-null-null-null-O-null)
+discourse(1-有-null-null-null-O-null, 4-吗-null-null-null-O-null)
+(ROOT (CP (CP (IP (VP (VE 有) (NP (NN 推荐)))) (SP 的)) (SP 吗)))
+(ROOT
+  (CP
+    (CP
+      (IP
+        (VP (VE 有)
+          (NP (NN 推荐))))
+      (SP 的))
+    (SP 吗)))
+O-4-4
+CP null
+root(ROOT-0, 有-1)
+det(推荐-3, 什么-2)
+dobj(有-1, 推荐-3)
+discourse(有-1, 的-4)
+
+<dependencies style="typed">
+  <dep type="det">
+    <governor idx="3">推荐</governor>
+    <dependent idx="2">什么</dependent>
+  </dep>
+  <dep type="dobj">
+    <governor idx="1">有</governor>
+    <dependent idx="3">推荐</dependent>
+  </dep>
+  <dep type="discourse">
+    <governor idx="1">有</governor>
+    <dependent idx="4">的</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+有/VE-1              root                root                
+什么/DT-2             det                 推荐/NN-3             
+推荐/NN-3             dobj                有/VE-1              
+的/SP-4              discourse           有/VE-1              
+
+-> 有/VE (root)
+  -> 推荐/NN (dobj)
+    -> 什么/DT (det)
+  -> 的/SP (discourse)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 有
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 有
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 1
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 1
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation VE
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 有
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 有-1
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation VE-1
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 1
+dobj(1-有-null-null-null-O-null, 3-推荐-null-null-null-O-null)
+discourse(1-有-null-null-null-O-null, 4-的-null-null-null-O-null)
+(ROOT (CP (IP (VP (VE 有) (NP (DP (DT 什么)) (NP (NN 推荐))))) (SP 的)))
+(ROOT
+  (CP
+    (IP
+      (VP (VE 有)
+        (NP
+          (DP (DT 什么))
+          (NP (NN 推荐)))))
+    (SP 的)))
+O-4-5
+CP null
+root(ROOT-0, 有-1)
+dep(有-1, 没-2)
+dep(有-1, 有-3)
+det(推荐-5, 什么-4)
+dobj(有-1, 推荐-5)
+discourse(有-1, 的-6)
+
+<dependencies style="typed">
+  <dep type="dep">
+    <governor idx="1">有</governor>
+    <dependent idx="2">没</dependent>
+  </dep>
+  <dep type="dep">
+    <governor idx="1">有</governor>
+    <dependent idx="3">有</dependent>
+  </dep>
+  <dep type="det">
+    <governor idx="5">推荐</governor>
+    <dependent idx="4">什么</dependent>
+  </dep>
+  <dep type="dobj">
+    <governor idx="1">有</governor>
+    <dependent idx="5">推荐</dependent>
+  </dep>
+  <dep type="discourse">
+    <governor idx="1">有</governor>
+    <dependent idx="6">的</dependent>
+  </dep>
+</dependencies>
+
+dep                 reln                gov                 
+---                 ----                ---                 
+有/VE-1              root                root                
+没/AD-2              dep                 有/VE-1              
+有/VE-3              dep                 有/VE-1              
+什么/DT-4             det                 推荐/NN-5             
+推荐/NN-5             dobj                有/VE-1              
+的/SP-6              discourse           有/VE-1              
+
+-> 有/VE (root)
+  -> 没/AD (dep)
+  -> 有/VE (dep)
+  -> 推荐/NN (dobj)
+    -> 什么/DT (det)
+  -> 的/SP (discourse)
+
+edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation 有
+edu.stanford.nlp.ling.CoreAnnotations$ValueAnnotation 有
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetBeginAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$CharacterOffsetEndAnnotation 1
+edu.stanford.nlp.ling.CoreAnnotations$IndexAnnotation 1
+edu.stanford.nlp.ling.CoreAnnotations$SentenceIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$PartOfSpeechAnnotation VE
+edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation 有
+edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation O
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadWordLabelAnnotation 有-1
+edu.stanford.nlp.trees.TreeCoreAnnotations$HeadTagLabelAnnotation VE-1
+edu.stanford.nlp.ling.CoreAnnotations$BeginIndexAnnotation 0
+edu.stanford.nlp.ling.CoreAnnotations$EndIndexAnnotation 1
+dep(1-有-null-null-null-O-null, 2-没-null-null-null-O-null)
+dep(1-有-null-null-null-O-null, 3-有-null-null-null-O-null)
+dobj(1-有-null-null-null-O-null, 5-推荐-null-null-null-O-null)
+discourse(1-有-null-null-null-O-null, 6-的-null-null-null-O-null)
+(ROOT (CP (IP (VP (VNV (VE 有) (AD 没) (VE 有)) (NP (DP (DT 什么)) (NP (NN 推荐))))) (SP 的)))
+(ROOT
+  (CP
+    (IP
+      (VP
+        (VNV (VE 有) (AD 没) (VE 有))
+        (NP
+          (DP (DT 什么))
+          (NP (NN 推荐)))))
+    (SP 的)))
+O-6-7
+CP null
+
+Process finished with exit code 0
