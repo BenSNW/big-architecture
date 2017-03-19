@@ -14,7 +14,7 @@ public class DiscreteHMM {
 
     /**
      * pi: initial hidden state probabilities
-     * A: transitions of hidden states, B: emissions, B[i][j] = P(observation j | hidden state i)
+     * A: transitions of hidden states, B: emissions, B[i][j] = P(j-th observation | hidden state i)
      *
      * always use row to represent hidden states and column to represent observed response
      */
@@ -34,7 +34,7 @@ public class DiscreteHMM {
      * since K is usually much smaller than N, it grows linearly with N.
      * If using exhaustive search, it takes K to the power of N which grows exponentially with N.
      *
-     * @param observations  observed state sequence using 1-of-K encoding (starting from 0)
+     * @param observations  observed sequence using 1-of-K encoding (starting from 0)
      * @return
      */
     public float probOfObservedSequence(int... observations) {
@@ -49,11 +49,12 @@ public class DiscreteHMM {
         // observation probability given every hidden state
         float[][] forwardProb = new float[b.length][observations.length];
 
-        // solve column by column which represent the contribution of observation at time t from each hidden state
+        // solve column by column in which each cell corresponds to
+        // each hidden state's contribution to the current observation
         for (int i = 0; i < b.length; i++)
             forwardProb[i][0] = pi[i] * b[i][observations[0]];
 
-        for (int j = 1; j < observations.length; j++) { // for each observed response
+        for (int j = 1; j < observations.length; j++) { // for each observed value
             for (int i = 0; i < b.length; i++) {        // for each current hidden state
                 for (int k = 0; k < b.length; k++)      // for each previous hidden state
                     forwardProb[i][j] += forwardProb[k][j - 1] * a[k][i];
