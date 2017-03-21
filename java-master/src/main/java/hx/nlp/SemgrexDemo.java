@@ -15,6 +15,9 @@ import edu.stanford.nlp.trees.tregex.TregexMatcher;
 import edu.stanford.nlp.trees.tregex.TregexPattern;
 import edu.stanford.nlp.trees.tregex.TregexPatternCompiler;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 
 /**
@@ -106,14 +109,14 @@ public class SemgrexDemo {
         }
 
 
-        resolveSemanticSVO();
+        parseSemanticSVO();
 
-        resolveSyntacticIP();
+        parseSyntacticIP();
 
     }
 
-    static void resolveSemanticSVO() {
-        System.out.println("\nresolving semantic SVO structure...");
+    static void parseSemanticSVO() {
+        System.out.println("\nparsing semantic SVO structure...");
         String text = "(ROOT (IP (NP (NN 工商) (NN 银行)) (VP (VV 涨) (NP (NN 停了)))))";
         GrammaticalStructure gs = gsf.newGrammaticalStructure(Tree.valueOf(text));
         SemanticGraph graph = SemanticGraphFactory.generateUncollapsedDependencies(gs);
@@ -130,20 +133,27 @@ public class SemgrexDemo {
             object  = matcher.getNode("object");
         }
 
-
-
+        graph.edgeListSorted();
+//        graph.outg
+        graph.getAllNodesByWordPattern("");
+        graph.vertexSet();
         System.out.println(subject + " " + verb + " " + object);
     }
 
-    static void resolveSyntacticIP() {
-        System.out.println("\nresolving syntactic IP clause...");
+    static void parseSyntacticIP() {
+        System.out.println("\nparsing syntactic IP clause...");
         String ipClause = "(IP (NP (DNP (NP (NN 工商) (NN 银行)) (DEG 的)) (NP (NN 股价) (CC 和) (NN 市盈率))) (VP (ADVP (AD 分别)) (VP (VC 是) (QP (CD 多少)))))";
         Tree tree = Tree.valueOf(ipClause);
         TregexPattern tregex = TregexPattern.compile("IP < NP=subject < VP=verb ?< NP=object");
         TregexMatcher tregexMatcher = tregex.matcher(tree);
 //        tree.pennPrint();
 
-        while (tregexMatcher.find()) {
+        tregex.prettyPrint();
+
+        while (tregexMatcher.findAt(tree)) {
+
+            tregexMatcher.getMatch().pennPrint();
+
             Tree subject = tregexMatcher.getNode("subject");
             Tree verb = tregexMatcher.getNode("verb");
             Tree object = tregexMatcher.getNode("object");
@@ -155,23 +165,114 @@ public class SemgrexDemo {
 //            System.out.println(SentenceUtils.listToString(object.yield()));
 //            System.out.println(SentenceUtils.listToOriginalTextString(subject.yieldWords()));
 
-            Tree subjHead = subject.headTerminal(hf, subject);
-            System.out.println(subjHead);
+            parseSyntacticNP(subject);
 
-            Tree subjTree = subjHead.parent(subject);
+            Tree subjHead = subject.headTerminal(hf, subject);
+            System.out.println(subjHead);   // 市盈率
+
+            Tree subjHeadParent = subjHead.parent(subject); // (NN 市盈率)
             System.out.println(subjHead.parent(subject));
+
+            System.out.println(subjHeadParent);
 
         }
 
     }
 
-    static void showTreeNodeAnnotations(Tree tree) {
-//        tree.labels().forEach(System.out::println);
-//        tree.labeledYield().forEach(System.out::println);
-//        CoreLabel label = (CoreLabel) tree.label();
-//        label.keySet().forEach((Class clazz) -> System.out.println(clazz.getName() + "-" + label.get(clazz)));
-        System.out.println(tree.flatten());
+    static void parseSyntacticNP(Tree npTree) {
+        System.out.println("\nparsing syntactic NP tree...");
+        TregexPattern pattern = TregexPattern.compile("NP ?<, NP=nmod1 < DNP=nmod2 < NP=nHead");
+        TregexMatcher matcher = pattern.matcher(npTree);
+
+        System.out.println(treeSpaningString(npTree));
+        treeSpaningTokens(npTree).forEach(label -> System.out.println(
+                label.index() + "-" + label.value()  + "-" + label.tag()));
+        treeSpaningLabels(npTree).forEach(label -> System.out.println(
+                label.index() + "-" + label.value()  + "-" + label.tag()));
+        System.out.println(treeStartIndex(npTree) + "-" + treeEndIndex(npTree));
+
+        if (matcher.matchesAt(npTree)) {
+            Tree nmod1 = matcher.getNode("nmod1");
+            Tree nmod2 = matcher.getNode("nmod2");
+            Tree nHead = matcher.getNode("nHead");
+            System.out.println(nmod1);
+            System.out.println(nmod2);
+            System.out.println(nHead);
+        }
     }
 
+    static boolean isEntityTree(Tree tree) {
+        return true;
+    }
+
+    static boolean isCompositeNode(Tree tree) {
+        return tree.size() > tree.depth();
+    }
+
+    static boolean isDateTimeTree(Tree tree) {
+        return true;
+    }
+
+    static int treeStartIndex(Tree tree) {
+        while (!tree.isLeaf())
+            tree = tree.firstChild();
+        CoreLabel label = (CoreLabel) tree.label();
+        return label.get(CoreAnnotations.IndexAnnotation.class);
+    }
+
+    static int treeEndIndex(Tree tree) {
+        while (!tree.isLeaf())
+            tree = tree.lastChild();
+        CoreLabel label = (CoreLabel) tree.label();
+        return label.get(CoreAnnotations.IndexAnnotation.class);
+    }
+
+    static int treeIndex(Tree tree) {
+        if (!tree.isLeaf())
+            throw new UnsupportedOperationException("only leaf node has index annotation");
+        CoreLabel label = (CoreLabel) tree.label();
+        return label.get(CoreAnnotations.IndexAnnotation.class);
+    }
+
+    static List<CoreLabel> treeSpaningTokens(Tree tree) {
+        if (tree.isLeaf())
+            return Arrays.asList((CoreLabel) tree.label());
+        if (tree.isPreTerminal())
+            return Arrays.asList((CoreLabel) tree.firstChild().label());
+        List<CoreLabel> leaves = new ArrayList<>();
+        for (Tree child: tree.children())
+            leaves.addAll(treeSpaningTokens(child));
+        return leaves;
+    }
+
+    static List<CoreLabel> treeSpaningLabels(Tree tree) {
+        List<CoreLabel> labels = new ArrayList<>();
+        addTreeLabels(tree, labels);
+        return labels;
+    }
+
+    static private void addTreeLabels(Tree tree, List<CoreLabel> labels) {
+        if (tree.isLeaf()) {
+            labels.add((CoreLabel) tree.label());
+            return;
+        }
+        if (tree.isPreTerminal()) {
+            labels.add((CoreLabel) tree.firstChild().label());
+            return;
+        }
+        for (Tree child: tree.children())
+            addTreeLabels(child, labels);
+    }
+
+    static String treeSpaningString(Tree tree) {
+        if (tree.isLeaf())
+            return tree.nodeString();
+        if (tree.isPreTerminal())
+            return tree.firstChild().nodeString();
+        StringBuilder sb = new StringBuilder();
+        for (Tree child: tree.children())
+            sb.append(treeSpaningString(child));
+        return sb.toString();
+    }
 
 }

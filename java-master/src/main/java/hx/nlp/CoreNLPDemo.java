@@ -1,12 +1,12 @@
 package hx.nlp;
 
-import edu.stanford.nlp.dcoref.Mention;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.io.IOUtils;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.ling.CoreUtilities;
 import edu.stanford.nlp.ling.IndexedWord;
+import edu.stanford.nlp.ling.tokensregex.TokenSequenceMatcher;
+import edu.stanford.nlp.ling.tokensregex.TokenSequencePattern;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
 import edu.stanford.nlp.parser.nndep.DependencyParser;
 import edu.stanford.nlp.pipeline.Annotation;
@@ -36,8 +36,9 @@ public class CoreNLPDemo {
     /** A logger for this class */
     private static Redwood.RedwoodChannels log = Redwood.channels(CoreNLPDemo.class);
 
-    private static final String[] SAMPLES = new String[] {
+    private static final String[] SAMPLES = new String[] {"你喜欢绿色还是红的", "工行昨天的股价",
             "工商银行昨天的股价", "中国工商银行上周的股价", "工商银行3天前的股价", "工商银行3月5日到3月10日的股价走势",
+            "工商银行3月份的股价走势", "工行第二季度的股价", "工商银行早上8点的股价", "工商银行到3月5日为止前一个月的股价",
             "工商银行的资金流入", "工商银行的股价和市盈率分别是多少", "资金流入前10位",
             "工商银行涨停了", "今天涨停的公司", "连续3天涨停的公司", "涨幅超过百分之三的公司",
             "603991市值三亿美元", "603991市值多少钱", "603991是哪家公司",
@@ -59,6 +60,9 @@ public class CoreNLPDemo {
 
         String propsFile = "chinese-parser.properties";
         StanfordCoreNLP annotatorPipeline = new StanfordCoreNLP(propsFile);
+
+        System.out.println(annotatorPipeline.getProperties().toString());
+
         Stream.of(SAMPLES).forEach(text -> {
             Annotation annotation = annotatorPipeline.process(text);
 //            annotation.keySet().forEach(System.out::println);
@@ -73,7 +77,20 @@ public class CoreNLPDemo {
 //            System.out.println(semanticGraph.toString(CoreLabel.OutputFormat.VALUE_MAP));
 //            semanticGraph.prettyPrint();
 
+            List<CoreLabel> tokens = sentence.get(CoreAnnotations.TokensAnnotation.class);
+            TokenSequencePattern pattern = TokenSequencePattern.compile("[{tag: /CD|DT/}] [{tag: \"M\"; word: /周|天/}]");
+            TokenSequenceMatcher matcher = pattern.getMatcher(tokens);
+            System.out.println(matcher.find());
 
+            for (CoreLabel token: sentence.get(CoreAnnotations.TokensAnnotation.class)) {
+                // Print out words, lemma, ne, and normalized ne
+                String word = token.get(CoreAnnotations.TextAnnotation.class);
+                String lemma = token.get(CoreAnnotations.LemmaAnnotation.class);
+                String pos = token.get(CoreAnnotations.PartOfSpeechAnnotation.class);
+                String ne = token.get(CoreAnnotations.NamedEntityTagAnnotation.class);
+                String normalized = token.get(CoreAnnotations.NormalizedNamedEntityTagAnnotation.class);
+                System.out.println("token: " + "word="+word + ", lemma="+lemma + ", pos=" + pos + ", ne=" + ne + ", normalized=" + normalized);
+            }
 
             IndexedWord rootNode = semanticGraph.getFirstRoot();
             CoreLabel rootLabel = rootNode.backingLabel();
@@ -87,12 +104,10 @@ public class CoreNLPDemo {
 //                System.out.println(word + "\t " + pos + "\t " + ner);
 //            });
 
-//            Mention mention = sentence.get(Mention.class);
-//            System.out.println(mention);
-
             List<CoreMap> entities = sentence.get(CoreAnnotations.MentionsAnnotation.class);
             for (CoreMap entity: entities) {
                 System.out.println(entity);
+//                entity.keySet().forEach((Class key) -> System.out.println(key + "-" + entity.get(key)));
                 entity.get(CoreAnnotations.TokensAnnotation.class).forEach(token -> {
                     String word = token.getString(CoreAnnotations.TextAnnotation.class);
                     String pos = token.getString(CoreAnnotations.PartOfSpeechAnnotation.class);

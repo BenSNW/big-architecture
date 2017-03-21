@@ -5,7 +5,6 @@ import com.hankcs.hanlp.corpus.dependency.CoNll.CoNLLWord;
 import com.hankcs.hanlp.dependency.CRFDependencyParser;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -20,7 +19,7 @@ public class HanLPDependencyParser {
             "工商银行上星期五的股价", "工商银行星期五的股价", "工商上个月的股价",
             "工商银行3月5日以前的股价走势", "工商银行到3月5日为止的股价走势",
             "中国工商银行昨天的股价是多少", "工商银行3月5日到3月10日的股价走势",
-            "工商银行昨天涨停了", "工商银行连续3天涨停了", "工商银行的资金流入是多少"};
+            "工商银行昨天涨停了", "工商银行连续3天涨停了", "工商银行的资金流入是多少" };
 
     public static void main(String[] args) {
 
