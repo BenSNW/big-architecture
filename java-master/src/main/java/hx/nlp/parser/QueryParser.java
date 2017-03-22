@@ -72,7 +72,7 @@ public class QueryParser {
         }
     }
 
-    public DateTimeParser isDateTimeTree(Tree tree) {
+    public DateTimeTokenSequenceParser isDateTimeTree(Tree tree) {
 
         return null;
     }

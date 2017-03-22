@@ -36,7 +36,7 @@ public class CoreNLPDemo {
     /** A logger for this class */
     private static Redwood.RedwoodChannels log = Redwood.channels(CoreNLPDemo.class);
 
-    private static final String[] SAMPLES = new String[] {"你喜欢绿色还是红的", "工行昨天的股价",
+    private static final String[] SAMPLES = new String[] {"工行昨天的股价", "工行最近几年的股价",
             "工商银行昨天的股价", "中国工商银行上周的股价", "工商银行3天前的股价", "工商银行3月5日到3月10日的股价走势",
             "工商银行3月份的股价走势", "工行第二季度的股价", "工商银行早上8点的股价", "工商银行到3月5日为止前一个月的股价",
             "工商银行的资金流入", "工商银行的股价和市盈率分别是多少", "资金流入前10位",
@@ -78,9 +78,26 @@ public class CoreNLPDemo {
 //            semanticGraph.prettyPrint();
 
             List<CoreLabel> tokens = sentence.get(CoreAnnotations.TokensAnnotation.class);
-            TokenSequencePattern pattern = TokenSequencePattern.compile("[{tag: /CD|DT/}] [{tag: \"M\"; word: /周|天/}]");
+            String cdmPattern = "(?$amount [{tag: /CD|DT/}]) (?$unit [{tag: M; word:/周|天/}]) (?$postLC [{tag: LC}])?";
+            TokenSequencePattern pattern = TokenSequencePattern.compile(cdmPattern);
             TokenSequenceMatcher matcher = pattern.getMatcher(tokens);
-            System.out.println(matcher.find());
+            while (matcher.find()) {
+                System.out.println(matcher.group());
+                matcher.groupNodes().forEach(System.out::println);
+                Stream.of(1,2,3).map(matcher::group).forEach(System.out::println);
+                Stream.of("$amount", "$unit", "$postLC").map(matcher::group).forEach(System.out::println);
+            }
+
+            Stream.of("[{tag:P}]? (?$start [{tag:NT}]{1,3}) [{tag:AD}]? (?$con [{tag:/P|CC/}]) (?$end [{tag:NT}]{1,3})",
+                    "[{tag:P}]? (?$date [{tag:NT}]{1,3}) [{tag:LC}]?",
+                    "[{tag:/NT|DT/}] [{tag:CD}] /个/? (?$unit [{tag:M; word:/天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) [{tag:LC}]?",
+                    "(?$pre [{tag:/LC|DT|JJ/}])? (?$mod [{tag:/DT|CD|OD/}]) /个/? (?$unit [{tag:M; word:/天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) (?$post [{tag:/LC|DT|JJ/}])?")
+                .map(p -> TokenSequencePattern.compile(p).matcher(tokens))
+                .filter(TokenSequenceMatcher::find)
+                .forEach(m -> {
+                    System.out.println(m.group());
+                    m.groupNodes().forEach(System.out::println);
+                });
 
             for (CoreLabel token: sentence.get(CoreAnnotations.TokensAnnotation.class)) {
                 // Print out words, lemma, ne, and normalized ne
