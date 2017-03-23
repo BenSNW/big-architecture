@@ -5,6 +5,8 @@ import edu.stanford.nlp.io.IOUtils;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.ling.IndexedWord;
+import edu.stanford.nlp.ling.tokensregex.MultiPatternMatcher;
+import edu.stanford.nlp.ling.tokensregex.SequenceMatchResult;
 import edu.stanford.nlp.ling.tokensregex.TokenSequenceMatcher;
 import edu.stanford.nlp.ling.tokensregex.TokenSequencePattern;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
@@ -26,6 +28,7 @@ import edu.stanford.nlp.util.PropertiesUtils;
 import edu.stanford.nlp.util.logging.Redwood;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -98,6 +101,19 @@ public class CoreNLPDemo {
                     System.out.println(m.group());
                     m.groupNodes().forEach(System.out::println);
                 });
+
+            List<TokenSequencePattern> patterns = Stream.of(
+                    "[{tag:P}]? (?$start [{tag:NT}]{1,3}) [{tag:AD}]? (?$con [{tag:/P|CC/}]) (?$end [{tag:NT}]{1,3})",
+                    "[{tag:P}]? (?$date [{tag:NT}]{1,3}) [{tag:LC}]?",
+                    "[{tag:/NT|DT/}] [{tag:CD}] /个/? (?$unit [{tag:M; word:/天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) [{tag:LC}]?",
+                    "(?$pre [{tag:/LC|DT|JJ/}])? (?$mod [{tag:/DT|CD|OD/}]) /个/? (?$unit [{tag:M; word:/天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) (?$post [{tag:/LC|DT|JJ/}])?")
+                .map(TokenSequencePattern::compile).collect(Collectors.toList());
+            MultiPatternMatcher multiPatternMatcher = TokenSequencePattern.getMultiPatternMatcher(patterns);
+            List<SequenceMatchResult<CoreMap>> matches = multiPatternMatcher.findNonOverlapping(tokens);
+            matches.forEach(match -> {
+                System.out.println(match.group());
+                System.out.println(match.elements());
+            });
 
             for (CoreLabel token: sentence.get(CoreAnnotations.TokensAnnotation.class)) {
                 // Print out words, lemma, ne, and normalized ne
@@ -267,7 +283,8 @@ public class CoreNLPDemo {
         IndexedWord root = getRoot(graph);
         return graph.getOutEdgesSorted(root).stream()
             .filter(edge -> "nsubj".equals(edge.getRelation().toString()))
-            .findFirst().get().toString();
+            .findFirst().get().getTarget()
+            .toString(CoreLabel.OutputFormat.VALUE);
     }
 
     static void resolveSyntacticTree(Tree root) {
