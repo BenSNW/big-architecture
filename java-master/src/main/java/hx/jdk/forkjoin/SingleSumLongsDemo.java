@@ -78,11 +78,11 @@ public class SingleSumLongsDemo {
 //            // shut down with force
 //            ti.shutRequest(true);
 //
-//        } // end-for
+//        } // endDate-for
 //
 //        System.exit(0);
 
-    } // end-method
+    } // endDate-method
 
     /**
      * Call the Tymeac Server with a synchronous request.
@@ -107,13 +107,13 @@ public class SingleSumLongsDemo {
 //                    // When any invalid return, bye
 //                    if (!checkBack(back)) System.exit(1);
 //
-//                } // end-for
+//                } // endDate-for
 //
 //                long now = System.nanoTime();
 //                double elapsed = (double) (now - last) / (NPS);
 //                System.out.printf("Nbr threads %2d : %9.5f\n", nbr_threads, elapsed);
 //
-//            } // end-for
+//            } // endDate-for
 //
 //        } catch (Exception e) {
 //
@@ -121,9 +121,9 @@ public class SingleSumLongsDemo {
 //
 //            System.exit(1);
 //
-//        } // end-catch
+//        } // endDate-catch
 
-    } // end-method
+    } // endDate-method
 
     static void check(long[] array) {
         for (int i = 0; i < array.length; ++i) {
@@ -209,7 +209,7 @@ public class SingleSumLongsDemo {
 
         return true;
 
-    } // end-method
+    } // endDate-method
 
     static void seqFill(long[] array) {
         for (int i = 0; i < array.length; ++i)

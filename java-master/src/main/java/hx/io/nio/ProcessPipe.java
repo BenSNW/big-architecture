@@ -23,7 +23,7 @@ public class ProcessPipe {
 	public static void main(String[] argv) throws Exception {
 		// wrap a channel around stdout
 		WritableByteChannel out = Channels.newChannel(System.out);
-		// start worker and get read end of channel
+		// start worker and get read dateTime of channel
 		ReadableByteChannel workerChannel = startWorker(10);
 		ByteBuffer buffer = ByteBuffer.allocate(100);
 

@@ -14,8 +14,8 @@
     <!-- For times when you just need to invoke a method on a specific object -->
     <!-- By default, Quartz Jobs are stateless, resulting in the possibility of jobs interfering with each other.
     If you specify two triggers for the same JobDetail, it might be possible that before the first job has finished,
-    the second one will start. If JobDetail classes implement the Stateful interface, this won’t happen.
-    The second job will not start before the first one has finished. To make jobs resulting from the
+    the second one will date. If JobDetail classes implement the Stateful interface, this won’t happen.
+    The second job will not date before the first one has finished. To make jobs resulting from the
     MethodInvokingJobDetailFactoryBean non-concurrent, set the concurrent flag to false. -->
     <bean id="simpleJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
         <property name="targetObject" ref="methodInvokingJobBean" />

@@ -26,6 +26,7 @@ import edu.stanford.nlp.trees.TreeCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.PropertiesUtils;
 import edu.stanford.nlp.util.logging.Redwood;
+import hx.nlp.parser.temporal.FromToPatternParser;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -39,7 +40,7 @@ public class CoreNLPDemo {
     /** A logger for this class */
     private static Redwood.RedwoodChannels log = Redwood.channels(CoreNLPDemo.class);
 
-    private static final String[] SAMPLES = new String[] {"工行昨天的股价", "工行最近几年的股价",
+    private static final String[] SAMPLES = new String[] { "工行昨天的股价", "工行最近几年的股价",
             "工商银行昨天的股价", "中国工商银行上周的股价", "工商银行3天前的股价", "工商银行3月5日到3月10日的股价走势",
             "工商银行3月份的股价走势", "工行第二季度的股价", "工商银行早上8点的股价", "工商银行到3月5日为止前一个月的股价",
             "工商银行的资金流入", "工商银行的股价和市盈率分别是多少", "资金流入前10位",
@@ -68,6 +69,7 @@ public class CoreNLPDemo {
 
         Stream.of(SAMPLES).forEach(text -> {
             Annotation annotation = annotatorPipeline.process(text);
+            annotation.set(CoreAnnotations.DocDateAnnotation.class, "2017-03-23");
 //            annotation.keySet().forEach(System.out::println);
 
             CoreMap sentence = annotation.get(CoreAnnotations.SentencesAnnotation.class).get(0);
@@ -91,28 +93,32 @@ public class CoreNLPDemo {
                 Stream.of("$amount", "$unit", "$postLC").map(matcher::group).forEach(System.out::println);
             }
 
-            Stream.of("[{tag:P}]? (?$start [{tag:NT}]{1,3}) [{tag:AD}]? (?$con [{tag:/P|CC/}]) (?$end [{tag:NT}]{1,3})",
-                    "[{tag:P}]? (?$date [{tag:NT}]{1,3}) [{tag:LC}]?",
-                    "[{tag:/NT|DT/}] [{tag:CD}] /个/? (?$unit [{tag:M; word:/天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) [{tag:LC}]?",
-                    "(?$pre [{tag:/LC|DT|JJ/}])? (?$mod [{tag:/DT|CD|OD/}]) /个/? (?$unit [{tag:M; word:/天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) (?$post [{tag:/LC|DT|JJ/}])?")
-                .map(p -> TokenSequencePattern.compile(p).matcher(tokens))
-                .filter(TokenSequenceMatcher::find)
-                .forEach(m -> {
-                    System.out.println(m.group());
-                    m.groupNodes().forEach(System.out::println);
-                });
+//            Stream.of("[{tag:P}]? (?$date [{tag:NT}]{1,3}) [{tag:AD}]? (?$con [{tag:/P|CC/}]) (?$endDate [{tag:NT}]{1,3})",
+//                    "[{tag:P}]? (?$date [{tag:NT}]{1,3}) [{tag:LC}]?",
+//                    "[{tag:/NT|DT/}] [{tag:CD}] /个/? (?$unit [{tag:M; word:/天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) [{tag:LC}]?",
+//                    "(?$pre [{tag:/LC|DT|JJ/}])? (?$mod [{tag:/DT|CD|OD/}]) /个/? (?$unit [{tag:M; word:/天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) (?$post [{tag:/LC|DT|JJ/}])?")
+//                .map(p -> TokenSequencePattern.compile(p).matcher(tokens))
+//                .filter(TokenSequenceMatcher::find)
+//                .forEach(m -> {
+//                    System.out.println(m.group());
+//                    m.groupNodes().forEach(System.out::println);
+//                });
+
+            new FromToPatternParser().parse(tokens);
 
             List<TokenSequencePattern> patterns = Stream.of(
-                    "[{tag:P}]? (?$start [{tag:NT}]{1,3}) [{tag:AD}]? (?$con [{tag:/P|CC/}]) (?$end [{tag:NT}]{1,3})",
-                    "[{tag:P}]? (?$date [{tag:NT}]{1,3}) [{tag:LC}]?",
+                    "[{tag:AD}]?　[{tag:P}]? (?$date [{tag:NT}]{1,3}) [{tag:AD}]? (?$con [{tag:/P|CC/}]) (?$endDate [{tag:NT}]{1,3})　[{tag:LC}]? ([{tag:DEG}]? []{0,2} [{tag:NN; word:/时./}] [{tag:LC}]?)?",
+                    "[{tag:P}]? (?$date [{tag:NT}]{1,3}) [{tag:/LC|AD/}]?",
                     "[{tag:/NT|DT/}] [{tag:CD}] /个/? (?$unit [{tag:M; word:/天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) [{tag:LC}]?",
-                    "(?$pre [{tag:/LC|DT|JJ/}])? (?$mod [{tag:/DT|CD|OD/}]) /个/? (?$unit [{tag:M; word:/天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) (?$post [{tag:/LC|DT|JJ/}])?")
+                    "(?$pre [{tag:/LC|DT|JJ/}])? (?$mod [{tag:/DT|CD|OD/}]) /个/? (?$unit [{tag:M; word:/分钟|刻钟|小时|天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) (?$post [{tag:/LC|JJ/])?")
                 .map(TokenSequencePattern::compile).collect(Collectors.toList());
             MultiPatternMatcher multiPatternMatcher = TokenSequencePattern.getMultiPatternMatcher(patterns);
             List<SequenceMatchResult<CoreMap>> matches = multiPatternMatcher.findNonOverlapping(tokens);
-            matches.forEach(match -> {
-                System.out.println(match.group());
-                System.out.println(match.elements());
+            matches.forEach(matchResult -> {
+                System.out.println(sentence + " -> " + matchResult.group());
+                matchResult.groupNodes().forEach(label -> System.out.println(
+                        label.get(CoreAnnotations.NamedEntityTagAnnotation.class) + "-"
+                      + label.get(CoreAnnotations.NormalizedNamedEntityTagAnnotation.class)));
             });
 
             for (CoreLabel token: sentence.get(CoreAnnotations.TokensAnnotation.class)) {
@@ -139,7 +145,9 @@ public class CoreNLPDemo {
 
             List<CoreMap> entities = sentence.get(CoreAnnotations.MentionsAnnotation.class);
             for (CoreMap entity: entities) {
-                System.out.println(entity);
+                System.out.println(entity + ": " + entity.get(CoreAnnotations.NamedEntityTagAnnotation.class)
+                    + "-" + entity.get(CoreAnnotations.NormalizedNamedEntityTagAnnotation.class)
+                    + "-" + entity.get(CoreAnnotations.NumericValueAnnotation.class));
 //                entity.keySet().forEach((Class key) -> System.out.println(key + "-" + entity.get(key)));
                 entity.get(CoreAnnotations.TokensAnnotation.class).forEach(token -> {
                     String word = token.getString(CoreAnnotations.TextAnnotation.class);

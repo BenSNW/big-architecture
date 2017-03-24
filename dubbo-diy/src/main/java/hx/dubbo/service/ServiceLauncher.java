@@ -26,7 +26,7 @@ public class ServiceLauncher {
 			
 			logger.info("Service started");
 		} catch (Throwable th) {
-			logger.error("Service start failed", th);
+			logger.error("Service date failed", th);
 		}
 	}
 	

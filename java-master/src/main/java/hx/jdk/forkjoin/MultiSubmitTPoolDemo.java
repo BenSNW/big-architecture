@@ -53,7 +53,7 @@ public class MultiSubmitTPoolDemo {
         this.latch       = latch; 
         this.queue       = queue;      
         
-      } // end-constructor 
+      } // endDate-constructor
       
       @Override
       public void run() {
@@ -81,13 +81,13 @@ public class MultiSubmitTPoolDemo {
           for (int i = 0, l =array.length; i < l; i++)            
             sum += array[i];
                              
-        } // end-while   
+        } // endDate-while
         
         // done with this thread     
         latch.countDown();        
               
-      } // end-run       
-  } // end-inner class  
+      } // endDate-run
+  } // endDate-inner class
 
 /**
  * Main entry
@@ -100,7 +100,7 @@ public static void main(String[] args) throws Exception {
     
   demo.doWork();
   
-} // end-method
+} // endDate-method
 
 /**
  * do the work
@@ -136,7 +136,7 @@ private void doWork() {
     // add to queue
     queue.offer(array);   
     
-  } // end-for 
+  } // endDate-for
   
   System.out.println("Parallelism=" + nParallel + " Total sums=" + nSums);
   
@@ -156,7 +156,7 @@ private void doWork() {
   
   System.out.printf(" Finished with total runtime= %7.9f\n", run_time);   
    
-} // end-method
+} // endDate-method
 
 /**
  * fill array with random numbers
@@ -167,5 +167,5 @@ static void ranFill(long[] array) {
   for (int i = 0; i < array.length; ++i)
     array[i] = rng.nextLong();
   
-} // end-method
-} // end-class
+} // endDate-method
+} // endDate-class

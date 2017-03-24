@@ -143,7 +143,7 @@ public class MultiRecurSubmit {
             //  double y = Math.tanh(temp);
             //  double z = Math.sinh(temp);
         }
-    } // end-inner-class
+    } // endDate-inner-class
 
     /*
      * Just submit a new request
@@ -165,7 +165,7 @@ public class MultiRecurSubmit {
             this.my_name = my_name;
             this.latch = latch;
 
-        } // end-constructor
+        } // endDate-constructor
 
         @Override
         public void run() {
@@ -184,7 +184,7 @@ public class MultiRecurSubmit {
             latch.countDown();
 
         }
-    } // end-inner class
+    } // endDate-inner class
 
     /**
      * do the actual work
@@ -224,11 +224,11 @@ public class MultiRecurSubmit {
 
         System.out.println("Finished");
 
-    } // end-method
+    } // endDate-method
 
     public static void main(String[] args) throws Exception {
 
         MultiRecurSubmit worker = new MultiRecurSubmit();
         worker.doWork();
     }
-} // end-class
+} // endDate-class

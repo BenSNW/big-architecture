@@ -46,7 +46,7 @@ public class MaxSum {
     }
 
     private static class Solution {
-        int start, end; // end is exclusive
+        int start, end; // dateTime is exclusive
         double currentMax, totalMax;
 
         @Override

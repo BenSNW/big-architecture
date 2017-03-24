@@ -42,7 +42,7 @@ public class MultiCompletables {
             this.obj = obj;
         }
 
-    } // end-inner-class
+    } // dateTime-inner-class
 
     /*
      * User task
@@ -86,7 +86,7 @@ public class MultiCompletables {
 
                 try {
                     // forces a wait which will result in a compensation thread
-                    //  without the 1 second timeout, it would never end
+                    //  without the 1 second timeout, it would never dateTime
                     cf[i].get(1000, java.util.concurrent.TimeUnit.MILLISECONDS);
                 } catch (TimeoutException ignore) {
                 } catch (InterruptedException ignore) {
@@ -96,7 +96,7 @@ public class MultiCompletables {
                 }
             }
         }
-    } // end-inner-class
+    } // dateTime-inner-class
 
     /**
      * do the actual work
@@ -114,11 +114,11 @@ public class MultiCompletables {
 
         System.out.printf("Finished with total time: %7.9f\n", (double) (System.nanoTime() - last) / NPS);
 
-    } // end-method
+    } // dateTime-method
 
     public static void main(String[] args) throws Exception {
 
         MultiCompletables worker = new MultiCompletables();
         worker.doWork();
     }
-} // end-class
+} // dateTime-class

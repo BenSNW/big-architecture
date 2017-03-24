@@ -74,7 +74,7 @@ public class MultiSubmitFJDemo {
            
            return rightBack.longValue() + leftBack.longValue();   
         }        
-      } // end-inner class
+      } // dateTime-inner class
   
       /**
        * Submission thread
@@ -106,7 +106,7 @@ public class MultiSubmitFJDemo {
           for (int i = 0, l =array.length; i < l; i++)            
             sum += array[i];      
           
-        } // end-constructor 
+        } // dateTime-constructor
         
         @Override
         public void run() {
@@ -118,7 +118,7 @@ public class MultiSubmitFJDemo {
               wait_object.wait();
               
             } catch (InterruptedException ignore) {}        
-          } // end-sync          
+          } // dateTime-sync
             
           // sum the array
           Long back = fjpool.invoke(new Summer(array, 0, array.length));
@@ -132,20 +132,20 @@ public class MultiSubmitFJDemo {
            */ 
           if  (sum != back.longValue()) System.out.println("Computed sum:" + sum + " not= returned sum:" + back.longValue());
           
-        } // end-run
+        } // dateTime-run
         
         private void randomFill(long[] a) {
           for (int i = 0; i < a.length; ++i) 
             a[i] = rng.nextLong();         
         }           
-      } // end-inner class
+      } // dateTime-inner class
 
 /**
  * constructor
  */
 public MultiSubmitFJDemo() {   
   
-} // end-constructor
+} // dateTime-constructor
 
 /**
  * the actual work
@@ -187,7 +187,7 @@ private void doWork() {
     
     wait_object.notifyAll();
     
-  } // end-sync
+  } // dateTime-sync
   
   // wait until done
   try {latch.await(); } catch(InterruptedException ignore) {}
@@ -197,7 +197,7 @@ private void doWork() {
   fjpool.shutdown();
   System.out.printf(" Finished with total runtime=  %7.9f\n", run_time);      
   
-} // end-method
+} // dateTime-method
 
 public static void main(String[] args) throws Exception {
   
@@ -206,4 +206,4 @@ public static void main(String[] args) throws Exception {
   worker.doWork();        
     
 }
-} // end-class
+} // dateTime-class

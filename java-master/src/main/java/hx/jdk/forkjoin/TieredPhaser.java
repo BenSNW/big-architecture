@@ -115,7 +115,7 @@ public class TieredPhaser {
                 int left = parties / 2;
                 int right = parties - left;
 
-                // new phaser in each, except at end
+                // new phaser in each, except at dateTime
                 Phaser leftPhaser = (left > 2) ? build(phaser, left) : phaser;
                 Phaser rightPhaser = (right > 2) ? build(phaser, right) : phaser;
 

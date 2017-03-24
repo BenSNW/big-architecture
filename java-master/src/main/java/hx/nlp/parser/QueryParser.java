@@ -8,6 +8,7 @@ import edu.stanford.nlp.semgraph.SemanticGraph;
 import edu.stanford.nlp.semgraph.SemanticGraphFactory;
 import edu.stanford.nlp.trees.*;
 import edu.stanford.nlp.util.CoreMap;
+import hx.nlp.parser.temporal.TemporalTokensParser;
 import hx.nlp.util.CoreNLPUtils;
 
 import java.util.ArrayList;
@@ -72,7 +73,7 @@ public class QueryParser {
         }
     }
 
-    public DateTimeTokenSequenceParser isDateTimeTree(Tree tree) {
+    public TemporalTokensParser isDateTimeTree(Tree tree) {
 
         return null;
     }

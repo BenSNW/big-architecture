@@ -79,7 +79,7 @@ static void uselessCalc (long n) {
   double y = Math.tanh(temp);
   double z = Math.sinh(temp);    
   
-} // end-method
+} // endDate-method
      
   private void doWork() {
        
