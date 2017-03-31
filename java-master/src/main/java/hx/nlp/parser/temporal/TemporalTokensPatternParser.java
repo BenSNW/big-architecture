@@ -6,12 +6,16 @@ import edu.stanford.nlp.ling.tokensregex.TokenSequenceMatcher;
 import edu.stanford.nlp.ling.tokensregex.TokenSequencePattern;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Created by zhipeng.wang on 03/23 2017.
  */
 public abstract class TemporalTokensPatternParser implements TemporalTokensParser {
 
+	static Pattern datePattern = Pattern.compile("((\\d{2,4})年)?((\\d{1,2})月份?)?((\\d{1,2})日|号)?");
+
+	@Override
 	public TemporalExpression parse(List<CoreLabel> tokens) {
 		TokenSequenceMatcher matcher = getPattern().matcher(tokens);
 		if (!matcher.find())

@@ -45,6 +45,17 @@ public class QueryParser {
                 Collectors.toMap(IndexedWord::index, Function.identity()));
     }
 
+    public QueryParser(Tree tree) {
+        query = CoreNLPUtils.treeSpaningString(tree);
+        parserTree = tree;
+        GrammaticalStructure gs = gsf.newGrammaticalStructure(parserTree);
+        semanticGraph = SemanticGraphFactory.generateEnhancedDependencies(gs);
+
+        entities = new ArrayList<>();
+        indexedWordMap = semanticGraph.vertexSet().stream().collect(
+                Collectors.toMap(IndexedWord::index, Function.identity()));
+    }
+
     public void parse() {
         IndexedWord root = semanticGraph.getFirstRoot();
         System.out.println(root.word() + " " + root.tag());
@@ -71,11 +82,6 @@ public class QueryParser {
                     System.out.println(child.toString());
             }
         }
-    }
-
-    public TemporalTokensParser isDateTimeTree(Tree tree) {
-
-        return null;
     }
 
     protected void parseNPTree(Tree npTree) {

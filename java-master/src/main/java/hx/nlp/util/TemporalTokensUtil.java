@@ -45,10 +45,10 @@ public class TemporalTokensUtil {
 				.put(JINTIAN, () -> LocalDate.now())
 				.put(MINGTIAN, () -> LocalDate.now().plusDays(1))
 				.put(HOUTIAN, () -> LocalDate.now().plusDays(2))
-				.put(QUNIAN, () -> LocalDate.of( year() - 1, 1, 1)) // 阴历还是阳历
-				.put(JINNIAN, () -> LocalDate.of( year(), 1, 1))
-				.put(MINGNIAN, () -> LocalDate.of( year() + 1, 1, 1))
-				.put(SHIYI, () -> LocalDate.of( year(), 10, 1))
+				.put(QUNIAN, () -> LocalDate.of( thisYear() - 1, 1, 1)) // 阴历还是阳历
+				.put(JINNIAN, () -> LocalDate.of( thisYear(), 1, 1))
+				.put(MINGNIAN, () -> LocalDate.of( thisYear() + 1, 1, 1))
+				.put(SHIYI, () -> LocalDate.of( thisYear(), 10, 1))
 				.build();
 
 	private static final Map<String, Supplier<TemporalExpression>> ntTemporals = ntMappers.entrySet()
@@ -58,11 +58,11 @@ public class TemporalTokensUtil {
 		return () -> TemporalExpression.temporalDate(entry.getKey(), entry.getValue().get());
 	}
 
-	public static int year() {
+	public static int thisYear() {
 		return LocalDate.now().getYear();
 	}
 
-	public static int month() {
+	public static int thisMonth() {
 		return LocalDate.now().getMonthValue();
 	}
 
@@ -98,8 +98,8 @@ public class TemporalTokensUtil {
 		int year = 1998, month = 12, day = 12;
 		if (matcher.matches()) {
 			System.out.println(matcher.group(2) + " " + matcher.group(4) + " " + matcher.group(6));
-//			year  = Integer.valueOf(matcher.group(2));
-//			month = Integer.valueOf(matcher.group(4));
+//			thisYear  = Integer.valueOf(matcher.group(2));
+//			thisMonth = Integer.valueOf(matcher.group(4));
 //			day   = Integer.valueOf(matcher.group(6));
 		}
 

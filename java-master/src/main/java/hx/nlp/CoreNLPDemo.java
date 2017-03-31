@@ -107,7 +107,7 @@ public class CoreNLPDemo {
             new FromToPatternParser().parse(tokens);
 
             List<TokenSequencePattern> patterns = Stream.of(
-                    "[{tag:AD}]?　[{tag:P}]? (?$date [{tag:NT}]{1,3}) [{tag:AD}]? (?$con [{tag:/P|CC/}]) (?$endDate [{tag:NT}]{1,3})　[{tag:LC}]? ([{tag:DEG}]? []{0,2} [{tag:NN; word:/时./}] [{tag:LC}]?)?",
+                    "[{tag:AD}]? [{tag:P}]? (?$from [{tag:NT}]{1,3}) [{tag:AD}]? [{tag:/P|CC/}] (?$to [{tag:NT}]{1,3}) ([{tag:DEG}]? []{0,3} /时间|时候|时期|时光/)? [{tag:LC}]?",
                     "[{tag:P}]? (?$date [{tag:NT}]{1,3}) [{tag:/LC|AD/}]?",
                     "[{tag:/NT|DT/}] [{tag:CD}] /个/? (?$unit [{tag:M; word:/天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) [{tag:LC}]?",
                     "(?$pre [{tag:/LC|DT|JJ/}])? (?$mod [{tag:/DT|CD|OD/}]) /个/? (?$unit [{tag:M; word:/分钟|刻钟|小时|天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) (?$post [{tag:/LC|JJ/])?")

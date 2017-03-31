@@ -24,6 +24,10 @@ public class TemporalExpression {
 	private boolean isApproximated;
 	private int repeatFrequence = 0;
 
+	public TemporalExpression(String text) {
+		this.expression = text;
+	}
+
 	private TemporalExpression(String text, LocalDate date ) {
 		expression = text;
 		this.date = date;

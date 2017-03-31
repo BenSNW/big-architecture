@@ -16,13 +16,10 @@ import java.util.regex.Pattern;
  */
 public class FromToPatternParser extends TemporalTokensPatternParser {
 
-	// /大概/? /自?从/? date /一?直/? /到|至/ endDate /(为止|
-	// 左右|前后)/?",
-	private static final TokenSequencePattern tokensPattern = TokenSequencePattern.compile(
+	// /大概/? /自?从/? date /一?直/? /到|至/ endDate /(为止|左右|前后)/?
+	static final TokenSequencePattern tokensPattern = TokenSequencePattern.compile(
 			"([{tag:AD}])? [{tag:P}]? ([{tag:NT}]{1,4}) [{tag:AD}]? " +
 			"[{tag:/P|CC/}] ([{tag:NT}]{1,4}) ([{tag:/AD|LC/}])?");
-
-	private static Pattern datePattern = Pattern.compile("((\\d{2,4})年)?((\\d{1,2})月份?)?((\\d{1,2})日|号)?");
 
 	@Override
 	protected TokenSequencePattern getPattern() {

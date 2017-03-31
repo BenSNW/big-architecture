@@ -39,7 +39,6 @@
 		<spark.version>2.1.0</spark.version>
 		<spark-streaming-kafka.version>2.1.0</spark-streaming-kafka.version>
 
-
 		<corenlp.version>3.7.0</corenlp.version>
 		<corenlp-spark.version>0.2.0-s</corenlp-spark.version>
 
@@ -80,7 +79,6 @@
 		<junit.version>4.12</junit.version>
 		<slf4j.version>1.7.12</slf4j.version>
 		<servlet.api.version>3.1.0</servlet.api.version>
-		<slf4j.version>1.7.12</slf4j.version>
 		<jackson.version>2.6.5</jackson.version>
 		<netty.version>4.0.34.Final</netty.version>
 		<jboss.resteasy.version>3.0.7.Final</jboss.resteasy.version>
