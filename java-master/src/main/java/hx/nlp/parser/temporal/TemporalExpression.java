@@ -5,6 +5,7 @@ import lombok.Data;
 import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAmount;
+import java.time.temporal.TemporalUnit;
 
 /**
  * Created by zhipeng.wang on 03/22 2017.
@@ -21,8 +22,10 @@ public class TemporalExpression {
 	private Duration duration;
 
 	private TYPE type;
-	private boolean isApproximated;
-	private int repeatFrequence = 0;
+	private TemporalUnit unit;
+
+	private byte approximation = 0; // before after or around
+	private byte repeatFrequence = 0;
 
 	public TemporalExpression(String text) {
 		this.expression = text;

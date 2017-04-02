@@ -2,12 +2,16 @@ package hx.nlp.util;
 
 import com.google.common.collect.ImmutableMap;
 import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.util.CoreMap;
 import hx.nlp.parser.temporal.TemporalExpression;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.function.Supplier;
 import java.util.regex.Matcher;
@@ -27,6 +31,7 @@ public class TemporalTokensUtil {
 	public static final String JINTIAN = "今天";
 	public static final String MINGTIAN = "明天";
 	public static final String HOUTIAN = "后天";
+	public static final String QIANNIAN = "前年";
 	public static final String QUNIAN = "去年";
 	public static final String JINNIAN = "今年";
 	public static final String MINGNIAN = "明年";
@@ -34,24 +39,28 @@ public class TemporalTokensUtil {
 
 	public static final String SHIYI = "十一";
 
+	public static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
 	private static final Set<String> NT_WORDS = new HashSet<>(
-			Arrays.asList(QIANTIAN, ZUOTIAN, JINTIAN, MINGTIAN, HOUTIAN, QUNIAN, JINNIAN, MINGNIAN));
+			Arrays.asList(QIANTIAN, ZUOTIAN, JINTIAN, MINGTIAN, HOUTIAN, QIANNIAN,
+					QUNIAN, JINNIAN, MINGNIAN));
 
-	private static final Map<String, Supplier<LocalDate>> ntMappers =
+	private static final Map<String, Supplier<LocalDate>> ntDateMappers =
 			ImmutableMap.<String, Supplier<LocalDate>>builder()
 				.put(QIANTIAN, () -> LocalDate.now().minusDays(2))
 				.put(ZUOTIAN, () -> LocalDate.now().minusDays(1))
 				.put(JINTIAN, () -> LocalDate.now())
 				.put(MINGTIAN, () -> LocalDate.now().plusDays(1))
 				.put(HOUTIAN, () -> LocalDate.now().plusDays(2))
+
+				.put(QIANNIAN, () -> LocalDate.of( thisYear() - 2, 1, 1))
 				.put(QUNIAN, () -> LocalDate.of( thisYear() - 1, 1, 1)) // 阴历还是阳历
 				.put(JINNIAN, () -> LocalDate.of( thisYear(), 1, 1))
 				.put(MINGNIAN, () -> LocalDate.of( thisYear() + 1, 1, 1))
 				.put(SHIYI, () -> LocalDate.of( thisYear(), 10, 1))
 				.build();
 
-	private static final Map<String, Supplier<TemporalExpression>> ntTemporals = ntMappers.entrySet()
+	private static final Map<String, Supplier<TemporalExpression>> ntTemporals = ntDateMappers.entrySet()
 			.stream().collect(Collectors.toMap(Map.Entry::getKey, TemporalTokensUtil::getSupplier));
 
 	private static Supplier<TemporalExpression> getSupplier(Map.Entry<String, Supplier<LocalDate>> entry) {
@@ -65,6 +74,10 @@ public class TemporalTokensUtil {
 	public static int thisMonth() {
 		return LocalDate.now().getMonthValue();
 	}
+
+//	public static TemporalExpression parseNTDateToken(CoreLabel token) {
+//		LocalDate.now().format()
+//	}
 
 	public LocalDateTime parseNTTokens(List<CoreMap> ntTokens) {
 		return parseNTTokens(LocalDateTime.now(), ntTokens);
@@ -109,6 +122,10 @@ public class TemporalTokensUtil {
 		Period period = LocalDate.now().until(LocalDate.now().plusDays(2));
 		System.out.println(period);
 		System.out.println(LocalDate.now().plus(period));
+
+		Period.ofDays(12);
+
+		Duration.ofSeconds(3601).getUnits().forEach(System.out::println);
 	}
 
 }

@@ -28,6 +28,8 @@ import edu.stanford.nlp.util.PropertiesUtils;
 import edu.stanford.nlp.util.logging.Redwood;
 import hx.nlp.parser.temporal.FromToPatternParser;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -41,7 +43,7 @@ public class CoreNLPDemo {
     private static Redwood.RedwoodChannels log = Redwood.channels(CoreNLPDemo.class);
 
     private static final String[] SAMPLES = new String[] { "工行昨天的股价", "工行最近几年的股价",
-            "工商银行昨天的股价", "中国工商银行上周的股价", "工商银行3天前的股价", "工商银行3月5日到3月10日的股价走势",
+            "工商银行昨天的股价", "中国工商银行上周三的股价", "工商银行3天前的股价", "工商银行3月5日到3月10日的股价走势",
             "工商银行3月份的股价走势", "工行第二季度的股价", "工商银行早上8点的股价", "工商银行到3月5日为止前一个月的股价",
             "工商银行的资金流入", "工商银行的股价和市盈率分别是多少", "资金流入前10位",
             "工商银行涨停了", "今天涨停的公司", "连续3天涨停的公司", "涨幅超过百分之三的公司",
@@ -67,9 +69,12 @@ public class CoreNLPDemo {
 
         System.out.println(annotatorPipeline.getProperties().toString());
 
-        Stream.of(SAMPLES).forEach(text -> {
-            Annotation annotation = annotatorPipeline.process(text);
-            annotation.set(CoreAnnotations.DocDateAnnotation.class, "2017-03-23");
+        Stream.of(SAMPLES).forEach( text -> {
+//            Annotation annotation = annotatorPipeline.process(text);
+            Annotation annotation = new Annotation(text);
+            annotation.set(CoreAnnotations.DocDateAnnotation.class,
+                    LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            annotatorPipeline.annotate(annotation);
 //            annotation.keySet().forEach(System.out::println);
 
             CoreMap sentence = annotation.get(CoreAnnotations.SentencesAnnotation.class).get(0);
@@ -110,7 +115,7 @@ public class CoreNLPDemo {
                     "[{tag:AD}]? [{tag:P}]? (?$from [{tag:NT}]{1,3}) [{tag:AD}]? [{tag:/P|CC/}] (?$to [{tag:NT}]{1,3}) ([{tag:DEG}]? []{0,3} /时间|时候|时期|时光/)? [{tag:LC}]?",
                     "[{tag:P}]? (?$date [{tag:NT}]{1,3}) [{tag:/LC|AD/}]?",
                     "[{tag:/NT|DT/}] [{tag:CD}] /个/? (?$unit [{tag:M; word:/天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) [{tag:LC}]?",
-                    "(?$pre [{tag:/LC|DT|JJ/}])? (?$mod [{tag:/DT|CD|OD/}]) /个/? (?$unit [{tag:M; word:/分钟|刻钟|小时|天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) (?$post [{tag:/LC|JJ/])?")
+                    "([{tag:/LC|DT|JJ/}])? ([{tag:/DT|CD|OD/}]) /个/? ([{tag:M; word:/分钟|刻钟|小时|天|日|周|星期|礼拜|旬|月份?|季度?|年/}]) ([{tag:/LC|JJ/}])?")
                 .map(TokenSequencePattern::compile).collect(Collectors.toList());
             MultiPatternMatcher multiPatternMatcher = TokenSequencePattern.getMultiPatternMatcher(patterns);
             List<SequenceMatchResult<CoreMap>> matches = multiPatternMatcher.findNonOverlapping(tokens);
@@ -147,7 +152,8 @@ public class CoreNLPDemo {
             for (CoreMap entity: entities) {
                 System.out.println(entity + ": " + entity.get(CoreAnnotations.NamedEntityTagAnnotation.class)
                     + "-" + entity.get(CoreAnnotations.NormalizedNamedEntityTagAnnotation.class)
-                    + "-" + entity.get(CoreAnnotations.NumericValueAnnotation.class));
+                    + "-" + entity.get(CoreAnnotations.NumericValueAnnotation.class)
+                    + "-" + entity.get(CoreAnnotations.WikipediaEntityAnnotation.class));
 //                entity.keySet().forEach((Class key) -> System.out.println(key + "-" + entity.get(key)));
                 entity.get(CoreAnnotations.TokensAnnotation.class).forEach(token -> {
                     String word = token.getString(CoreAnnotations.TextAnnotation.class);

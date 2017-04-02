@@ -15,6 +15,8 @@ public abstract class TemporalTokensPatternParser implements TemporalTokensParse
 
 	static Pattern datePattern = Pattern.compile("((\\d{2,4})年)?((\\d{1,2})月份?)?((\\d{1,2})日|号)?");
 
+	static String nnSuffix = "([{tag:DEG}]? []{0,3} /时间|时候|时期|时光/)?";
+
 	@Override
 	public TemporalExpression parse(List<CoreLabel> tokens) {
 		TokenSequenceMatcher matcher = getPattern().matcher(tokens);
