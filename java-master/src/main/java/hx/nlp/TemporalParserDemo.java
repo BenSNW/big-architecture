@@ -39,7 +39,7 @@ public class TemporalParserDemo {
 			List<TokenSequencePattern> patterns = Stream.of(
 					"[{tag:AD}]? [{tag:P}]? (?$from [{tag:NT}]{1,3}) [{tag:AD}]? [{tag:/P|CC/}] (?$to [{tag:NT}]{1,3}) ([{tag:DEG}]? []{0,3} /时间|时候|时期|时光/)? [{tag:LC}]?",
 
-					"[{tag:/P|DT|AD/}]? (?$date ([ {tag:NT}|{word:/过年|春节|国庆节?|清明节?|端午节?/} ] [{tag:DEG}]?){1,2}) ([{tag:/LC|AD/}])?",     // since until or during pattern
+					"[{tag:/P|DT|AD/}]? (?$date ([ {tag:NT} | {word:/过年|春节|国庆节?|清明节?|端午节?/} ] [{tag:DEG}]?){1,2}) ([{tag:/LC|AD/}])?",     // since until or during pattern
 
 					"[{tag:/P|DT/}]? (?$date [{tag:NT}]{1,2}) ([{tag:LC}])? [{tag:DEG}]? [{tag:DT}]? ([{tag:/CD|OD/}] [{tag:M}]? /分钟|刻钟|小时|天|日|星期[一二三四五六日]?|礼拜[一二三四五六日]?|月份?|季度?/ | [{tag:/M|JJ/}]? /时间|时候|时期|时光/) [{tag:LC}]?",         // A during B pattern
 

@@ -10,7 +10,7 @@ public class NTParser extends TemporalTokensPatternParser {
 
 	static final TokenSequencePattern tokensPattern = TokenSequencePattern.compile(
 			"([{tag:AD}])? [{tag:P}]? ([{tag:NT}]{1,4}) [{tag:AD}]? " +
-					"[{tag:/P|CC/}] ([{tag:NT}]{1,4}) ([{tag:/AD|LC/}])?");
+			"[{tag:/P|CC/}] ([{tag:NT}]{1,4}) ([{tag:/AD|LC/}])?");
 
 	@Override
 	protected TokenSequencePattern getPattern() {

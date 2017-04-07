@@ -27,6 +27,7 @@ import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.PropertiesUtils;
 import edu.stanford.nlp.util.logging.Redwood;
 import hx.nlp.parser.temporal.FromToPatternParser;
+import hx.nlp.parser.temporal.QPTemporalParser;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -110,6 +111,7 @@ public class CoreNLPDemo {
 //                });
 
             new FromToPatternParser().parse(tokens);
+            new QPTemporalParser().parse(tokens);
 
             List<TokenSequencePattern> patterns = Stream.of(
                     "[{tag:AD}]? [{tag:P}]? (?$from [{tag:NT}]{1,3}) [{tag:AD}]? [{tag:/P|CC/}] (?$to [{tag:NT}]{1,3}) ([{tag:DEG}]? []{0,3} /时间|时候|时期|时光/)? [{tag:LC}]?",
