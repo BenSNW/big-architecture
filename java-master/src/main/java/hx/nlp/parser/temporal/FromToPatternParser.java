@@ -32,7 +32,7 @@ public class FromToPatternParser extends TemporalTokensPatternParser {
 		LocalDate from = toLocalDate(matcher.group(2));
 		LocalDate to = toLocalDate(matcher.group(3));
 		if (from != null && to != null)
-			return TemporalExpression.temporalRange(matcher.group(), from, to);
+			return TemporalExpression.temporalDateRange(matcher.group(), from, to);
 
 		List<CoreMap> mathedTokens = matcher.groupNodes();
 		List<? extends CoreMap> tokens = matcher.elements();
@@ -50,7 +50,8 @@ public class FromToPatternParser extends TemporalTokensPatternParser {
 			date = date.withMonth(Integer.valueOf(matcher.group(4)));
 		if (matcher.group(6) != null)
 			date = date.withDayOfMonth(Integer.valueOf(matcher.group(6)));
-		return LocalDateTime.of(date, LocalTime.MIN).toLocalDate();
+		return date;
+//		return LocalDateTime.of(date, LocalTime.MIN).toLocalDate();
 	}
 
 
