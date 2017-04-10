@@ -3,7 +3,7 @@ package hx.nlp.parser.temporal;
 import lombok.Data;
 
 import java.time.*;
-import java.time.temporal.TemporalUnit;
+import java.time.temporal.ChronoUnit;
 
 /**
  * Created by zhipeng.wang on 03/22 2017.
@@ -12,21 +12,12 @@ import java.time.temporal.TemporalUnit;
 public class TemporalExpression {
 
 	public enum TYPE implements Comparable<TYPE> {
-
-		// 精确到分或几点整时才认为是TIME，否则作为TIME_RANGE，如三点钟，三点多，三点整
-		DATE(10), TIME(100), DATE_RANGE(50), TIME_RANGE(500), SET(1), DEMONSTRATIVE(1);
-
-		private int precision;
-
-		TYPE(int precision) {
-			this.precision = precision;
-		}
-
+		POINT, RANGE, LENGTH, SET, DEMONSTRATIVE
 	}
 
 	protected String expression;
-	private LocalDate date;
-	private LocalTime time;
+//	private LocalDate date;
+//	private LocalTime time;
 //	private Period period;
 //	private Duration duration;
 
@@ -34,7 +25,8 @@ public class TemporalExpression {
 	private LocalDateTime endTime;
 
 	private TYPE type;
-	private TemporalUnit precision;     // ChronoUnit
+	// 用于计算匹配程度，只有时间精确到几点整时才认为精度是时，否则作为分，如三点钟，三点多，三点整
+	private ChronoUnit precision;
 
 	private byte approximation = 0;     // before after or around，三四天前；三十几天；几百多;3、4天
 	private byte repeatFrequence = 0;
@@ -43,81 +35,93 @@ public class TemporalExpression {
 		this.expression = text;
 	}
 
-	private TemporalExpression(String text, LocalDate date ) {
-		expression = text;
-		type = TYPE.DATE;
-		endTime = startTime = date.atStartOfDay();
+	private TemporalExpression(String text, LocalDate date, ChronoUnit unit) {
+		this(text, date.atStartOfDay(), unit);
 	}
 
-	private TemporalExpression(String text, LocalDateTime dateTime ) {
+	private TemporalExpression(String text, LocalDateTime dateTime, ChronoUnit unit) {
 		expression = text;
-		type = TYPE.TIME;
+		type = TYPE.POINT;
+		precision = unit;
 		endTime = startTime = dateTime;
 	}
 
-	private TemporalExpression(String text, LocalDate from, LocalDate to) {
-		expression = text;
-		type = TYPE.DATE_RANGE;
-		this.startTime = from.atStartOfDay();
-		this.endTime = to.atStartOfDay();
+	private TemporalExpression(String text, LocalDate from, LocalDate to, ChronoUnit unit) {
+		this(text, from.atStartOfDay(), to.atStartOfDay(), unit);
 	}
 
-	private TemporalExpression(String text, LocalDateTime from, LocalDateTime to) {
+	private TemporalExpression(String text, LocalDateTime from, LocalDateTime to, ChronoUnit unit) {
 		expression = text;
-		type = TYPE.TIME_RANGE;
+		type = TYPE.RANGE;
+		precision = unit;
 		startTime = from;
 		endTime = to;
 	}
 
-	private TemporalExpression(String text, LocalDate date, LocalTime from, LocalTime to) {
-		this(text, LocalDateTime.of(date, from), LocalDateTime.of(date, to));
+	public static TemporalExpression temporalPoint(String text, LocalDate date) {
+		return new TemporalExpression(text, date.atStartOfDay(), ChronoUnit.DAYS);
 	}
 
-	private TemporalExpression(String text, Period period) {
-		this.expression = text;
-		this.type = TYPE.DATE_RANGE;
-		startTime = LocalDateTime.MIN;
-		endTime = startTime.plusDays(period.getDays());
+	public static TemporalExpression temporalPoint(String text, LocalDateTime dt, ChronoUnit unit) {
+		return new TemporalExpression(text, dt, unit);
 	}
 
-	public static TemporalExpression temporalDate(String text, LocalDate date) {
-		return new TemporalExpression(text, date);
+//	public static TemporalExpression temporalTime(String text, LocalDate date, LocalTime time) {
+//		return temporalTime(text, LocalDateTime.of(date, time));
+//	}
+//
+//	public static TemporalExpression temporalTime(String text, LocalTime time) {
+//		return temporalTime(text, LocalDateTime.of(LocalDate.now(), time));
+//	}
+//
+//	public static TemporalExpression temporalRange(String text, LocalDate from, int days) {
+//		return new TemporalExpression(text, from, from.plusDays(days));
+//	}
+//
+//	public static TemporalExpression temporalDateRange(String text, LocalDate from, LocalDate to) {
+//		return new TemporalExpression(text, from, to);
+//	}
+
+	public static TemporalExpression temporalRange(String text, LocalDateTime startTime,
+	                                               LocalDateTime endTime, ChronoUnit unit) {
+		return new TemporalExpression(text, startTime, endTime, unit);
 	}
 
-	public static TemporalExpression temporalTime(String text, LocalDateTime time) {
-		return new TemporalExpression(text, time);
+//	public static TemporalExpression ofYear(int year) {
+//		return temporalDateRange(year + "年", LocalDate.of(year, 1, 1), LocalDate.of(year, 12, 31));
+//	}
+//
+//	public static TemporalExpression atHour(LocalDate date, int hour) {
+//		return temporalTime(hour + "时", date, LocalTime.of(hour, 0, 0));
+//	}
+
+	public static TemporalExpression ofLength(String text, float amount, ChronoUnit unit) {
+		TemporalExpression tp = new TemporalExpression(text);
+		tp.type = TYPE.LENGTH;
+		tp.precision = unit;
+		tp.startTime = LocalDate.ofEpochDay(0).atStartOfDay();
+		tp.endTime = tp.startTime.plusSeconds((long) (amount * unit.getDuration().getSeconds()));
+		return tp;
 	}
 
-	public static TemporalExpression temporalTime(String text, LocalDate date, LocalTime time) {
-		return temporalTime(text, LocalDateTime.of(date, time));
+	public void reorderTime() {
+		if (startTime != null && endTime != null && startTime.compareTo(endTime) > 0) {
+			LocalDateTime temp = startTime;
+			startTime = endTime;
+			endTime = temp;
+		}
 	}
 
-	public static TemporalExpression temporalTime(String text, LocalTime time) {
-		return temporalTime(text, LocalDateTime.of(LocalDate.now(), time));
-	}
-
-	public static TemporalExpression temporalDateRange(String text, LocalDate from, LocalDate to) {
-		return new TemporalExpression(text, from, to);
-	}
-
-	public static TemporalExpression temporalDateRange(String text, LocalDate from, int days) {
-		return new TemporalExpression(text, from, from.plusDays(days));
-	}
-
-	public static TemporalExpression temporalTimeRange(String text, LocalDateTime startTime, LocalDateTime endTime) {
-		return new TemporalExpression(text, startTime, endTime);
-	}
-
-	public static TemporalExpression ofYear(int year) {
-		return temporalDateRange(year + "年", LocalDate.of(year, 1, 1), LocalDate.of(year, 12, 31));
-	}
-
-	public static TemporalExpression atHour(LocalDate date, int hour) {
-		return temporalTime(hour + "时", date, LocalTime.of(hour, 0, 0));
+	public float match(LocalDateTime ldt) {
+		switch (type) {
+			case POINT:
+				return precision.between(startTime, ldt);
+		}
+		return 1.0f;
 	}
 
 	public TemporalExpression withTime(LocalTime time) {
-		type = TYPE.TIME;
+		type = TYPE.POINT;
 		startTime = LocalDateTime.of(startTime.toLocalDate(), time);
 		return this;
 	}

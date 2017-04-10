@@ -7,6 +7,7 @@ import edu.stanford.nlp.util.CoreMap;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,17 +30,17 @@ public class FromToPatternParser extends TemporalTokensPatternParser {
 	@Override
 	protected TemporalExpression parseMatchedPattern(TokenSequenceMatcher matcher) {
 		System.out.println(matcher.group(1) + "," + matcher.group(4));
-		LocalDate from = toLocalDate(matcher.group(2));
-		LocalDate to = toLocalDate(matcher.group(3));
+		LocalDateTime from = toLocalDate(matcher.group(2));
+		LocalDateTime to = toLocalDate(matcher.group(3));
 		if (from != null && to != null)
-			return TemporalExpression.temporalDateRange(matcher.group(), from, to);
+			return TemporalExpression.temporalRange(matcher.group(), from, to, ChronoUnit.DAYS);
 
 		List<CoreMap> mathedTokens = matcher.groupNodes();
 		List<? extends CoreMap> tokens = matcher.elements();
 		return null;
 	}
 
-	private LocalDate toLocalDate(String text) {
+	private LocalDateTime toLocalDate(String text) {
 		LocalDate date = LocalDate.now();
 		Matcher matcher = datePattern.matcher(text);
 		if (!matcher.matches())
@@ -50,7 +51,7 @@ public class FromToPatternParser extends TemporalTokensPatternParser {
 			date = date.withMonth(Integer.valueOf(matcher.group(4)));
 		if (matcher.group(6) != null)
 			date = date.withDayOfMonth(Integer.valueOf(matcher.group(6)));
-		return date;
+		return date.atStartOfDay();
 //		return LocalDateTime.of(date, LocalTime.MIN).toLocalDate();
 	}
 

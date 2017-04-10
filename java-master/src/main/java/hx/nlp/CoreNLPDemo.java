@@ -25,6 +25,7 @@ import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.TreeCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.PropertiesUtils;
+import edu.stanford.nlp.util.RuntimeInterruptedException;
 import edu.stanford.nlp.util.logging.Redwood;
 import hx.nlp.parser.temporal.FromToPatternParser;
 import hx.nlp.parser.temporal.QPTemporalParser;
@@ -43,7 +44,7 @@ public class CoreNLPDemo {
     /** A logger for this class */
     private static Redwood.RedwoodChannels log = Redwood.channels(CoreNLPDemo.class);
 
-    private static final String[] SAMPLES = new String[] { "工行昨天的股价", "工行最近几年的股价",
+    private static final String[] SAMPLES = new String[] { "工行最近几年的股价", "前3天", "上个星期", "前2周",
             "工商银行昨天的股价", "中国工商银行上周三的股价", "工商银行3天前的股价", "工商银行3月5日到3月10日的股价走势",
             "工商银行3月份的股价走势", "工行第二季度的股价", "工商银行早上8点的股价", "工商银行到3月5日为止前一个月的股价",
             "工商银行的资金流入", "工商银行的股价和市盈率分别是多少", "资金流入前10位",
@@ -110,8 +111,10 @@ public class CoreNLPDemo {
 //                    m.groupNodes().forEach(System.out::println);
 //                });
 
-            new FromToPatternParser().parse(tokens);
-            new QPTemporalParser().parse(tokens);
+            try {
+                new FromToPatternParser().parse(tokens);
+                new QPTemporalParser().parse(tokens);
+            } catch (RuntimeException ex) {}
 
             List<TokenSequencePattern> patterns = Stream.of(
                     "[{tag:AD}]? [{tag:P}]? (?$from [{tag:NT}]{1,3}) [{tag:AD}]? [{tag:/P|CC/}] (?$to [{tag:NT}]{1,3}) ([{tag:DEG}]? []{0,3} /时间|时候|时期|时光/)? [{tag:LC}]?",

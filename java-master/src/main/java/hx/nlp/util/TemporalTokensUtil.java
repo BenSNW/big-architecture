@@ -3,14 +3,13 @@ package hx.nlp.util;
 import com.google.common.collect.ImmutableMap;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
-import edu.stanford.nlp.util.StringUtils;
 import hx.nlp.parser.temporal.TemporalExpression;
 
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Period;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.WeekFields;
 import java.util.*;
 import java.util.function.Supplier;
 import java.util.regex.Matcher;
@@ -23,8 +22,8 @@ import java.util.stream.Stream;
  */
 public class TemporalTokensUtil {
 
-	private static Pattern datePattern = Pattern.compile("((\\d{2,4})年)?((\\d{1,2})月份?)?((\\d{1,2})日|号)?");
-	private static Pattern timePattern = Pattern.compile("((凌晨|早上|早晨|清晨|上午|中午|下午|傍晚|黄昏|晚上|夜晚|半夜\\d{2,4})年)?((\\d{1,2})月份?)?((\\d{1,2})日|号)?");
+	public static Pattern datePattern = Pattern.compile("((\\d{2,4})年)?((\\d{1,2})月份?)?((\\d{1,2})日|号)?");
+	public static Pattern timePattern = Pattern.compile("((凌晨|早上|早晨|清晨|上午|中午|下午|傍晚|黄昏|晚上|夜晚|半夜\\d{2,4})年)?((\\d{1,2})月份?)?((\\d{1,2})日|号)?");
 
 	public static final String QIANTIAN = "前天";
 	public static final String ZUOTIAN = "昨天";
@@ -42,7 +41,7 @@ public class TemporalTokensUtil {
 
 	public static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-	private static final Map<String, Supplier<LocalDate>> ntDateMappers = ImmutableMap.<String, Supplier<LocalDate>>builder()
+	public static final Map<String, Supplier<LocalDate>> ntDateMappers = ImmutableMap.<String, Supplier<LocalDate>>builder()
 			.put(QIANTIAN, () -> LocalDate.now().minusDays(2))
 			.put(ZUOTIAN, () -> LocalDate.now().minusDays(1))
 			.put(JINTIAN, () -> LocalDate.now())
@@ -57,44 +56,56 @@ public class TemporalTokensUtil {
 			.put(SHIYI, () -> LocalDate.of( thisYear(), 10, 1))
 			.build();
 
-	private static final Set<String> NT_WORDS = ntDateMappers.keySet();
+	public static final Set<String> NT_WORDS = ntDateMappers.keySet();
 
-	private static final Map<String, Supplier<TemporalExpression>> ntTemporals = ntDateMappers.entrySet()
+	public static final Map<String, Supplier<TemporalExpression>> ntTemporals = ntDateMappers.entrySet()
 			.stream().collect(Collectors.toMap(Map.Entry::getKey, TemporalTokensUtil::dateToTemporal));
 
-	private static Supplier<TemporalExpression> dateToTemporal(Map.Entry<String, Supplier<LocalDate>> entry) {
-		return () -> TemporalExpression.temporalDate(entry.getKey(), entry.getValue().get());
+	public static Supplier<TemporalExpression> dateToTemporal(Map.Entry<String, Supplier<LocalDate>> entry) {
+		return () -> TemporalExpression.temporalPoint(entry.getKey(), entry.getValue().get());
 	}
 
-//	private static final Map<String, Integer> dtMapper = ImmutableMap.<String, Integer>builder()
-//			.put("前", -2).put("", -2).put("前", -2).put("前", -2)
-//			.put("前", -2).put("前", -2).put("前", -2).put("前", -2)
-//			.put("前", -2).put("前", -2).put("前", -2).put("前", -2)
-//			.build();
-
-	private static final Map<Character, Integer> cdMapper = ImmutableMap.<Character, Integer>builder()
-//			.put('１', 1).put('２', 2).put('３', 3).put('４', 4).put('５', 5)
-//			.put('６', 6).put('７', 7).put('８', 8).put('９', 9).put('０', 0)
+	public static final Map<Character, Integer> cdMapper = ImmutableMap.<Character, Integer>builder()
 			.put('零', 0).put('〇', 0).put('一', 1).put('二', 2).put('两', 2)
 			.put('三', 3).put('四', 4).put('五', 5).put('六', 6).put('七', 7)
 			.put('八', 8).put('九', 9).put('几', 3).put('多', 3).put('来', 2)
+			.put('1', 1).put('2', 2).put('3', 3).put('4', 4).put('5', 5)
+			.put('6', 6).put('7', 7).put('8', 8).put('9', 9).put('0', 0)
+			.put('１', 1).put('２', 2).put('３', 3).put('４', 4).put('５', 5)
+			.put('６', 6).put('７', 7).put('８', 8).put('９', 9).put('０', 0)
 			.build();
 
-	private static final Map<Character, Integer> cdUnitMapper = ImmutableMap.<Character, Integer>builder()
+	public static final Map<Character, Integer> cdUnitMapper = ImmutableMap.<Character, Integer>builder()
 			.put('十', 10).put('百', 100).put('千', 1000).put('万', 10000).put('亿', 100000000)
 			.build();
 
+	public static final Map<String, Long> ntUnitMapper = ImmutableMap.<String, Long>builder()
+			.put("秒", 1L).put("秒钟", 1L).put("分", 60L).put("分钟", 60L)
+			.put("刻", 900L).put("刻钟", 900L).put("小时", 3600L).put("钟头", 3600L)
+			.put("天", 24 * 3600L).put("日", 24 * 3600L)
+			.put("周", ChronoUnit.WEEKS.getDuration().getSeconds())
+			.put("星期", ChronoUnit.WEEKS.getDuration().getSeconds())
+			.put("礼拜", ChronoUnit.WEEKS.getDuration().getSeconds())
+			.put("月", ChronoUnit.MONTHS.getDuration().getSeconds())
+			.put("季", 4 * ChronoUnit.MONTHS.getDuration().getSeconds())
+			.put("季度", 4 * ChronoUnit.MONTHS.getDuration().getSeconds())
+			.put("年", ChronoUnit.YEARS.getDuration().getSeconds())
+			.put("年度", ChronoUnit.YEARS.getDuration().getSeconds())
+			.put("世纪", ChronoUnit.CENTURIES.getDuration().getSeconds())
+			.build();
+
+	public static final Map<String, Integer> dtMapper = ImmutableMap.<String, Integer>builder()
+		.put("前", -1).put("后", 1).put("上", -1).put("下", -2).put("这", -1)
+		.put("最近", -1)
+		.build();
+
 	public static int thisYear() {
-		return LocalDate.now().getYear();
+		return Year.now().getValue();
 	}
 
 	public static int thisMonth() {
 		return LocalDate.now().getMonthValue();
 	}
-
-//	public static TemporalExpression parseNTDateToken(CoreLabel token) {
-//		LocalDate.now().format()
-//	}
 
 	public static LocalDateTime parseNTTokens(List<CoreMap> ntTokens) {
 		return parseNTTokens(LocalDateTime.now(), ntTokens);
@@ -157,10 +168,11 @@ public class TemporalTokensUtil {
 				else
 					cd += 3 * cdUnitMapper.get(c);
 				previousUnit = cdUnitMapper.get(c);
-			} else {
-				int n = c >= '0' && c <= '9' ? c - '0' : cdMapper.get(c);
+			} else if (cdMapper.containsKey(c)){
+//				int n = c >= '0' && c <= '9' ? c - '0' : cdMapper.get(c);
+				int n = cdMapper.get(c);
 				int currrentUnit = (i+1 < text.length() && cdUnitMapper.containsKey(text.charAt(i+1))) ?
-					cdUnitMapper.get(text.charAt(i+1)) : 1;
+						cdUnitMapper.get(text.charAt(i+1)) : 1;
 
 				if (currrentUnit == 1) {
 					cd += n * Math.max(1, previousUnit/10);
@@ -178,6 +190,27 @@ public class TemporalTokensUtil {
 		return cd;
 	}
 
+	public static ChronoUnit getChronoUnit(String unit) {
+		return secondsToChronoUnit(ntUnitMapper.get(unit));
+	}
+
+	public static ChronoUnit secondsToChronoUnit(long seconds) {
+		return Stream.of(ChronoUnit.values()).sorted(Comparator.comparing(ChronoUnit::getDuration).reversed())
+			.filter(cu -> seconds >= cu.getDuration().getSeconds())
+			.findFirst().orElse(ChronoUnit.MINUTES);    // 刻钟
+//		ChronoUnit[] units = ChronoUnit.values();
+//		Arrays.sort(units , Comparator.comparing(ChronoUnit::getDuration));
+//		return Arrays.binarySearch(units, ChronoUnit.DAYS, Comparator.comparing(ChronoUnit::getDuration));
+	}
+
+	public static LocalDateTime truncateDateTime(LocalDateTime ldt, ChronoUnit unit) {
+//		System.out.println(dt.atOffset(ZoneOffset.ofHours(8)).toEpochSecond() + " " + System.currentTimeMillis()/1000);
+		long epochSeconds = ldt.toEpochSecond(ZoneOffset.ofHours(8));
+		long truncatedSeconds = epochSeconds - epochSeconds % unit.getDuration().getSeconds();
+//		System.out.println(ChronoUnit.DAYS.between(LocalDate.ofEpochDay(0), dt));
+//		System.out.println(System.currentTimeMillis()/1000/unit + " " + seconds);
+		return LocalDateTime.ofInstant(Instant.ofEpochSecond(truncatedSeconds), ZoneOffset.ofHours(8));
+	}
 
 	public static void main(String[] args) {
 //		LocalDate date = LocalDate.parse("3月5日", DateTimeFormatter.ofPattern("'X'X'X'X-MM-DD"));
@@ -205,12 +238,30 @@ public class TemporalTokensUtil {
 
 		Duration.ofSeconds(3601).getUnits().forEach(System.out::println);
 //		Duration.of(2, ChronoUnit.YEARS);
+		Duration.ofSeconds(3601).getSeconds();
 
 		System.out.println(LocalDate.ofYearDay(2017, 1));
 		System.out.println(LocalDate.of(2017, 3, 1).minusDays(1));
 
 		Stream.of("三百零几", "十来万", "一百多万", "一百万", "三四十", "一百七八十万", "一百三四十多万", "十几二十多万")
 				.forEach(text -> System.out.println(parseNumber(text)));
+
+		long seconds = ChronoUnit.DECADES.getDuration().getSeconds();
+
+		System.out.println(truncateDateTime(LocalDateTime.now(), ChronoUnit.DAYS));
+		System.out.println(truncateDateTime(LocalDateTime.now(), ChronoUnit.MONTHS).getDayOfMonth());
+		System.out.println(truncateDateTime(LocalDateTime.now(), ChronoUnit.HOURS).getHour());
+		System.out.println(truncateDateTime(LocalDateTime.now(), ChronoUnit.YEARS).getYear());
+
+		System.out.println(LocalDate.now().with(DayOfWeek.MONDAY));
+		System.out.println(LocalDate.now().with(DayOfWeek.SUNDAY));
+		System.out.println(LocalDate.now().with(ChronoField.ALIGNED_WEEK_OF_MONTH, 1).with(DayOfWeek.MONDAY));
+		System.out.println(LocalDate.now().with(WeekFields.of(Locale.CHINA).dayOfWeek(), 1));
+
+//		System.out.println(LocalDate.now().with(ChronoField.PROLEPTIC_MONTH, -1));
+		System.out.println(LocalDate.now().plusMonths(-1));
+		System.out.println(LocalDate.now().with(ChronoField.DAY_OF_MONTH, 30).plusMonths(-2));
+		System.out.println(LocalDate.now().with(ChronoField.DAY_OF_MONTH, 30).plus(-2, ChronoUnit.MONTHS));
 
 	}
 
