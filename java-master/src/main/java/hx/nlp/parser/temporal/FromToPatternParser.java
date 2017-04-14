@@ -6,16 +6,14 @@ import edu.stanford.nlp.util.CoreMap;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by zhipeng.wang on 03/23 2017.
  */
-public class FromToPatternParser extends TemporalTokensPatternParser {
+public class FromToPatternParser extends TemporalPatternParser {
 
 	// /大概/? /自?从/? date /一?直/? /到|至/ endDate /(为止|左右|前后)/?
 	static final TokenSequencePattern tokensPattern = TokenSequencePattern.compile(

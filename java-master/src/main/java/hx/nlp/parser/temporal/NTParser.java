@@ -6,7 +6,7 @@ import edu.stanford.nlp.ling.tokensregex.TokenSequencePattern;
 /**
  * Created by zhipeng.wang on 03/31 2017.
  */
-public class NTParser extends TemporalTokensPatternParser {
+public class NTParser extends TemporalPatternParser {
 
 	static final TokenSequencePattern tokensPattern = TokenSequencePattern.compile(
 			"([{tag:AD}])? [{tag:P}]? ([{tag:NT}]{1,4}) [{tag:AD}]? " +

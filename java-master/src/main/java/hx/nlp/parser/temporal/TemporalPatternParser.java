@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 /**
  * Created by zhipeng.wang on 03/23 2017.
  */
-public abstract class TemporalTokensPatternParser implements TemporalTokensParser {
+public abstract class TemporalPatternParser implements TemporalTokensParser {
 
 	static Pattern datePattern = Pattern.compile("((\\d{2,4})年)?((\\d{1,2})月份?)?((\\d{1,2})日|号)?");
 

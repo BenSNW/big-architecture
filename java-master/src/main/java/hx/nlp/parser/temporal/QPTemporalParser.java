@@ -19,7 +19,7 @@ import static hx.nlp.util.TemporalTokensUtil.secondsToChronoUnit;
 /**
  * Created by zhipeng.wang on 04/01 2017.
  */
-public class QPTemporalParser extends TemporalTokensPatternParser {
+public class QPTemporalParser extends TemporalPatternParser {
 
 	static final TokenSequencePattern tokensPattern = TokenSequencePattern.compile(
 			"([{word:/上|下|前面?|后面?|这|那|再?过|最近|自？从/} | {tag:DT}])? " +
